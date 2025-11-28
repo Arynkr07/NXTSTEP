@@ -2,43 +2,49 @@ import { NextRequest, NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 export async function POST(req: NextRequest) {
-  console.log("--- 1. API Route hit ---"); // Log start
+  // 1. LOOK FOR THIS NEW LOG IN YOUR TERMINAL
+  console.log("--- 🔒 STRICT GUARDRAILS ACTIVE ---"); 
 
   try {
-    // Check if body is readable
     const body = await req.json();
-    console.log("--- 2. Body parsed:", body); 
-
     const { userMessage, quizResults } = body;
 
-    // Check API Key
     const apiKey = process.env.GEMINI_API_KEY;
-    console.log("--- 3. API Key status:", apiKey ? "Found key starting with " + apiKey.substring(0,5) : "MISSING");
-
     if (!apiKey) {
-      throw new Error("API Key is missing from .env.local");
+      throw new Error("API Key is missing");
     }
 
-    // Initialize Gemini
     const genAI = new GoogleGenerativeAI(apiKey);
+    
+    // ✅ USING THE STABLE MODEL (2.5 does not exist publicly yet!)
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
-    // Generate
-    console.log("--- 4. Sending to Gemini... ---");
-    const result = await model.generateContent(`User says: ${userMessage}`);
+    const prompt = `
+      SYSTEM INSTRUCTION:
+      You are "NxtStep AI", a specialized Career Counselor.
+      
+      ⛔️ YOUR RULES:
+      1. IF the user asks about Careers, Skills, Jobs, or Resumes -> Answer Helpfully.
+      2. IF the user asks about General Knowledge (e.g., "States in India", "Capitals", "Movies") -> REFUSE.
+         - Say: "I can only help with career-related questions. Do you have a question about your job path?"
+
+      CONTEXT:
+      ${quizResults ? JSON.stringify(quizResults) : "No profile."}
+
+      USER QUESTION:
+      "${userMessage}"
+    `;
+    
+    const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    console.log("--- 5. Gemini responded! ---");
+    
+    console.log("--- AI Responded ---");
 
     return NextResponse.json({ reply: text });
 
   } catch (error: any) {
-    // THIS IS THE IMPORTANT PART: It prints the real error to your terminal
-    console.error("\n❌ CRITICAL ERROR DETAILS ❌\n", error);
-    
-    return NextResponse.json(
-      { error: error.message || "Something went wrong" },
-      { status: 500 }
-    );
+    console.error("Error:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
