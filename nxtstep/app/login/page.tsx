@@ -118,12 +118,10 @@ export default function Login() {
 
         <p className="mt-4 text-center">
           Don’t have an account?{" "}
-          <button
-            onClick={handleRegister}
-            className="text-blue-500 hover:underline"
-          >
+          <Link href="/signup" className="text-blue-500 hover:underline">
+            
             Register
-          </button>
+          </Link>
         </p>
       </div>
     </div>

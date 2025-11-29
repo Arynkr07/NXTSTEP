@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import ChatbotPanel from './ChatbotPanel'; 
 import RecommendationsModal from './RecommendationsModal'; 
 import { MOCK_CAREERS, Career } from './mockData'; 
+import { Link } from 'lucide-react';
 
 // Helper function to check for array intersection
 const arrayIntersects = (arr1: string[], arr2: string[]): boolean => {
@@ -17,6 +18,7 @@ export default function GuidancePage() {
     const [recommendedCareers, setRecommendedCareers] = useState<Career[]>([]);
     const [selectedCareer, setSelectedCareer] = useState<Career | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false); 
+    const [searchQuery, setSearchQuery] = useState<string>('');
 
     // 🌟 CORE LOGIC: Filter MOCK_CAREERS based on user answers
     const handleChatCompletion = (userAnswers: any) => { 
@@ -76,18 +78,43 @@ export default function GuidancePage() {
 
     return (
         // Apply engaging background gradient
-        <div className="flex flex-col h-screen overflow-hidden text-white bg-gradient-to-br from-gray-900 via-purple-900 to-gray-800"> 
-            
+        <div className=" text-white bg-gradient-to-br from-gray-900 via-purple-900 to-gray-800 font-inter min-h-screen relative"> 
+        
             {/* Header */}
-            <header className="p-4 bg-purple-900 flex justify-between items-center shadow-lg flex-shrink-0">
-                <h1 className="text-xl font-bold text-white">NxtStep</h1>
-                <nav className="space-x-4">
-                    <a href="#" className="hover:text-orange-400 font-medium">Dashboard</a>
-                    <a href="#" className="hover:text-orange-400 font-medium">Assessments</a>
-                    <a href="#" className="hover:text-orange-400 font-medium">Roadmap</a>
-                </nav>
-            </header>
+            
+                <nav className="bg-[#210440] relative z-10 flex justify-between items-center p-4 md:p-8 max-w8xl mx-auto">
+        <div className="flex items-center space-x-2">
+          <img src="https://placehold.co/40x40/F1AA9B/white?text=N" alt="NXTSTEP Logo" className="rounded-full"/>
+          <span className="text-2xl font-bold text-[#F1AA9B]">NXTSTEP</span>
+        </div>
+        <div className="hidden md:flex items-center space-x-6">
+          <a href="#" className="font-medium text-[#F1AA9B] hover:text-orange-500 transition-colors">Home</a>
+          <a href="#" className="font-medium text-[#F1AA9B] hover:text-orange-500 transition-colors">About</a>
+          <a href="#" className="font-medium text-[#F1AA9B] hover:text-orange-500 transition-colors">Form</a>
+          <a href="/options" className="font-medium text-[#F1AA9B] hover:text-orange-500 transition-colors">Options</a>
+          <a href="#" className="font-medium text-[#F1AA9B] hover:text-orange-500 transition-colors">Services</a>
+          <a href="/dashboard" className="font-medium text-[#F1AA9B] hover:text-orange-500 transition-colors">Dashboard</a>
+        </div>
+        <div className="flex items-center space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white cursor-pointer hover:text-gray-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <input
+                        type="text"
+                        id="searchBar"
+                        placeholder="Search career options..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="w-full sm:w-auto p-2 text-base rounded-l-md focus:outline-none focus:ring-2 focus:[#310E10] text-[#F5EFEB]"
+                        />
+                        <Link href="/signup">
 
+                        <button onClick={() => {}} className="px-4 py-2 border border-white text-white text-sm font-semibold rounded-full hover:bg-[#F1AA9B] transition-colors hidden sm:block">Sign in</button>
+                        </Link>
+                    
+                    </div>
+      </nav>
+            
             {/* Main Content Area */}
             <main className="flex flex-1 p-6 justify-center items-center"> 
                 {/* Chatbot Container */}
@@ -105,6 +132,7 @@ export default function GuidancePage() {
                     setSelectedCareer={setSelectedCareer}
                 />
             )}
+            
         </div>
     );
 }
