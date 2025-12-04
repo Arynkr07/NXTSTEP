@@ -1,5 +1,8 @@
 'use client';
 
+
+import { getAuth } from "firebase/auth";
+import { app } from "lib/mongodb.ts";
 import React, { useState } from 'react';
 
 // Imports (Make sure these files exist in the same folder)
