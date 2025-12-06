@@ -2,7 +2,7 @@
 
 
 import { getAuth } from "firebase/auth";
-import { app } from "lib/mongodb.ts";
+import { app } from "@/lib/firebase";
 import React, { useState } from 'react';
 
 // Imports (Make sure these files exist in the same folder)
