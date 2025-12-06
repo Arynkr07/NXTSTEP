@@ -414,8 +414,7 @@ export default function CareerOptionsPage() {
     {/* Hero Section Container */}
             <div className="relative min-h-screen">
                 {/* Background elements (blobs and shapes) */}
-                <div className="bg-[#210440] absolute inset-0 z-0"><img src="https://pbs.twimg.com/media/EDyxVvhWsAMIbLx?format=png&name=small" alt="Background" className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"/>
-      
+                <div className="bg-[#210440] absolute inset-0 z-0"style={{ backgroundImage: "url('https://pbs.twimg.com/media/EDyxVvhWsAMIbLx?format=png&name=small')", backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '10vh', boxShadow: 'inset 0 0 0 1000px rgba(33, 4, 64, 0.7)' }}>
                     {/* <div className="absolute -top-10 -left-10 w-96 h-96 bg-[#E5958E] rounded-full  filter  opacity-100 animate-blob"></div>
                     <div className="absolute top-90 right-50 w-80 h-80 bg-[#E5958E] rounded-full  filter opacity-100 animate-blob animation-delay-2000"></div>
                     <div className="absolute top-200 right-20 w-60 h-60 bg-[#E5958E] rounded-full  filter opacity-100 animate-blob animation-delay-2000"></div>

@@ -439,7 +439,7 @@ export default function Dashboard() {
   if (!mounted) return null;
 
   return (
-    <div className="text-white bg-gradient-to-br from-gray-900 via-purple-900 to-gray-800 font-inter min-h-screen relative">
+    <div className="text-white bg-gradient-to-br from-gray-900 via-purple-900 to-gray-800 font-inter min-h-screen relative"style={{ backgroundImage: "url('https://pbs.twimg.com/media/EDyxVvhWsAMIbLx?format=png&name=small')", backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '10vh', boxShadow: 'inset 0 0 0 1000px rgba(33, 4, 64, 0.7)' }}>
       {/* Navbar */}
       <nav className="bg-[#210440] relative z-10 flex justify-between items-center p-4 md:p-8 max-w-7xl mx-auto">
                     <div className="flex items-center space-x-2">
@@ -473,8 +473,7 @@ export default function Dashboard() {
                     
                     </div>
                 </nav>
-<img src="https://pbs.twimg.com/media/EDyxVvhWsAMIbLx?format=png&name=small" alt="Background" className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"/>
-      
+
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 mt-12 md:mt-24 space-y-12">
         {/* Saved Careers */}

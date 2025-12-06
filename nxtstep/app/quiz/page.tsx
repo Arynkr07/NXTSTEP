@@ -83,7 +83,7 @@ export default function GuidancePage() {
     
         // Apply engaging background gradient
 
-        <div className="text-white bg-gradient-to-br from-gray-900 via-purple-900 to-gray-800 font-inter min-h-screen relative">
+        <div className="text-white bg-gradient-to-br from-gray-900 via-purple-900 to-gray-800 font-inter min-h-screen relative"style={{ backgroundImage: "url('https://pbs.twimg.com/media/EDyxVvhWsAMIbLx?format=png&name=small')", backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh', boxShadow: 'inset 0 0 0 1000px rgba(33, 4, 64, 0.7)' }}>
       {/* Navbar */}
       
       

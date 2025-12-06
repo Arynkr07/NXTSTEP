@@ -99,8 +99,7 @@ export default function Login() {
                     
                     </div>
                 </nav>
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br "><img src="https://pbs.twimg.com/media/EDyxVvhWsAMIbLx?format=png&name=small" alt="Background" className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"/>
-       
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br "style={{ backgroundImage: "url('https://pbs.twimg.com/media/EDyxVvhWsAMIbLx?format=png&name=small')", backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh', boxShadow: 'inset 0 0 0 1000px rgba(33, 4, 64, 0.7)' }}>
       <div className="bg-[#e5bbfa] p-8 rounded-xl shadow-md w-full max-w-md">
         <h1 className="text-2xl font-bold mb-4 text-center text-gray-800">
           Login to NxtStep

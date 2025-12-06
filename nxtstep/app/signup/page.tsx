@@ -37,7 +37,7 @@ export default function Signup() {
   };
 
   return (
-    <div className="bg-[#210440] text-gray-800 font-inter">
+    <div className="bg-[#210440] text-gray-800 font-inter " style={{ backgroundImage: "url('https://pbs.twimg.com/media/EDyxVvhWsAMIbLx?format=png&name=small')", backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '10vh', boxShadow: 'inset 0 0 0 1000px rgba(33, 4, 64, 0.7)' }}>
       <nav className="bg-[#210440] relative z-10 flex justify-between items-center p-4 md:p-8 max-w-7xl mx-auto">
                     <div className="flex items-center space-x-2">
                         <img src="https://placehold.co/40x40/F1AA9B/white?text=N" alt="Foody Logo" className="rounded-full"/>
@@ -71,8 +71,7 @@ export default function Signup() {
                     </div>
                 </nav>
     
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br "><img src="https://pbs.twimg.com/media/EDyxVvhWsAMIbLx?format=png&name=small" alt="Background" className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"/>
-      
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br ">
       <div className="bg-[#e5bbfa] p-8 rounded-xl shadow-lg w-full max-w-md">
         
         <h1 className="text-2xl font-bold mb-4 text-center text-black">Create Account</h1>
