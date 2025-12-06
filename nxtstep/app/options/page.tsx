@@ -414,43 +414,44 @@ export default function CareerOptionsPage() {
     {/* Hero Section Container */}
             <div className="relative min-h-screen">
                 {/* Background elements (blobs and shapes) */}
-                <div className="bg-[#210440] absolute inset-0 z-0">
-                    <div className="absolute -top-10 -left-10 w-96 h-96 bg-[#E5958E] rounded-full  filter  opacity-100 animate-blob"></div>
+                <div className="bg-[#210440] absolute inset-0 z-0"><img src="https://pbs.twimg.com/media/EDyxVvhWsAMIbLx?format=png&name=small" alt="Background" className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"/>
+      
+                    {/* <div className="absolute -top-10 -left-10 w-96 h-96 bg-[#E5958E] rounded-full  filter  opacity-100 animate-blob"></div>
                     <div className="absolute top-90 right-50 w-80 h-80 bg-[#E5958E] rounded-full  filter opacity-100 animate-blob animation-delay-2000"></div>
                     <div className="absolute top-200 right-20 w-60 h-60 bg-[#E5958E] rounded-full  filter opacity-100 animate-blob animation-delay-2000"></div>
                     <div className="absolute top-0 right-0 w-80 h-80 bg-[#E5958E] rounded-full  filter opacity-100 animate-blob animation-delay-2000"></div>
-                    <div className="absolute top-240 right70 w-80 h-80 bg-[#E5958E] rounded-full  filter opacity-100 animate-blob animation-delay-2000"></div>
+                    <div className="absolute top-240 right70 w-80 h-80 bg-[#E5958E] rounded-full  filter opacity-100 animate-blob animation-delay-2000"></div> */}
                 </div>
 
                 {/* Navbar */}
                 <nav className="bg-[#210440] relative z-10 flex justify-between items-center p-4 md:p-8 max-w-7xl mx-auto">
                     <div className="flex items-center space-x-2">
                         <img src="https://placehold.co/40x40/F1AA9B/white?text=N" alt="Foody Logo" className="rounded-full"/>
-                        <span className="text-2xl font-bold text-[#F1AA9B]">NXTSTEP</span>
+                        <span className="text-2xl font-bold text-[#fdfdfd]">NXTSTEP</span>
                     </div>
                     <div className="hidden md:flex items-center space-x-6">
-                        <a href="#" className="font-medium text-[#F1AA9B] hover:text-orange-500 transition-colors">Home</a>
-                        <a href="#" className="font-medium text-[#F1AA9B] hover:text-orange-500 transition-colors">About</a>
-                        <a href="#" className="font-medium text-[#F1AA9B] hover:text-orange-500 transition-colors">Form</a>
-                        <a href="/options" className="font-medium text-[#F1AA9B] hover:text-orange-500 transition-colors">Options</a>
-                        <a href="#" className="font-medium text-[#F1AA9B] hover:text-orange-500 transition-colors">Services</a>
-                        <a href="/dashboard" className="font-medium text-[#F1AA9B] hover:text-orange-500 transition-colors">Dashboard</a>
+                        <a href="/home" className="font-medium text-[#fcfcfb] hover:text-[#650b4b] transition-colors">Home</a>
+                        <a href="/about" className="font-medium text-[#fffefe] hover:text-[#650b4b] transition-colors">About</a>
+                        <a href="/form" className="font-medium text-[#fdfcfb] hover:text-[#650b4b] transition-colors">Form</a>
+                        <a href="/options" className="font-medium text-[#fdfbfb] hover:text-[#650b4b] transition-colors">Options</a>
+                        <a href="/quiz" className="font-medium text-[#fefdfd] hover:text-[#650b4b] transition-colors">Quiz</a>
+                        <a href="/dashboard" className="font-medium text-[#fefbfb] hover:text-[#650b4b] transition-colors">Dashboard</a>
                     </div>
                     <div className="flex items-center space-x-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white cursor-pointer hover:text-gray-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white cursor-pointer hover:text-gray-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                        <input
+                        </svg> */}
+                        {/* <input
                         type="text"
                         id="searchBar"
                         placeholder="Search career options..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         className="w-full sm:w-auto p-2 text-base rounded-l-md focus:outline-none focus:ring-2 focus:[#310E10] text-[#F5EFEB]"
-                        />
+                        /> */}
                         <Link href="/signup">
 
-                        <button onClick={() => {}} className="px-4 py-2 border border-white text-white text-sm font-semibold rounded-full hover:bg-[#F1AA9B] transition-colors hidden sm:block">Sign in</button>
+                        <button onClick={() => {}} className="px-4 py-2 border border-white text-white text-sm font-semibold rounded-full hover:bg-[#650b4b] transition-colors hidden sm:block">Sign in</button>
                         </Link>
                     
                     </div>
@@ -461,7 +462,7 @@ export default function CareerOptionsPage() {
                     {/* Left content (Text) */}
                     <div className="w-full md:w-1/2 text-center md:text-left mb-10 md:mb-0">
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl  leading-tight text-white mb-6">
-                            <span className=" text-[#F1AA9B] font-extrabold ">Choose Path</span> for Yourself <span className=" text-[#F1AA9B] font-extrabold">with NXTSTEP</span> 
+                            <span className=" text-[#6e2158] font-extrabold ">Choose Path</span> for Yourself <span className=" text-[#F1AA9B] font-extrabold">with NXTSTEP</span> 
                         </h1>
                         <p className="text-lg text-[#a3736a] mb-8 max-w-md mx-auto md:mx-0">
                             Discover your ideal career path with NXTSTEP. Explore diverse options, find your passion, and take the first step towards a fulfilling future.
@@ -526,7 +527,7 @@ export default function CareerOptionsPage() {
                 {/* Navigation arrows */}
                   <button
                     onClick={scrollLeft}
-                    className="p-3 bg-[#f59683] rounded-full shadow-lg border border-[#F1AA9B] hover:bg-[#f59683] transition-colors"
+                    className="p-3 bg-[#650b4b] rounded-full shadow-lg border border-[#F1AA9B] hover:bg-[#f59683] transition-colors"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#f36e54]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
@@ -534,7 +535,7 @@ export default function CareerOptionsPage() {
                   </button>
                   <button
                     onClick={scrollRight}
-                    className="p-3 bg-[#f59683] rounded-full shadow-lg border border-[#F1AA9B] hover:bg-[#f59683] transition-colors"
+                    className="p-3 bg-[#650b4b] rounded-full shadow-lg border border-[#F1AA9B] hover:bg-[#f59683] transition-colors"
                   >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#f36e54]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
@@ -553,7 +554,7 @@ export default function CareerOptionsPage() {
                   onClick={() => handleShowPopup(career)}
                 >
                   <img src={career.imageUrl} alt={career.title} className="w-full h-70 object-cover rounded-t-xl" />
-                  <div className="bg-[#F1AA9B] p-4 flex-grow flex items-center justify-center">
+                  <div className="bg-[#650b4b] p-4 flex-grow flex items-center justify-center">
                     <h3 className="font-semibold text-lg text-white">{career.title}</h3>
                   </div>
                   </div>
