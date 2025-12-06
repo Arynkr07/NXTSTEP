@@ -31,7 +31,7 @@ export default function Signup() {
       // Redirect after a delay
       setTimeout(() => router.push("/"), 3000);
     } catch (err) {
-      setError(err.message || "Signup failed");
+      setError((err as Error).message || "Signup failed");
       setSuccess("");
     }
   };

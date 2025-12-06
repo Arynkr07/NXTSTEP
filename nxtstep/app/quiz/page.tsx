@@ -80,10 +80,13 @@ export default function GuidancePage() {
     };
 
     return (
+    
         // Apply engaging background gradient
-        <div className="text-white bg-gradient-to-br from-gray-900 via-purple-900 to-gray-800 font-inter min-h-screen relative"><img src="https://pbs.twimg.com/media/EDyxVvhWsAMIbLx?format=png&name=small" alt="Background" className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"/>
-       
+
+        <div className="text-white bg-gradient-to-br from-gray-900 via-purple-900 to-gray-800 font-inter min-h-screen relative">
       {/* Navbar */}
+      
+      
       <nav className="bg-[#210440] relative z-10 flex justify-between items-center p-4 md:p-8 max-w-7xl mx-auto">
                     <div className="flex items-center space-x-2">
                         <img src="https://placehold.co/40x40/F1AA9B/white?text=N" alt="Foody Logo" className="rounded-full"/>
@@ -118,15 +121,17 @@ export default function GuidancePage() {
                 </nav>
             
             {/* Main Content Area */}
-            <main className="flex flex-1 p-6 justify-center items-center"> 
+            <main className="flex flex-1 p-6 justify-center items-center">
                 {/* Chatbot Container */}
                 <div className="w-1/3 min-w-[350px]">
                     <ChatbotPanel onChatComplete={handleChatCompletion} />
                 </div>
             </main>
+            
 
             {/* Recommendations Modal */}
-            {isModalOpen && (
+            <div>
+                {isModalOpen && (
                 <RecommendationsModal 
                     onClose={closeModal}
                     recommendations={recommendedCareers}
@@ -134,7 +139,9 @@ export default function GuidancePage() {
                     setSelectedCareer={setSelectedCareer}
                 />
             )}
+            </div>
             
         </div>
+       
     );
 }

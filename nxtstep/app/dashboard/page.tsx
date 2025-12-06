@@ -473,11 +473,10 @@ export default function Dashboard() {
                     
                     </div>
                 </nav>
-
+<img src="https://pbs.twimg.com/media/EDyxVvhWsAMIbLx?format=png&name=small" alt="Background" className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"/>
+      
       {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 mt-12 md:mt-24 space-y-12"><img src="https://pbs.twimg.com/media/EDyxVvhWsAMIbLx?format=png&name=small" alt="Background" className="absolute inset-0 w-full h-full object-cover opacity-20 z-0"/>
-       
-
+      <div className="relative z-10 max-w-7xl mx-auto px-4 mt-12 md:mt-24 space-y-12">
         {/* Saved Careers */}
         <div className="bg-[#280a49] rounded-2xl shadow p-6">
           <h2 className="text-2xl font-semibold text-[#F1AA9B] mb-4">My Favourites</h2>
