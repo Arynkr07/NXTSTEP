@@ -2,9 +2,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { auth } from "./firebase"; // make sure firebase.js is set up
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { sendEmailVerification, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./firebase"; 
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { Zap, ArrowRight, Lock, Mail } from "lucide-react";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -14,10 +14,6 @@ export default function Login() {
   const [success, setSuccess] = useState("");
   const router = useRouter();
 
-  // Firebase hook
-  const [createUserWithEmailAndPassword, user, loading, hookError] =
-    useCreateUserWithEmailAndPassword(auth);
-
   useEffect(() => {
     const savedUsername = localStorage.getItem("rememberedUsername");
     if (savedUsername) {
@@ -26,27 +22,10 @@ export default function Login() {
     }
   }, []);
 
-  const handleRegister = async () => {
-    try {
-      const userCred = await createUserWithEmailAndPassword(email, password);
-      if (userCred) {
-        await sendEmailVerification(userCred.user);
-        setSuccess("Registration successful! Check your email for verification.");
-        setError("");
-      }
-    } catch (err) {
-      setError(
-        err && typeof err === "object" && "message" in err
-          ? String((err as { message?: string }).message)
-          : "Registration failed"
-      );
-    }
-  };
-
   const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      setSuccess("Login successful!");
+      setSuccess("Welcome back! Catching your wave...");
       setError("");
 
       if (rememberMe) {
@@ -55,109 +34,135 @@ export default function Login() {
         localStorage.removeItem("rememberedUsername");
       }
 
-      router.push("/");
+      setTimeout(() => router.push("/dashboard"), 1500);
     } catch (err) {
-      setError(
-        err && typeof err === "object" && "message" in err
-          ? String((err as { message?: string }).message)
-          : "Login failed"
-      );
+      setError((err as Error).message || "Login failed. Please check your credentials.");
     }
   };
 
   return (
-    <div className="bg-[#210440] text-gray-800 font-inter">
-      <nav className="bg-[#210440] relative z-10 flex justify-between items-center p-4 md:p-8 max-w-7xl mx-auto">
-                    <div className="flex items-center space-x-2">
-                        <img src="https://placehold.co/40x40/F1AA9B/white?text=N" alt="Foody Logo" className="rounded-full"/>
-                        <span className="text-2xl font-bold text-[#fdfdfd]">NXTSTEP</span>
-                    </div>
-                    <div className="hidden md:flex items-center space-x-6">
-                        <a href="/home" className="font-medium text-[#fcfcfb] hover:text-[#650b4b] transition-colors">Home</a>
-                        <a href="/about" className="font-medium text-[#fffefe] hover:text-[#650b4b] transition-colors">About</a>
-                        <a href="/form" className="font-medium text-[#fdfcfb] hover:text-[#650b4b] transition-colors">Form</a>
-                        <a href="/options" className="font-medium text-[#fdfbfb] hover:text-[#650b4b] transition-colors">Options</a>
-                        <a href="/quiz" className="font-medium text-[#fefdfd] hover:text-[#650b4b] transition-colors">Quiz</a>
-                        <a href="/dashboard" className="font-medium text-[#fefbfb] hover:text-[#650b4b] transition-colors">Dashboard</a>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                        {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white cursor-pointer hover:text-gray-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg> */}
-                        {/* <input
-                        type="text"
-                        id="searchBar"
-                        placeholder="Search career options..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-full sm:w-auto p-2 text-base rounded-l-md focus:outline-none focus:ring-2 focus:[#310E10] text-[#F5EFEB]"
-                        /> */}
-                        <Link href="/signup">
+    <div className="min-h-screen bg-white font-sans text-slate-900">
+      {/* --- NAVIGATION --- */}
+      <nav className="flex items-center justify-between px-8 py-6 border-b border-slate-100">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center text-white font-bold italic">N</div>
+          <span className="text-xl font-bold tracking-tight uppercase">NXTSTEP</span>
+        </div>
+        <div className="hidden md:flex gap-8 text-sm font-medium text-slate-600">
+          <Link href="/home" className="hover:text-orange-600 transition">Home</Link>
+          <Link href="/about" className="hover:text-orange-600 transition">About</Link>
+          <Link href="/options" className="hover:text-orange-600 transition">Options</Link>
+          <Link href="/dashboard" className="hover:text-orange-600 transition">Dashboard</Link>
+        </div>
+        <Link href="/signup">
+          <button className="bg-orange-600 text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-orange-700 transition shadow-lg shadow-orange-100">
+            Join Now
+          </button>
+        </Link>
+      </nav>
 
-                        <button onClick={() => {}} className="px-4 py-2 border border-white text-white text-sm font-semibold rounded-full hover:bg-[#650b4b] transition-colors hidden sm:block">Sign in</button>
-                        </Link>
-                    
-                    </div>
-                </nav>
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br "style={{ backgroundImage: "url('https://pbs.twimg.com/media/EDyxVvhWsAMIbLx?format=png&name=small')", backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '100vh', boxShadow: 'inset 0 0 0 1000px rgba(33, 4, 64, 0.7)' }}>
-      <div className="bg-[#e5bbfa] p-8 rounded-xl shadow-md w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-4 text-center text-gray-800">
-          Login to NxtStep
-        </h1>
-
-        {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
-        {success && <p className="text-green-500 mb-4 text-center">{success}</p>}
-
-        <input
-          type="email"
-          placeholder="Email"
-          className="border p-2 w-full mb-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <input
-          type="password"
-          placeholder="Password"
-          className="border p-2 w-full mb-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <div className="flex items-center justify-between mt-2 mb-4">
-          <div className="flex items-center">
-            <input
-              type="checkbox"
-              id="rememberMe"
-              checked={rememberMe}
-              onChange={(e) => setRememberMe(e.target.checked)}
-              className="mr-2"
-            />
-            <label htmlFor="rememberMe" className="text-gray-600">
-              Remember Me
-            </label>
+      <div className="grid md:grid-cols-2 min-h-[calc(100vh-88px)]">
+        {/* --- LEFT SIDE: THE VIBE --- */}
+        <div className="hidden md:flex bg-slate-900 p-12 flex-col justify-center relative overflow-hidden text-white">
+          <div className="z-10">
+            <div className="flex items-center gap-2 text-orange-500 font-bold text-sm uppercase tracking-widest mb-4">
+              <Zap size={16} fill="currentColor" />
+              <span>Welcome Back</span>
+            </div>
+            <h1 className="text-7xl font-black leading-[0.9] mb-6 tracking-tighter uppercase italic">
+              Resume Your <br /> 
+              <span className="text-orange-500">Journey*</span>
+            </h1>
+            <p className="text-lg text-slate-400 max-w-sm">
+              Your personalized roadmaps and AI challenges are waiting. Log in to keep leveling up.
+            </p>
           </div>
-          <Link href="/reset-password" className="text-blue-500 hover:underline">
-            Forget Password?
-          </Link>
+          {/* Decorative Background Text */}
+          <div className="absolute -bottom-10 left-0 opacity-[0.05] select-none pointer-events-none">
+            <h2 className="text-[200px] font-black italic whitespace-nowrap">SIGN IN</h2>
+          </div>
         </div>
 
-        <button
-          onClick={handleLogin}
-          className="bg-[#650b4b] text-white p-2 w-full rounded hover:bg-[#f9a8e1] transition"
-        >
-          Login
-        </button>
+        {/* --- RIGHT SIDE: THE FORM --- */}
+        <div className="flex items-center justify-center p-8 bg-slate-50">
+          <div className="w-full max-w-md">
+            <div className="mb-10 text-center md:text-left">
+              <h2 className="text-4xl font-black uppercase italic tracking-tighter">Login to NxtStep</h2>
+              <p className="text-slate-500 mt-2 font-medium">Pick up right where you left off.</p>
+            </div>
 
-        <p className="mt-4 text-center">
-          Don’t have an account?{" "}
-          <Link href="/signup" className="text-blue-500 hover:underline">
-            
-            Register
-          </Link>
-        </p>
+            {error && (
+              <div className="bg-red-50 text-red-600 p-4 rounded-xl border-2 border-red-200 mb-6 font-bold text-sm italic">
+                {error}
+              </div>
+            )}
+            {success && (
+              <div className="bg-green-50 text-green-600 p-4 rounded-xl border-2 border-green-200 mb-6 font-bold text-sm italic">
+                {success}
+              </div>
+            )}
+
+            <div className="space-y-6">
+              <div>
+                <label className="text-xs font-black uppercase tracking-widest text-slate-400 mb-2 block">Email Address</label>
+                <div className="relative">
+                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+                  <input
+                    type="email"
+                    placeholder="name@example.com"
+                    className="w-full border-2 border-slate-900 p-4 pl-12 rounded-xl font-bold focus:outline-none focus:ring-4 focus:ring-orange-100 transition shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] bg-white"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-xs font-black uppercase tracking-widest text-slate-400 mb-2 block">Password</label>
+                <div className="relative">
+                  <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+                  <input
+                    type="password"
+                    placeholder="••••••••"
+                    className="w-full border-2 border-slate-900 p-4 pl-12 rounded-xl font-bold focus:outline-none focus:ring-4 focus:ring-orange-100 transition shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] bg-white"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between mt-2">
+                <label className="flex items-center gap-2 cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    checked={rememberMe}
+                    onChange={(e) => setRememberMe(e.target.checked)}
+                    className="w-5 h-5 border-2 border-slate-900 rounded accent-orange-600 cursor-pointer"
+                  />
+                  <span className="text-sm font-bold text-slate-600 group-hover:text-slate-900 transition">Remember Me</span>
+                </label>
+                <Link href="/reset-password" id="forgetPassword" className="text-sm font-bold text-orange-600 hover:underline">
+                  Forgot Password?
+                </Link>
+              </div>
+
+              <button
+                onClick={handleLogin}
+                className="w-full bg-slate-900 text-white p-5 rounded-xl font-black uppercase italic tracking-widest flex items-center justify-center gap-3 hover:bg-orange-600 transition-all hover:scale-[1.02] shadow-xl mt-4"
+              >
+                Launch Dashboard <ArrowRight size={20} />
+              </button>
+            </div>
+
+            <p className="mt-8 text-center text-slate-500 font-medium">
+              New to the waves?{" "}
+              <Link href="/signup" className="text-orange-600 font-bold hover:underline">
+                Register for Free
+              </Link>
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
     </div>
   );
 }

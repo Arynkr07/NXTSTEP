@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { auth } from "./firebase"; // make sure firebase.js is set up correctly
+import { auth } from "./firebase"; 
 import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
-import Link from "next/dist/client/link";
+import Link from "next/link";
+import { Zap, ArrowRight, Target } from "lucide-react";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -18,18 +19,12 @@ export default function Signup() {
       setError("Passwords do not match");
       return;
     }
-
     try {
       const userCred = await createUserWithEmailAndPassword(auth, email, password);
-
-      // Send email verification
       await sendEmailVerification(userCred.user);
-
-      setSuccess("Signup successful! Please check your email for verification.");
+      setSuccess("Account created! Check your email to verify.");
       setError("");
-
-      // Redirect after a delay
-      setTimeout(() => router.push("/"), 3000);
+      setTimeout(() => router.push("/login"), 3000);
     } catch (err) {
       setError((err as Error).message || "Signup failed");
       setSuccess("");
@@ -37,87 +32,117 @@ export default function Signup() {
   };
 
   return (
-    <div className="bg-[#210440] text-gray-800 font-inter " style={{ backgroundImage: "url('https://pbs.twimg.com/media/EDyxVvhWsAMIbLx?format=png&name=small')", backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '10vh', boxShadow: 'inset 0 0 0 1000px rgba(33, 4, 64, 0.7)' }}>
-      <nav className="bg-[#210440] relative z-10 flex justify-between items-center p-4 md:p-8 max-w-7xl mx-auto">
-                    <div className="flex items-center space-x-2">
-                        <img src="https://placehold.co/40x40/F1AA9B/white?text=N" alt="Foody Logo" className="rounded-full"/>
-                        <span className="text-2xl font-bold text-[#fdfdfd]">NXTSTEP</span>
-                    </div>
-                    <div className="hidden md:flex items-center space-x-6">
-                        <a href="/home" className="font-medium text-[#fcfcfb] hover:text-[#650b4b] transition-colors">Home</a>
-                        <a href="/about" className="font-medium text-[#fffefe] hover:text-[#650b4b] transition-colors">About</a>
-                        <a href="/form" className="font-medium text-[#fdfcfb] hover:text-[#650b4b] transition-colors">Form</a>
-                        <a href="/options" className="font-medium text-[#fdfbfb] hover:text-[#650b4b] transition-colors">Options</a>
-                        <a href="/quiz" className="font-medium text-[#fefdfd] hover:text-[#650b4b] transition-colors">Quiz</a>
-                        <a href="/dashboard" className="font-medium text-[#fefbfb] hover:text-[#650b4b] transition-colors">Dashboard</a>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                        {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white cursor-pointer hover:text-gray-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg> */}
-                        {/* <input
-                        type="text"
-                        id="searchBar"
-                        placeholder="Search career options..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-full sm:w-auto p-2 text-base rounded-l-md focus:outline-none focus:ring-2 focus:[#310E10] text-[#F5EFEB]"
-                        /> */}
-                        <Link href="/signup">
+    <div className="min-h-screen bg-white font-sans text-slate-900">
+      {/* --- NAVIGATION (Matching Template) --- */}
+      <nav className="flex items-center justify-between px-8 py-6 border-b border-slate-100">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center text-white font-bold italic">N</div>
+          <span className="text-xl font-bold tracking-tight uppercase">NXTSTEP</span>
+        </div>
+        <div className="hidden md:flex gap-8 text-sm font-medium text-slate-600">
+          <Link href="/home" className="hover:text-orange-600 transition">Home</Link>
+          <Link href="/options" className="hover:text-orange-600 transition">Options</Link>
+          <Link href="/dashboard" className="hover:text-orange-600 transition">Dashboard</Link>
+        </div>
+        <Link href="/login">
+          <button className="border-2 border-slate-900 px-6 py-2 rounded-full font-bold text-sm hover:bg-slate-900 hover:text-white transition">
+            Sign In
+          </button>
+        </Link>
+      </nav>
 
-                        <button onClick={() => {}} className="px-4 py-2 border border-white text-white text-sm font-semibold rounded-full hover:bg-[#650b4b] transition-colors hidden sm:block">Sign in</button>
-                        </Link>
-                    
-                    </div>
-                </nav>
-    
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br ">
-      <div className="bg-[#e5bbfa] p-8 rounded-xl shadow-lg w-full max-w-md">
-        
-        <h1 className="text-2xl font-bold mb-4 text-center text-black">Create Account</h1>
+      <div className="grid md:grid-cols-2 min-h-[calc(100vh-88px)]">
+        {/* --- LEFT SIDE: THE VIBE --- */}
+        <div className="hidden md:flex bg-slate-50 p-12 flex-col justify-center relative overflow-hidden">
+          <div className="z-10">
+            <div className="flex items-center gap-2 text-orange-600 font-bold text-sm uppercase tracking-widest mb-4">
+              <Zap size={16} fill="currentColor" />
+              <span>Join the community</span>
+            </div>
+            <h1 className="text-7xl font-black leading-[0.9] mb-6 tracking-tighter uppercase italic">
+              Ready for<br /> 
+              <span className="text-orange-600">The Jump?*</span>
+            </h1>
+            <p className="text-lg text-slate-600 max-w-sm">
+              Create an account to start building your personalized career roadmap and take on daily AI challenges.
+            </p>
+          </div>
+          {/* Decorative Background Text */}
+          <div className="absolute -bottom-10 left-0 opacity-[0.03] select-none pointer-events-none">
+            <h2 className="text-[200px] font-black italic whitespace-nowrap">NXTSTEP</h2>
+          </div>
+        </div>
 
-        {error && <p className="text-red-500 text-center mb-2">{error}</p>}
-        {success && <p className="text-green-500 text-center mb-2">{success}</p>}
+        {/* --- RIGHT SIDE: THE FORM --- */}
+        <div className="flex items-center justify-center p-8">
+          <div className="w-full max-w-md">
+            <div className="mb-10">
+              <h2 className="text-4xl font-black uppercase italic tracking-tighter">Create Account</h2>
+              <p className="text-slate-500 mt-2">Enter your details to catch the wave.</p>
+            </div>
 
-        <input
-          type="email"
-          placeholder="Email"
-          className="border border-black text-black p-2 w-full mb-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+            {error && (
+              <div className="bg-red-50 text-red-600 p-4 rounded-xl border border-red-100 mb-6 font-medium text-sm">
+                {error}
+              </div>
+            )}
+            {success && (
+              <div className="bg-green-50 text-green-600 p-4 rounded-xl border border-green-100 mb-6 font-medium text-sm">
+                {success}
+              </div>
+            )}
 
-        <input
-          type="password"
-          placeholder="Password"
-          className="border-black text-black border p-2 w-full mb-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+            <div className="space-y-5">
+              <div>
+                <label className="text-xs font-black uppercase tracking-widest text-slate-400 mb-2 block">Email Address</label>
+                <input
+                  type="email"
+                  placeholder="name@example.com"
+                  className="w-full border-2 border-slate-900 p-4 rounded-xl font-bold focus:outline-none focus:ring-4 focus:ring-orange-100 transition shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
 
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          className="border border-black text-black p-2 w-full mb-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
+              <div>
+                <label className="text-xs font-black uppercase tracking-widest text-slate-400 mb-2 block">Password</label>
+                <input
+                  type="password"
+                  placeholder="••••••••"
+                  className="w-full border-2 border-slate-900 p-4 rounded-xl font-bold focus:outline-none focus:ring-4 focus:ring-orange-100 transition shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
 
-        <button
-          onClick={handleSignup}
-          className="bg-[#650b4b] text-white p-2 w-full rounded hover:bg-[#f9a8e1] transition"
-        >
-          Sign Up
-        </button>
+              <div>
+                <label className="text-xs font-black uppercase tracking-widest text-slate-400 mb-2 block">Confirm Password</label>
+                <input
+                  type="password"
+                  placeholder="••••••••"
+                  className="w-full border-2 border-slate-900 p-4 rounded-xl font-bold focus:outline-none focus:ring-4 focus:ring-orange-100 transition shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+              </div>
 
-        <p className="text-black mt-4 text-center">
-          Already have an account?{" "}
-          <a href="/login" className="text-blue-500 hover:underline">
-            Login
-          </a>
-        </p>
+              <button
+                onClick={handleSignup}
+                className="w-full bg-orange-600 text-white p-5 rounded-xl font-black uppercase italic tracking-widest flex items-center justify-center gap-3 hover:bg-orange-700 transition-all hover:scale-[1.02] shadow-xl shadow-orange-200 mt-8"
+              >
+                Sign Up Now <ArrowRight size={20} />
+              </button>
+            </div>
+
+            <p className="mt-8 text-center text-slate-500 font-medium">
+              Already a member?{" "}
+              <Link href="/login" className="text-orange-600 font-bold hover:underline">
+                Login here
+              </Link>
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
     </div>
   );
 }
