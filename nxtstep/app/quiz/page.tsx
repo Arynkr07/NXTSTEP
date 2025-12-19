@@ -2,60 +2,90 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Zap, Target, MessageSquare, Sparkles, ArrowRight, Settings } from 'lucide-react';
+import { Zap, MessageSquare, Sparkles } from 'lucide-react';
 
-// Mock/Sub-components (Assuming these are in your project)
 import ChatbotPanel from './ChatbotPanel'; 
 import RecommendationsModal from './RecommendationsModal'; 
 import { MOCK_CAREERS, Career } from './mockData'; 
 
-const arrayIntersects = (arr1: string[], arr2: string[]): boolean => {
-    return arr1.some(item => arr2.includes(item));
-};
-
 export default function GuidancePage() {
+    // --- STATE MANAGEMENT ---
     const [recommendedCareers, setRecommendedCareers] = useState<Career[]>([]);
     const [selectedCareer, setSelectedCareer] = useState<Career | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false); 
+    const [isProcessing, setIsProcessing] = useState(false);
 
+    // 🧠 IMPROVED ALGORITHM: Weighted Scoring System
     const handleChatCompletion = (userAnswers: any) => { 
-        const userInterests: string[] = userAnswers.interests || [];
-        const userSkills: string[] = userAnswers.skills || [];
-        const userWorkStyle: string = userAnswers.workStyle || '';
-        
-        const filteredCareers = MOCK_CAREERS.filter((career) => {
-            const interestMatch = arrayIntersects(userInterests, career.relatedInterests || []);
-            const skillMatch = arrayIntersects(userSkills, career.skills || []);
-            const styleMatch = userWorkStyle === '' || 
-                               (userWorkStyle === 'Hands-on/Practical' && career.description.toLowerCase().includes('build')) ||
-                               (userWorkStyle === 'Analytical/Abstract' && career.description.toLowerCase().includes('analyze'));
+        setIsProcessing(true);
 
-            return interestMatch && skillMatch && styleMatch;
-        });
-
-        const finalRecommendations = filteredCareers.length > 0 
-            ? filteredCareers.slice(0, 10) 
-            : MOCK_CAREERS.slice(0, 5); 
+        setTimeout(() => {
+            const userInterests: string[] = userAnswers.interests || [];
+            const userSkills: string[] = userAnswers.skills || [];
+            const userWorkStyle: string = userAnswers.workStyle || '';
             
-        setRecommendedCareers(finalRecommendations); 
-        setIsModalOpen(true); 
-        setSelectedCareer(null); 
+            // 1. Map through ALL careers and assign a score
+            const scoredCareers = MOCK_CAREERS.map((career) => {
+                let score = 0;
 
-        if (typeof window !== "undefined") {
-            const profileData = {
-                topRecommended: finalRecommendations.slice(0, 3).map(c => c.title),
-                userInterests: userInterests,
-                userSkills: userSkills,
-                date: new Date().toDateString()
-            };
-            localStorage.setItem("userCareerProfile", JSON.stringify(profileData));
-        }
+                // A. Interest Match (High Weight: +3 points per match)
+                // We check if the career's interests overlap with user's interests
+                const matchingInterests = career.relatedInterests?.filter(i => 
+                    userInterests.includes(i)
+                ).length || 0;
+                score += (matchingInterests * 3);
+
+                // B. Skill Match (Medium Weight: +2 points per match)
+                const matchingSkills = career.skills?.filter(s => 
+                    userSkills.includes(s)
+                ).length || 0;
+                score += (matchingSkills * 2);
+
+                // C. Work Style Match (Low Weight: +1 point)
+                // Loose matching on description
+                if (userWorkStyle === 'Hands-on/Practical' && career.description.toLowerCase().includes('build')) score += 1;
+                if (userWorkStyle === 'Analytical/Abstract' && career.description.toLowerCase().includes('analyze')) score += 1;
+                if (userWorkStyle === 'Hands-on/Practical' && career.title.includes('Engineer')) score += 1; // Extra boost for engineers if hands-on
+
+                return { ...career, score };
+            });
+
+            // 2. Sort by Score (Highest first) and Filter out zero scores
+            const sortedCareers = scoredCareers
+                .filter(c => c.score > 0) // Only keep relevant ones
+                .sort((a, b) => b.score - a.score); // Highest score at the top
+
+            // 3. Fallback Logic (Only if genuinely no matches found)
+            const finalRecommendations = sortedCareers.length > 0 
+                ? sortedCareers.slice(0, 6) // Take top 6 scorers
+                : MOCK_CAREERS.slice(0, 5); // Fallback to defaults
+                
+            // Update Data States
+            setRecommendedCareers(finalRecommendations); 
+            setSelectedCareer(null); 
+            
+            // Save to Local Storage
+            if (typeof window !== "undefined") {
+                const profileData = {
+                    topRecommended: finalRecommendations.slice(0, 3).map(c => c.title),
+                    userInterests: userInterests,
+                    userSkills: userSkills,
+                    date: new Date().toDateString()
+                };
+                localStorage.setItem("userCareerProfile", JSON.stringify(profileData));
+            }
+
+            // Stop loading and Open
+            setIsProcessing(false);
+            setIsModalOpen(true); 
+
+        }, 2500); 
     };
     
     const closeModal = () => setIsModalOpen(false); 
 
     return (
-        <div className="min-h-screen bg-white font-sans text-slate-900">
+        <div className="min-h-screen bg-white font-sans text-slate-900 relative">
             {/* --- NAVIGATION --- */}
             <nav className="flex items-center justify-between px-8 py-6 border-b border-slate-100 sticky top-0 bg-white z-50">
                 <div className="flex items-center gap-2">
@@ -113,7 +143,6 @@ export default function GuidancePage() {
                 {/* --- RIGHT SIDE: THE CHATBOT PANEL --- */}
                 <div className="flex items-center justify-center p-8 bg-white border-l border-slate-100">
                     <div className="w-full max-w-lg">
-                        {/* Chat Container with Brutalist Shadows */}
                         <div className="relative border-4 border-slate-900 rounded-[40px] shadow-[16px_16px_0px_0px_rgba(15,23,42,1)] bg-white overflow-hidden min-h-[600px] flex flex-col">
                             
                             {/* Chat Header */}
@@ -148,6 +177,17 @@ export default function GuidancePage() {
                     </div>
                 </div>
             </div>
+
+            {/* PROCESSING OVERLAY */}
+            {isProcessing && (
+                <div className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-slate-900/95 backdrop-blur-md text-white">
+                    <div className="flex flex-col items-center animate-pulse">
+                        <Zap size={64} className="text-orange-500 mb-6 animate-bounce" />
+                        <h2 className="text-4xl font-black italic tracking-tighter uppercase mb-2">Analyzing Profile</h2>
+                        <p className="text-slate-400 font-mono text-sm">Mapping your skills to 50+ career paths...</p>
+                    </div>
+                </div>
+            )}
 
             {/* Recommendations Modal */}
             {isModalOpen && (

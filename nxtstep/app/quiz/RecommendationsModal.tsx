@@ -14,6 +14,7 @@ interface RecommendationsModalProps {
     setSelectedCareer: (career: Career | null) => void;
 }
 
+
 export default function RecommendationsModal({ 
     onClose, 
     recommendations,
