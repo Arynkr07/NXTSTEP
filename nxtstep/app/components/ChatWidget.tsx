@@ -1,98 +1,108 @@
-"use client"; // This is required for interactivity
+"use client";
 
 import { useState } from "react";
+import { MessageSquare, X, Send, Zap } from "lucide-react";
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<{ role: string; text: string }[]>([
-    { role: "ai", text: "Hi! I'm NxtStep AI. How can I help with your career today?" },
+    { role: "ai", text: "Hi! I'm NxtStep AI. Need a roadmap or career advice?" },
   ]);
   const [isLoading, setIsLoading] = useState(false);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
 
-    // 1. Add user message to UI immediately
     const userMsg = { role: "user", text: input };
     setMessages((prev) => [...prev, userMsg]);
     setInput("");
     setIsLoading(true);
 
     try {
-      // 2. Send to our Backend API
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           userMessage: userMsg.text,
-          quizResults: {}, // We can connect real quiz results later
+          quizResults: {},
         }),
       });
 
       const data = await res.json();
 
-      // 3. Add AI response to UI
       if (res.ok) {
         setMessages((prev) => [...prev, { role: "ai", text: data.reply }]);
       } else {
-        setMessages((prev) => [...prev, { role: "ai", text: "Oops! Something went wrong. Check the console." }]);
-        console.error(data.error);
+        setMessages((prev) => [...prev, { role: "ai", text: "Neural link interrupted. Try again!" }]);
       }
     } catch (error) {
-      console.error("Frontend Error:", error);
-      setMessages((prev) => [...prev, { role: "ai", text: "Error connecting to server." }]);
+      setMessages((prev) => [...prev, { role: "ai", text: "Connection error." }]);
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 font-sans">
-      {/* 1. The Toggle Button */}
+    <div className="fixed bottom-6 right-6 z-[100] font-sans">
+      {/* 1. The Toggle Button - Brutalist Style */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-all flex items-center justify-center"
+          className="bg-orange-600 text-white p-4 rounded-2xl border-4 border-slate-900 dark:border-white shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:-translate-y-1 transition-all flex items-center gap-2 font-black uppercase italic tracking-tighter"
         >
-          💬 Need Help?
+          <MessageSquare size={20} fill="currentColor" />
+          <span>Need Help?</span>
         </button>
       )}
 
       {/* 2. The Chat Window */}
       {isOpen && (
-        <div className="bg-white border border-gray-200 w-80 h-96 rounded-lg shadow-2xl flex flex-col overflow-hidden">
+        <div className="bg-white dark:bg-slate-900 border-4 border-slate-900 dark:border-white w-80 md:w-96 h-[500px] rounded-[32px] shadow-[12px_12px_0px_0px_rgba(15,23,42,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] flex flex-col overflow-hidden animate-in slide-in-from-bottom-4">
+          
           {/* Header */}
-          <div className="bg-blue-600 text-white p-3 flex justify-between items-center">
-            <h3 className="font-bold">NxtStep Assistant</h3>
-            <button onClick={() => setIsOpen(false)} className="text-sm hover:text-gray-200">
-              ✕ Close
+          <div className="bg-slate-900 dark:bg-slate-800 text-white p-5 flex justify-between items-center border-b-2 border-slate-800 dark:border-slate-700">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center">
+                <Zap size={16} fill="white" />
+              </div>
+              <h3 className="font-black uppercase italic text-sm tracking-widest">NxtStep AI*</h3>
+            </div>
+            <button 
+              onClick={() => setIsOpen(false)} 
+              className="hover:bg-orange-600 p-1 rounded-lg transition"
+            >
+              <X size={20} />
             </button>
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto p-3 space-y-3 bg-gray-50">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50 dark:bg-slate-950/50">
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`p-2 rounded-lg text-sm max-w-[80%] ${
+                className={`p-3 rounded-2xl text-sm font-bold shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] dark:shadow-none border-2 ${
                   msg.role === "user"
-                    ? "bg-blue-600 text-white ml-auto"
-                    : "bg-gray-200 text-gray-800"
+                    ? "bg-orange-600 text-white ml-auto border-slate-900 dark:border-orange-500"
+                    : "bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 border-slate-900 dark:border-slate-700"
                 }`}
               >
                 {msg.text}
               </div>
             ))}
-            {isLoading && <div className="text-xs text-gray-500 italic">Thinking...</div>}
+            {isLoading && (
+              <div className="flex gap-2 items-center text-xs font-black uppercase italic text-orange-600 animate-pulse">
+                <Zap size={12} fill="currentColor" /> Analyzing...
+              </div>
+            )}
           </div>
 
           {/* Input Area */}
-          <div className="p-3 border-t flex gap-2">
+          <div className="p-4 bg-white dark:bg-slate-900 border-t-4 border-slate-900 dark:border-slate-800 flex gap-2">
             <input
               type="text"
-              className="flex-1 border rounded px-2 py-1 text-sm text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Ask me anything..."
+              className="flex-1 bg-slate-100 dark:bg-slate-800 border-2 border-slate-900 dark:border-slate-700 rounded-xl px-4 py-2 text-xs font-bold text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-600"
+              placeholder="ASK THE NEURAL ENGINE..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && sendMessage()}
@@ -100,9 +110,9 @@ export default function ChatWidget() {
             <button
               onClick={sendMessage}
               disabled={isLoading}
-              className="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700 disabled:opacity-50"
+              className="bg-slate-900 dark:bg-orange-600 text-white p-2 rounded-xl border-2 border-slate-900 dark:border-white hover:bg-orange-600 transition disabled:opacity-50"
             >
-              Send
+              <Send size={18} />
             </button>
           </div>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
-import { Mail, Phone, MessageSquare, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare, ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -13,18 +14,25 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Logic: You can use 'addDoc(collection(db, "messages"), formData)' 
-    // here to save these to Firestore!
-    
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', subject: 'General Inquiry', message: '' });
-    }, 1500);
-  };
+  e.preventDefault();
+  setIsSubmitting(true);
+  
+  try {
+    // This is the "Real" working part
+    await addDoc(collection(db, "contactMessages"), {
+      ...formData,
+      timestamp: serverTimestamp(),
+    });
+
+    setIsSubmitting(false);
+    setSubmitted(true);
+    setFormData({ name: '', email: '', subject: 'General Inquiry', message: '' });
+  } catch (error) {
+    console.error("Error sending message: ", error);
+    alert("Something went wrong. Please try again!");
+    setIsSubmitting(false);
+  }
+};
 
   return (
     // 1. MAIN CONTAINER: Added dark:bg-slate-950 and dark:text-white

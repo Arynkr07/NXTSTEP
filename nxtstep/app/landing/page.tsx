@@ -10,11 +10,6 @@ import React, { useEffect, useState } from 'react';
 import { onAuthStateChanged } from "firebase/auth";
 import ContactForm from '../components/contact';
 
-
-// Now use them
-
-
-
 const UpgradedLandingPage = () => {
   const user = auth.currentUser;
 const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -26,13 +21,10 @@ const [isLoggedIn, setIsLoggedIn] = useState(false);
   return () => unsubscribe();
 }, []);
   return (
-    <div className="bg-white font-sans text-slate-900">
+    // Updated background and text colors for dark mode
+    <div className="bg-white dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-100 transition-colors duration-300">
       
-<<<<<<< HEAD
-=======
-      {/* --- 1. NAVIGATION BAR --- */}
       <Navbar />
->>>>>>> parent of d89560e (mode required)
 
       {/* --- 2. HOW IT WORKS (Upgraded with Course Suggestions) --- */}
       <section className="py-24 px-8 max-w-7xl mx-auto">
