@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Sparkles, Loader2, GraduationCap, DollarSign, Clock, CheckCircle, Trophy } from 'lucide-react';
-import { Career } from './mockData'; 
+import { Career } from '../components/data'; 
 
 // Define the shape of our new AI response
 interface RoadmapStep {

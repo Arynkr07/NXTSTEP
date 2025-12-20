@@ -1,10 +1,15 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { auth } from "./firebase"; 
 import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import Link from "next/link";
 import { Zap, ArrowRight, Target } from "lucide-react";
+// Just import the tools you need
+import { auth, db } from "@/lib/firebase"; 
+import { doc, setDoc } from "firebase/firestore";
+import navbar from '../components/navbar'; 
+
+// Now use them
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -13,20 +18,49 @@ export default function Signup() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const router = useRouter();
+  const [username, setUsername] = useState("");
+
+  
 
   const handleSignup = async () => {
+    
     if (password !== confirmPassword) {
       setError("Passwords do not match");
       return;
     }
     try {
+      // 1. Create the Auth Account
       const userCred = await createUserWithEmailAndPassword(auth, email, password);
-      await sendEmailVerification(userCred.user);
+      const user = userCred.user;
+
+      // 2. Create the Firestore User Profile
+      // This is the "Memory" piece that stores their NxtStep data
+      await setDoc(doc(db, "users", user.uid), {
+        uid: user.uid,
+        email: user.email,
+        username: username, // Saving the name here
+      likedCareers: [],
+      quizResults: [],
+      createdAt: new Date().toISOString()
+      });
+
+      // 3. Send Verification Email
+      await sendEmailVerification(user);
+
       setSuccess("Account created! Check your email to verify.");
       setError("");
+      
+      // Delay redirect so they can read the success message
       setTimeout(() => router.push("/login"), 3000);
+      
     } catch (err) {
-      setError((err as Error).message || "Signup failed");
+      // Friendly error handling
+      const errorMessage = (err as Error).message;
+      if (errorMessage.includes("email-already-in-use")) {
+        setError("This email is already registered. Try logging in!");
+      } else {
+        setError(errorMessage || "Signup failed");
+      }
       setSuccess("");
     }
   };
@@ -34,19 +68,21 @@ export default function Signup() {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
       {/* --- NAVIGATION (Matching Template) --- */}
-      <nav className="flex items-center justify-between px-8 py-6 border-b border-slate-100">
+      <nav className="flex items-center justify-between px-8 py-6 border-b-4 border-slate-900 sticky top-0 bg-white z-50">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center text-white font-bold italic">N</div>
-          <span className="text-xl font-bold tracking-tight uppercase">NXTSTEP</span>
-        </div>
-        <div className="hidden md:flex gap-8 text-sm font-medium text-slate-600">
-          <Link href="/home" className="hover:text-orange-600 transition">Home</Link>
-          <Link href="/options" className="hover:text-orange-600 transition">Options</Link>
+          <Link href="/landing" className="hover:text-orange-600 transition"><div className="w-10 h-10 bg-orange-600 rounded-xl flex items-center justify-center text-white font-black italic border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]">N</div>
+          <span className="text-2xl font-black tracking-tighter uppercase italic">NXTSTEP</span>
+        </Link>
+          </div>
+        <div className="hidden md:flex gap-10 text-sm font-black uppercase tracking-widest italic text-slate-600">
+          <Link href="/landing" className="hover:text-orange-600 transition">Roadmaps</Link>
+          <Link href="/options" className="hover:text-orange-600 transition">Careers</Link>
           <Link href="/dashboard" className="hover:text-orange-600 transition">Dashboard</Link>
+          <Link href="/contact" className="hover:text-orange-600 transition">Contact</Link>
         </div>
-        <Link href="/login">
-          <button className="border-2 border-slate-900 px-6 py-2 rounded-full font-bold text-sm hover:bg-slate-900 hover:text-white transition">
-            Sign In
+        <Link href="/signup">
+          <button className="bg-slate-900 text-white px-8 py-3 rounded-full font-black uppercase italic tracking-widest text-sm hover:bg-orange-600 transition shadow-[4px_4px_0px_0px_rgba(234,88,12,1)]">
+            Join Now
           </button>
         </Link>
       </nav>

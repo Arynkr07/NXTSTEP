@@ -1,9 +1,96 @@
-import React from 'react'
+"use client";
+import { useState } from "react";
+import { auth } from "@/lib/firebase"; 
+import { sendPasswordResetEmail } from "firebase/auth";
+import Link from "next/link";
+import { Mail, ArrowLeft, Zap, CheckCircle } from "lucide-react";
+import Navbar from "../components/navbar"; // Ensure this path is correct
 
-const forgotpage = () => {
+export default function ResetPassword() {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [isSent, setIsSent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleReset = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError("");
+
+    try {
+      await sendPasswordResetEmail(auth, email);
+      setIsSent(true);
+    } catch (err: any) {
+      if (err.code === "auth/user-not-found") {
+        setError("No account found with this email address.");
+      } else {
+        setError("Something went wrong. Please try again later.");
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
-    <div>page</div>
-  )
-}
+    <div className="min-h-screen bg-white font-sans text-slate-900">
+      {/* 1. Added the Navbar here */}
+      <Navbar />
 
-export default forgotpage
+      <div className="flex items-center justify-center p-8 min-h-[calc(100vh-80px)]">
+        <div className="w-full max-w-md">
+          {/* Back to Login */}
+          <Link href="/login" className="flex items-center gap-2 text-slate-400 font-bold text-sm uppercase tracking-widest mb-12 hover:text-slate-900 transition group">
+            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Back to Login
+          </Link>
+
+          <div className="mb-10">
+            <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]">
+              <Zap className="text-orange-600" fill="currentColor" size={32} />
+            </div>
+            <h1 className="text-4xl font-black uppercase italic tracking-tighter">Reset <span className="text-orange-600">Password*</span></h1>
+            <p className="text-slate-500 mt-2 font-medium italic">We'll send a recovery link to your inbox.</p>
+          </div>
+
+          {isSent ? (
+            <div className="bg-green-50 border-4 border-slate-900 p-8 rounded-[32px] text-center shadow-[12px_12px_0px_0px_rgba(34,197,94,1)]">
+              <CheckCircle className="mx-auto text-green-500 mb-4" size={48} />
+              <h2 className="text-xl font-black uppercase italic mb-2">Check Your Email</h2>
+              <p className="text-sm text-green-700 font-bold italic">We've sent a reset link to <strong>{email}</strong>. Follow the instructions to catch the wave again.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleReset} className="space-y-6">
+              {error && (
+                <div className="bg-red-50 text-red-600 p-4 rounded-xl border-4 border-slate-900 font-bold text-sm italic shadow-[4px_4px_0px_0px_rgba(220,38,38,1)]">
+                  {error}
+                </div>
+              )}
+              
+              <div>
+                <label className="text-xs font-black uppercase tracking-widest text-slate-400 mb-2 block">Email Address</label>
+                <div className="relative">
+                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+                  <input
+                    type="email"
+                    required
+                    placeholder="name@example.com"
+                    className="w-full border-4 border-slate-900 p-4 pl-12 rounded-xl font-bold focus:outline-none focus:ring-4 focus:ring-orange-100 transition shadow-[8px_8px_0px_0px_rgba(15,23,42,1)]"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full bg-slate-900 text-white p-5 rounded-xl font-black uppercase italic tracking-widest flex items-center justify-center gap-3 hover:bg-orange-600 transition-all hover:scale-[1.02] shadow-[8px_8px_0px_0px_rgba(234,88,12,1)] disabled:bg-slate-400 disabled:shadow-none"
+              >
+                {isLoading ? "Sending Link..." : "Send Reset Link"}
+              </button>
+            </form>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}

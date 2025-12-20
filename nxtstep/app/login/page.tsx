@@ -2,9 +2,15 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { auth } from "./firebase"; 
+// Just import the tools you need
+import { auth, db } from "@/lib/firebase"; 
+import Navbar from "../components/navbar";
+
+
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Zap, ArrowRight, Lock, Mail } from "lucide-react";
+// Now use them
+const user = auth.currentUser; 
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -13,53 +19,53 @@ export default function Login() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const router = useRouter();
+  
 
   useEffect(() => {
-    const savedUsername = localStorage.getItem("rememberedUsername");
-    if (savedUsername) {
-      setEmail(savedUsername);
-      setRememberMe(true);
-    }
-  }, []);
+  const savedEmail = localStorage.getItem("rememberedEmail");
+  if (savedEmail) {
+    setEmail(savedEmail);
+    setRememberMe(true);
+  }
+}, []);
 
   const handleLogin = async () => {
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      setSuccess("Welcome back! Catching your wave...");
-      setError("");
+    // 1. Sign in with Firebase
+    await signInWithEmailAndPassword(auth, email, password);
+    
+    setSuccess("Welcome back! Catching your wave...");
+    setError("");
 
-      if (rememberMe) {
-        localStorage.setItem("rememberedUsername", email);
-      } else {
-        localStorage.removeItem("rememberedUsername");
-      }
-
-      setTimeout(() => router.push("/dashboard"), 1500);
-    } catch (err) {
-      setError((err as Error).message || "Login failed. Please check your credentials.");
+    // 2. Handle "Remember Me"
+    if (rememberMe) {
+      // Saves email to browser so it's there next time
+      localStorage.setItem("rememberedEmail", email);
+    } else {
+      // Clears it if the box is unchecked
+      localStorage.removeItem("rememberedEmail");
     }
+
+    // 3. Redirect to Dashboard
+    setTimeout(() => router.push("/dashboard"), 1500);
+  } catch (err) {
+    // Error handling for wrong passwords or non-existent users
+    const errorMessage = (err as Error).message;
+    if (errorMessage.includes("user-not-found")) {
+      setError("No account found with this email.");
+    } else if (errorMessage.includes("wrong-password")) {
+      setError("Incorrect password. Try again!");
+    } else {
+      setError("Login failed. Please check your credentials.");
+    }
+    setSuccess("");
+  }
   };
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
       {/* --- NAVIGATION --- */}
-      <nav className="flex items-center justify-between px-8 py-6 border-b border-slate-100">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center text-white font-bold italic">N</div>
-          <span className="text-xl font-bold tracking-tight uppercase">NXTSTEP</span>
-        </div>
-        <div className="hidden md:flex gap-8 text-sm font-medium text-slate-600">
-          <Link href="/home" className="hover:text-orange-600 transition">Home</Link>
-          <Link href="/about" className="hover:text-orange-600 transition">About</Link>
-          <Link href="/options" className="hover:text-orange-600 transition">Options</Link>
-          <Link href="/dashboard" className="hover:text-orange-600 transition">Dashboard</Link>
-        </div>
-        <Link href="/signup">
-          <button className="bg-orange-600 text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-orange-700 transition shadow-lg shadow-orange-100">
-            Join Now
-          </button>
-        </Link>
-      </nav>
+      <Navbar />
 
       <div className="grid md:grid-cols-2 min-h-[calc(100vh-88px)]">
         {/* --- LEFT SIDE: THE VIBE --- */}
@@ -141,7 +147,7 @@ export default function Login() {
                   />
                   <span className="text-sm font-bold text-slate-600 group-hover:text-slate-900 transition">Remember Me</span>
                 </label>
-                <Link href="/reset-password" id="forgetPassword" className="text-sm font-bold text-orange-600 hover:underline">
+                <Link href="/forgot" id="forgetPassword" className="text-sm font-bold text-orange-600 hover:underline">
                   Forgot Password?
                 </Link>
               </div>

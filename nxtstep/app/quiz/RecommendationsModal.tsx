@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useEffect } from 'react';
-// Imports (assuming correct paths relative to this modal file)
+import React, { useEffect, useState } from 'react';
+import { auth, db } from "@/lib/firebase"; 
+import { doc, updateDoc, arrayUnion, arrayRemove, onSnapshot } from "firebase/firestore";
+import { Heart, CheckCircle, ArrowRight, X } from 'lucide-react';
 import CareerCard from './CareerCard';
 import HowToPursueDetail from './HowToPursueDetail';
-// NOTE: Assuming Career interface is correctly exported from mockData
-import { Career } from './mockData'; 
+import { Career } from '../components/data';
 
 interface RecommendationsModalProps {
     onClose: () => void;
@@ -14,7 +15,6 @@ interface RecommendationsModalProps {
     setSelectedCareer: (career: Career | null) => void;
 }
 
-
 export default function RecommendationsModal({ 
     onClose, 
     recommendations,
@@ -22,76 +22,123 @@ export default function RecommendationsModal({
     setSelectedCareer,
 }: RecommendationsModalProps) {
     
-    // 1. Accessibility & UX Improvement: Close modal on ESC key press
+    const [savedIds, setSavedIds] = useState<number[]>([]);
+    const user = auth.currentUser;
+
+    // 1. Listen for saved careers in Real-time
+    useEffect(() => {
+        if (!user) return;
+        const userRef = doc(db, "users", user.uid);
+        const unsubscribe = onSnapshot(userRef, (docSnap) => {
+            if (docSnap.exists()) {
+                setSavedIds(docSnap.data().likedCareers || []);
+            }
+        });
+        return () => unsubscribe();
+    }, [user]);
+
+    // 2. Firebase Toggle Function
+    const handleToggleFavorite = async (id: number) => {
+        if (!user) return;
+        const userRef = doc(db, "users", user.uid);
+        const isSaved = savedIds.includes(id);
+
+        try {
+            await updateDoc(userRef, {
+                likedCareers: isSaved ? arrayRemove(id) : arrayUnion(id)
+            });
+        } catch (err) {
+            console.error("Error saving career from modal:", err);
+        }
+    };
+
+    // ESC key listener
     useEffect(() => {
         const handleEscape = (event: KeyboardEvent) => {
-            if (event.key === 'Escape') {
-                onClose();
-            }
+            if (event.key === 'Escape') onClose();
         };
         document.addEventListener('keydown', handleEscape);
         return () => document.removeEventListener('keydown', handleEscape);
     }, [onClose]);
 
+    const isCurrentCareerSaved = selectedCareer ? savedIds.includes(selectedCareer.id) : false;
 
     return (
-        // 1. Full-screen Modal Overlay (Fixed position, dark, blurred background)
-        <div 
-            className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/90 backdrop-blur-sm p-4"
-            // Optional: Click outside the modal content to close (needs event handling)
-            // onClick={onClose} 
-        >
-            
-            {/* 2. Modal Content Box (Internal Scrollable Workspace) */}
-            {/* Added shadow, background color, and ensured the content doesn't click through the backdrop */}
-            <div 
-                className="bg-gray-800 rounded-xl shadow-2xl w-[95%] h-[95%] max-w-7xl flex flex-col overflow-hidden transform transition-all duration-300 scale-100"
-                // onClick={(e) => e.stopPropagation()} // Prevents closing when clicking inside the content
-            >
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/90 backdrop-blur-md p-4 animate-in fade-in duration-300">
+            <div className="bg-white border-4 border-slate-900 rounded-[40px] shadow-[20px_20px_0px_0px_rgba(234,88,12,1)] w-full h-[90vh] max-w-7xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-300">
                 
-                {/* Modal Header */}
-                <div className="p-5 border-b border-gray-700 flex justify-between items-center bg-purple-700 text-white flex-shrink-0">
-                    <h2 className="text-2xl font-bold">Your NxtStep Career Blueprint 🗺️</h2>
+                {/* Header */}
+                <div className="p-6 border-b-4 border-slate-900 flex justify-between items-center bg-orange-600 text-white">
+                    <div className="flex items-center gap-4">
+                        <div className="bg-slate-900 p-2 rounded-xl border-2 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+                            <CheckCircle size={24} />
+                        </div>
+                        <h2 className="text-3xl font-black uppercase italic tracking-tighter">AI Career Blueprint*</h2>
+                    </div>
                     <button 
                         onClick={onClose} 
-                        className="text-orange-300 hover:text-orange-100 transition-colors p-1"
-                        aria-label="Close recommendations"
+                        className="bg-slate-900 text-white p-3 rounded-2xl border-2 border-slate-900 hover:bg-white hover:text-slate-900 transition shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] active:translate-y-1 active:shadow-none"
                     >
-                        {/* Close Icon (Simple X) */}
-                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        <X size={24} strokeWidth={3} />
                     </button>
                 </div>
 
-                {/* 3. Modal Body: The Internal Two-Column Split (flex-1 ensures it fills remaining vertical space) */}
                 <div className="flex flex-1 overflow-hidden">
-                    
-                    {/* LEFT SECTION (w-1/3): Career Cards List (Vertically scrollable) */}
-                    {/* Reduced width to 1/3 to give more space for the detailed roadmap */}
-                    <div className="w-1/3 p-6 pr-4 border-r border-gray-700 overflow-y-auto space-y-4 bg-gray-900/50">
-                        
-                        <p className="text-purple-300 font-medium text-sm mb-4">Select a path below to view the detailed roadmap immediately on the right.</p>
+                    {/* LEFT SECTION: Recommendations */}
+                    <div className="w-1/3 p-6 border-r-4 border-slate-900 overflow-y-auto space-y-4 bg-slate-50 custom-scrollbar">
+                        <p className="text-slate-500 font-black text-[10px] uppercase tracking-[0.2em] mb-4">Top Matches Based on Your Vibe</p>
                         
                         {recommendations.map((career) => (
-                            <CareerCard 
-                                key={career.id} 
-                                career={career} 
-                                onSelect={() => setSelectedCareer(career)} 
-                                isSelected={selectedCareer?.id === career.id}
-                            />
+                            <div key={career.id} className="relative group">
+                                <CareerCard 
+                                    career={career} 
+                                    // FIXED: Changed 'Career' to 'career'
+                                    onSelect={() => setSelectedCareer(career)} 
+                                    isSelected={selectedCareer?.id === career.id}
+                                />
+                                {savedIds.includes(career.id) && (
+                                    <div className="absolute top-4 right-4 bg-green-500 text-white p-1 rounded-full border-2 border-slate-900 shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] z-10">
+                                        <CheckCircle size={14} strokeWidth={3} />
+                                    </div>
+                                )}
+                            </div>
                         ))}
                     </div>
 
-                    {/* RIGHT SECTION (w-2/3): Detailed Roadmap Panel (Updates on click) */}
-                    <div className="w-2/3 p-6 overflow-y-auto bg-gray-800 text-gray-100">
+                    {/* RIGHT SECTION: Detailed Roadmap */}
+                    <div className="w-2/3 p-10 overflow-y-auto bg-white flex flex-col custom-scrollbar">
                         {selectedCareer ? (
-                            // Display the detailed roadmap
-                            <HowToPursueDetail career={selectedCareer} />
+                            <div className="flex-1 animate-in slide-in-from-right-4 duration-500">
+                                <div className="flex justify-between items-start mb-8">
+                                    <div className="max-w-[60%]">
+                                        <h3 className="text-5xl font-black uppercase italic tracking-tighter text-slate-900 leading-[0.9] mb-4">{selectedCareer.title}</h3>
+                                        <div className="inline-block bg-orange-100 text-orange-600 px-4 py-1 rounded-full font-black text-xs uppercase tracking-widest border-2 border-orange-200">
+                                            98% Vibe Match
+                                        </div>
+                                    </div>
+                                    
+                                    <button 
+                                        onClick={() => handleToggleFavorite(selectedCareer.id)}
+                                        className={`flex items-center gap-3 px-8 py-4 rounded-2xl font-black uppercase italic tracking-widest text-sm transition-all border-4 border-slate-900 shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] active:translate-y-1 active:shadow-none ${
+                                            isCurrentCareerSaved 
+                                            ? 'bg-orange-600 text-white' 
+                                            : 'bg-white text-slate-900 hover:bg-orange-50'
+                                        }`}
+                                    >
+                                        <Heart size={20} fill={isCurrentCareerSaved ? "white" : "none"} strokeWidth={3} />
+                                        {isCurrentCareerSaved ? "Path Locked" : "Save this Path"}
+                                    </button>
+                                </div>
+                                
+                                <HowToPursueDetail career={selectedCareer} />
+                            </div>
                         ) : (
-                            // Default message when no card is selected
-                            <div className="h-full flex flex-col justify-center items-center text-center p-8">
-                                <h3 className="text-3xl font-bold text-orange-400">Unlock Your Roadmap</h3>
-                                <p className="text-gray-400 mt-4 text-lg">Click any recommended career on the left to instantly see the step-by-step pursuit guide, suggested colleges, and fee details here.</p>
-                                <p className="text-sm mt-8 text-gray-600">— NxtStep AI Mentor</p>
+                            <div className="h-full flex flex-col justify-center items-center text-center p-12">
+                                <div className="w-24 h-24 bg-orange-100 rounded-full flex items-center justify-center mb-6 animate-bounce border-4 border-orange-600">
+                                    <ArrowRight size={48} className="text-orange-600 -rotate-90" />
+                                </div>
+                                <h3 className="text-4xl font-black uppercase italic tracking-tighter">Choose Your Path</h3>
+                                <p className="text-slate-400 mt-4 max-w-sm font-bold italic text-lg leading-relaxed">Select a career on the left to unlock your customized 4-year roadmap, fee estimates, and recommended colleges.</p>
                             </div>
                         )}
                     </div>
