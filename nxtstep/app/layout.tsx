@@ -1,46 +1,35 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// "use client"; // important if ThemeProvider uses useTheme
+import type { Metadata } from "next"; // Import types
+import { Inter } from "next/font/google"; // Optional: Add a font
 import "./globals.css";
-import ChatWidget from "./components/ChatWidget"; 
-import { ThemeProvider } from "./components/themeProvider";
+import Navbar from "./components/navbar";
+import { ThemeProvider } from "./components/themeProvider"; // Import from your new component
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NxtStep - Find Your Path",
-  description: "AI-powered career counseling",
+  title: "NxtStep",
+  description: "Your Career Counseling Platform",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    // 1. Added suppressHydrationWarning to prevent theme-flicker errors
     <html lang="en" suppressHydrationWarning>
-      <body
-        // 2. Added bg-white and dark:bg-slate-950 to the body
-        // 3. Added transition-colors so the switch feels smooth
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300`}
-      >
-        <ThemeProvider 
-          attribute="class" 
-          defaultTheme="light" 
-          enableSystem={false} // Force it to use the toggle rather than system settings initially
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
+          {/* Navbar should be inside the body, usually inside the provider */}
+          <Navbar />
           {children}
         </ThemeProvider>
-        
-        <ChatWidget />
       </body>
     </html>
   );

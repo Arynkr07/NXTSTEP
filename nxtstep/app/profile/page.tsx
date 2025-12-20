@@ -4,7 +4,6 @@ import { auth, db } from "@/lib/firebase";
 import { doc, onSnapshot, updateDoc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import { User, ShieldCheck, Edit3, Save } from "lucide-react";
-import Navbar from "../components/navbar";
 
 export default function ProfileSettings() {
   const [userData, setUserData] = useState<any>(null);
@@ -48,7 +47,6 @@ export default function ProfileSettings() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
       <div className="max-w-2xl mx-auto p-8 mt-12">
         <header className="mb-12 border-b-4 border-slate-900 pb-6">
           <h1 className="text-5xl font-black uppercase italic tracking-tighter">Account <span className="text-orange-600">Settings*</span></h1>

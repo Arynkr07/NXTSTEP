@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageSquare, ArrowLeft } from 'lucide-react';
-import Link from 'next/link';
+import { Mail, Phone, MessageSquare, Send } from 'lucide-react';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -28,7 +27,8 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans">
+    // 1. MAIN CONTAINER: Added dark:bg-slate-950 and dark:text-white
+    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-white font-sans transition-colors duration-300">
       
       <main className="max-w-7xl mx-auto px-8 py-16 grid lg:grid-cols-2 gap-16 items-center">
         
@@ -39,18 +39,20 @@ export default function ContactPage() {
               <MessageSquare size={18} fill="currentColor" />
               <span>Support Center</span>
             </div>
-            <h1 className="text-7xl font-black leading-[0.9] mb-6 tracking-tighter uppercase italic">
+            {/* Dark mode text color added */}
+            <h1 className="text-7xl font-black leading-[0.9] mb-6 tracking-tighter uppercase italic text-slate-900 dark:text-white">
               Let's Talk <br /> 
               <span className="text-orange-600">Strategy*</span>
             </h1>
-            <p className="text-lg text-slate-500 font-medium italic border-l-4 border-slate-900 pl-6">
+            <p className="text-lg text-slate-500 dark:text-slate-400 font-medium italic border-l-4 border-slate-900 dark:border-slate-700 pl-6">
               Have questions about your AI roadmap or need technical help? Our team is on standby.
             </p>
           </header>
 
           <div className="space-y-8">
+            {/* Email Block */}
             <div className="flex items-center gap-6 group">
-              <div className="w-14 h-14 bg-slate-900 text-white rounded-2xl flex items-center justify-center border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(234,88,12,1)] group-hover:scale-110 transition">
+              <div className="w-14 h-14 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl flex items-center justify-center border-2 border-slate-900 dark:border-white shadow-[4px_4px_0px_0px_rgba(234,88,12,1)] group-hover:scale-110 transition">
                 <Mail size={24} />
               </div>
               <div>
@@ -59,8 +61,9 @@ export default function ContactPage() {
               </div>
             </div>
 
+            {/* Phone Block */}
             <div className="flex items-center gap-6 group">
-              <div className="w-14 h-14 bg-slate-900 text-white rounded-2xl flex items-center justify-center border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(234,88,12,1)] group-hover:scale-110 transition">
+              <div className="w-14 h-14 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl flex items-center justify-center border-2 border-slate-900 dark:border-white shadow-[4px_4px_0px_0px_rgba(234,88,12,1)] group-hover:scale-110 transition">
                 <Phone size={24} />
               </div>
               <div>
@@ -74,14 +77,16 @@ export default function ContactPage() {
         {/* RIGHT SIDE: THE FORM */}
         <div className="relative">
           <div className="absolute inset-0 bg-orange-600 rounded-[40px] translate-x-4 translate-y-4 -z-10"></div>
-          <div className="bg-white border-4 border-slate-900 p-10 rounded-[40px] shadow-xl">
+          
+          {/* 2. FORM CONTAINER: Added dark:bg-slate-900 and dark:border-slate-700 */}
+          <div className="bg-white dark:bg-slate-900 border-4 border-slate-900 dark:border-slate-700 p-10 rounded-[40px] shadow-xl">
             {submitted ? (
               <div className="text-center py-12">
                 <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-green-600">
                    <Send size={32} />
                 </div>
-                <h2 className="text-3xl font-black uppercase italic mb-2">Message Received!</h2>
-                <p className="text-slate-500 font-bold">We'll get back to you within 24 hours.</p>
+                <h2 className="text-3xl font-black uppercase italic mb-2 dark:text-white">Message Received!</h2>
+                <p className="text-slate-500 dark:text-slate-400 font-bold">We'll get back to you within 24 hours.</p>
                 <button 
                   onClick={() => setSubmitted(false)}
                   className="mt-8 text-orange-600 font-black uppercase italic text-sm hover:underline"
@@ -94,10 +99,11 @@ export default function ContactPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="text-xs font-black uppercase tracking-widest text-slate-400 mb-2 block">Name</label>
+                    {/* 3. INPUTS: Added dark:bg-slate-950, dark:text-white, dark:border-slate-700 */}
                     <input 
                       required
                       type="text" 
-                      className="w-full border-2 border-slate-900 p-4 rounded-xl font-bold focus:ring-4 focus:ring-orange-100 outline-none" 
+                      className="w-full bg-white dark:bg-slate-950 border-2 border-slate-900 dark:border-slate-700 text-slate-900 dark:text-white p-4 rounded-xl font-bold focus:ring-4 focus:ring-orange-100 dark:focus:ring-orange-900 outline-none transition-colors" 
                       placeholder="Your Name"
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
@@ -108,7 +114,7 @@ export default function ContactPage() {
                     <input 
                       required
                       type="email" 
-                      className="w-full border-2 border-slate-900 p-4 rounded-xl font-bold focus:ring-4 focus:ring-orange-100 outline-none" 
+                      className="w-full bg-white dark:bg-slate-950 border-2 border-slate-900 dark:border-slate-700 text-slate-900 dark:text-white p-4 rounded-xl font-bold focus:ring-4 focus:ring-orange-100 dark:focus:ring-orange-900 outline-none transition-colors" 
                       placeholder="email@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
@@ -119,7 +125,7 @@ export default function ContactPage() {
                 <div>
                   <label className="text-xs font-black uppercase tracking-widest text-slate-400 mb-2 block">Subject</label>
                   <select 
-                    className="w-full border-2 border-slate-900 p-4 rounded-xl font-bold focus:ring-4 focus:ring-orange-100 outline-none bg-white"
+                    className="w-full bg-white dark:bg-slate-950 border-2 border-slate-900 dark:border-slate-700 text-slate-900 dark:text-white p-4 rounded-xl font-bold focus:ring-4 focus:ring-orange-100 dark:focus:ring-orange-900 outline-none transition-colors appearance-none"
                     value={formData.subject}
                     onChange={(e) => setFormData({...formData, subject: e.target.value})}
                   >
@@ -135,7 +141,7 @@ export default function ContactPage() {
                   <textarea 
                     required
                     rows={4} 
-                    className="w-full border-2 border-slate-900 p-4 rounded-xl font-bold focus:ring-4 focus:ring-orange-100 outline-none resize-none" 
+                    className="w-full bg-white dark:bg-slate-950 border-2 border-slate-900 dark:border-slate-700 text-slate-900 dark:text-white p-4 rounded-xl font-bold focus:ring-4 focus:ring-orange-100 dark:focus:ring-orange-900 outline-none resize-none transition-colors" 
                     placeholder="How can we help your journey?"
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
@@ -144,7 +150,7 @@ export default function ContactPage() {
 
                 <button 
                   disabled={isSubmitting}
-                  className="w-full bg-slate-900 text-white p-5 rounded-xl font-black uppercase italic tracking-widest flex items-center justify-center gap-3 hover:bg-orange-600 transition shadow-[8px_8px_0px_0px_rgba(234,88,12,1)] active:translate-y-1 active:shadow-none"
+                  className="w-full bg-slate-900 dark:bg-orange-600 text-white p-5 rounded-xl font-black uppercase italic tracking-widest flex items-center justify-center gap-3 hover:bg-orange-600 dark:hover:bg-orange-700 transition shadow-[8px_8px_0px_0px_rgba(234,88,12,1)] active:translate-y-1 active:shadow-none"
                 >
                   {isSubmitting ? "Sending..." : "Blast Message"} <Send size={20} />
                 </button>

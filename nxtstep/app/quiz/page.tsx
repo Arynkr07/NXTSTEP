@@ -4,10 +4,9 @@ import React, { useState } from 'react';
 import { Zap, MessageSquare, Sparkles } from 'lucide-react';
 import ChatbotPanel from './ChatbotPanel'; 
 import RecommendationsModal from './RecommendationsModal'; 
-import { careerOptions, Career } from '../components/data'; // Ensure path is correct
+import { careerOptions, Career } from '../components/data'; 
 import { auth, db } from "@/lib/firebase"; 
 import { doc, updateDoc, arrayUnion } from "firebase/firestore";
-import Navbar from '../components/navbar';
 
 export default function GuidancePage() {
     const [recommendedCareers, setRecommendedCareers] = useState<Career[]>([]);
@@ -75,32 +74,40 @@ export default function GuidancePage() {
     };
 
     return (
-        <div className="min-h-screen bg-white font-sans text-slate-900 relative">
-            <Navbar />
+        // Root: Added dark:bg-slate-950 and dark:text-white
+        <div className="min-h-screen bg-white dark:bg-slate-950 font-sans text-slate-900 dark:text-white relative transition-colors duration-300">
 
             <div className="grid lg:grid-cols-2 min-h-[calc(100vh-88px)]">
                 {/* LEFT SIDE: Hero Content */}
-                <div className="bg-slate-50 p-12 flex flex-col justify-center relative overflow-hidden">
+                {/* Changed bg-slate-50 to dark:bg-slate-900 */}
+                <div className="bg-slate-50 dark:bg-slate-900 p-12 flex flex-col justify-center relative overflow-hidden transition-colors duration-300">
                     <div className="z-10 max-w-xl">
                         <div className="flex items-center gap-2 text-orange-600 font-bold text-sm uppercase tracking-widest mb-4">
                             <Sparkles size={18} fill="currentColor" />
                             <span>AI Career Mentor</span>
                         </div>
-                        <h1 className="text-7xl md:text-8xl font-black leading-[0.9] mb-8 tracking-tighter uppercase italic text-slate-900">
+                        <h1 className="text-7xl md:text-8xl font-black leading-[0.9] mb-8 tracking-tighter uppercase italic text-slate-900 dark:text-white">
                             Map Your <br /> 
                             <span className="text-orange-600">Potential*</span>
                         </h1>
-                        <p className="text-lg text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-900 pl-6 mb-8">
+                        {/* Quote: Added dark:text-slate-400 and dark:border-slate-600 */}
+                        <p className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed italic border-l-4 border-slate-900 dark:border-slate-600 pl-6 mb-8">
                             "Answer a few questions and let our neural engine build a custom roadmap for your future."
                         </p>
                     </div>
                 </div>
 
                 {/* RIGHT SIDE: Chat Panel */}
-                <div className="flex items-center justify-center p-8 bg-white border-l border-slate-100">
+                {/* Added dark:bg-slate-950 and dark:border-slate-800 */}
+                <div className="flex items-center justify-center p-8 bg-white dark:bg-slate-950 border-l border-slate-100 dark:border-slate-800 transition-colors duration-300">
                     <div className="w-full max-w-lg">
-                        <div className="relative border-4 border-slate-900 rounded-[40px] shadow-[16px_16px_0px_0px_rgba(15,23,42,1)] bg-white overflow-hidden min-h-[600px] flex flex-col">
-                            <div className="bg-slate-900 p-6 flex items-center justify-between text-white">
+                        {/* Chat Container: 
+                            1. Added dark:bg-slate-900
+                            2. Changed border to dark:border-slate-700
+                            3. Added a subtle white shadow for depth in dark mode (dark:shadow-[...]) 
+                        */}
+                        <div className="relative border-4 border-slate-900 dark:border-slate-700 rounded-[40px] shadow-[16px_16px_0px_0px_rgba(15,23,42,1)] dark:shadow-[16px_16px_0px_0px_rgba(255,255,255,0.1)] bg-white dark:bg-slate-900 overflow-hidden min-h-[600px] flex flex-col transition-all duration-300">
+                            <div className="bg-slate-900 dark:bg-black p-6 flex items-center justify-between text-white">
                                 <div className="flex items-center gap-3">
                                     <div className="w-10 h-10 bg-orange-600 rounded-xl flex items-center justify-center animate-pulse">
                                         <MessageSquare size={20} fill="white" />
