@@ -9,6 +9,7 @@ import React, { useEffect, useState } from 'react';
 import { onAuthStateChanged } from "firebase/auth";
 import Navbar from '../components/navbar';
 import ContactForm from '../components/contact';
+import { ThemeProvider } from '../components/themeProvider';
 
 const UpgradedLandingPage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -23,8 +24,9 @@ const UpgradedLandingPage = () => {
   return (
     // Updated background and text colors for dark mode
     <div className="bg-white dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-100 transition-colors duration-300">
-      
+      <ThemeProvider>
       <Navbar />
+      </ThemeProvider>
 
       {/* --- 2. HOW IT WORKS --- */}
       <section className="py-24 px-8 max-w-7xl mx-auto">

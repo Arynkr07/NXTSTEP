@@ -8,7 +8,7 @@ export function ThemeProvider({ children, ...props }: any) {
     <NextThemesProvider 
       attribute="class" // Must be "class"
       defaultTheme="light" 
-      enableSystem={false} // Prevents it from following Windows/Mac settings over your button
+      enableSystem // Prevents it from following Windows/Mac settings over your button
       {...props}
     >
       {children}
