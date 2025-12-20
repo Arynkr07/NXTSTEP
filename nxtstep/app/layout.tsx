@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-// 1. IMPORT THE CHAT WIDGET
 import ChatWidget from "./components/ChatWidget"; 
+import { ThemeProvider } from "./components/themeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NxtStep - Find Your Path", // Updated title for you
+  title: "NxtStep - Find Your Path",
   description: "AI-powered career counseling",
 };
 
@@ -25,13 +25,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    // 1. Added suppressHydrationWarning to prevent theme-flicker errors
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        // 2. Added bg-white and dark:bg-slate-950 to the body
+        // 3. Added transition-colors so the switch feels smooth
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300`}
       >
-        {children}
+        <ThemeProvider 
+          attribute="class" 
+          defaultTheme="light" 
+          enableSystem={false} // Force it to use the toggle rather than system settings initially
+        >
+          {children}
+        </ThemeProvider>
         
-        {/* 2. ADD THE WIDGET HERE */}
         <ChatWidget />
       </body>
     </html>
