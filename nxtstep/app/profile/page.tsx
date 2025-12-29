@@ -4,6 +4,8 @@ import { auth, db } from "@/lib/firebase";
 import { doc, onSnapshot, updateDoc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import { User, ShieldCheck, Edit3, Save } from "lucide-react";
+import { RevealOnScroll } from '../components/reveal';
+import { TiltCard } from '../components/tilteffect';
 
 export default function ProfileSettings() {
   const [userData, setUserData] = useState<any>(null);
@@ -47,16 +49,19 @@ export default function ProfileSettings() {
 
   return (
     <div className="min-h-screen bg-white">
+      <RevealOnScroll>
       <div className="max-w-2xl mx-auto p-8 mt-12">
         <header className="mb-12 border-b-4 border-slate-900 pb-6">
-          <h1 className="text-5xl font-black uppercase italic tracking-tighter">Account <span className="text-orange-600">Settings*</span></h1>
+          <h1 className="text-5xl dark:text-slate-800 font-black uppercase italic tracking-tighter">Account <span className="text-orange-600">Settings*</span></h1>
         </header>
 
         <div className="space-y-10">
           {/* USERNAME SECTION */}
+          
           <section className="border-4 border-slate-900 p-8 rounded-[40px] bg-slate-50 shadow-[8px_8px_0px_0px_rgba(15,23,42,1)]">
+            <TiltCard>
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-black uppercase italic flex items-center gap-2">
+              <h2 className="text-2xl dark:text-slate-800 font-black uppercase italic flex items-center gap-2">
                 <User className="text-orange-600" /> Identity
               </h2>
               <button 
@@ -68,7 +73,7 @@ export default function ProfileSettings() {
             </div>
 
             {isEditing ? (
-              <div className="space-y-4">
+              <div className="space-y-4 dark:text-slate-800">
                 <input 
                   type="text" 
                   value={newUsername}
@@ -89,18 +94,23 @@ export default function ProfileSettings() {
               </div>
             )}
             {message && <p className="mt-4 text-sm font-bold text-orange-600 italic">{message}</p>}
+            </TiltCard>
           </section>
 
           {/* SECURITY STATUS */}
           <section className="p-8 border-4 border-slate-900 rounded-[40px] flex items-center justify-between">
+          <TiltCard>
              <div>
-                <h3 className="text-lg font-black uppercase italic">Security Status</h3>
+                <h3 className="text-lg dark:text-slate-800 font-black uppercase italic">Security Status</h3>
                 <p className="text-slate-500 font-medium text-sm">Account connected via Firebase Auth</p>
              </div>
              <ShieldCheck size={40} className="text-green-500" />
+              </TiltCard>
           </section>
+         
         </div>
       </div>
+      </RevealOnScroll>
     </div>
   );
 }

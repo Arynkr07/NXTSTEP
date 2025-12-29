@@ -23,7 +23,7 @@ export default function GuidancePage() {
             const userInterests: string[] = userAnswers.interests || [];
             const userSkills: string[] = userAnswers.skills || [];
             
-            // 1. Scoring Logic
+            // 1. Scoring Logic: Matching user input against the Career dataset
             const scoredCareers = careerOptions.map((career) => {
                 let score = 0;
                 const matchingInterests = career.relatedInterests?.filter(i => userInterests.includes(i)).length || 0;
@@ -41,26 +41,31 @@ export default function GuidancePage() {
                 ? sortedCareers.slice(0, 6) 
                 : careerOptions.slice(0, 5);
                 
-            // 2. Sync to Firebase
+            // 2. Sync to Firebase for the Dashboard Command Center
             const currentUser = auth.currentUser;
             if (currentUser) {
                 const userRef = doc(db, "users", currentUser.uid);
-                const topCareerMatch = finalRecommendations[0]?.title || "General Analysis";
-                const finalScore = Math.min((sortedCareers[0]?.score || 15) * 4, 100);
+                
+                // We pick the top recommendation to display as the "Target Career" in the table
+                const topCareer = finalRecommendations[0];
+                const topCareerMatch = topCareer?.title || "General Analysis";
+                
+                // Normalize score to a 1-100 scale for the Dashboard progress bar
+                const finalScore = Math.min((topCareer?.score || 15) * 4, 100);
 
                 try {
                     await updateDoc(userRef, {
                         vibe: userInterests[0] || "Exploring",
-                        // One single update for the Dashboard Table
+                        // CRITICAL: This structure matches your Dashboard's table requirements
                         quizResults: arrayUnion({
-                            id: Date.now(),
-                            quizName: topCareerMatch, // Uses the actual career name!
+                            id: topCareer?.id || Date.now(), // Use Career ID if available
+                            quizName: topCareerMatch, 
                             score: finalScore,
                             createdAt: new Date().toISOString()
                         }),
                         userSkills: userSkills
                     });
-                    console.log("Success: Mission Data Synced!");
+                    console.log("Success: Mission Data Synced to Command Center!");
                 } catch (error) {
                     console.error("Firebase Sync Error:", error);
                 }
@@ -74,12 +79,9 @@ export default function GuidancePage() {
     };
 
     return (
-        // Root: Added dark:bg-slate-950 and dark:text-white
         <div className="min-h-screen bg-white dark:bg-slate-950 font-sans text-slate-900 dark:text-white relative transition-colors duration-300">
-
             <div className="grid lg:grid-cols-2 min-h-[calc(100vh-88px)]">
                 {/* LEFT SIDE: Hero Content */}
-                {/* Changed bg-slate-50 to dark:bg-slate-900 */}
                 <div className="bg-slate-50 dark:bg-slate-900 p-12 flex flex-col justify-center relative overflow-hidden transition-colors duration-300">
                     <div className="z-10 max-w-xl">
                         <div className="flex items-center gap-2 text-orange-600 font-bold text-sm uppercase tracking-widest mb-4">
@@ -90,7 +92,6 @@ export default function GuidancePage() {
                             Map Your <br /> 
                             <span className="text-orange-600">Potential*</span>
                         </h1>
-                        {/* Quote: Added dark:text-slate-400 and dark:border-slate-600 */}
                         <p className="text-lg text-slate-500 dark:text-slate-400 font-medium leading-relaxed italic border-l-4 border-slate-900 dark:border-slate-600 pl-6 mb-8">
                             "Answer a few questions and let our neural engine build a custom roadmap for your future."
                         </p>
@@ -98,14 +99,8 @@ export default function GuidancePage() {
                 </div>
 
                 {/* RIGHT SIDE: Chat Panel */}
-                {/* Added dark:bg-slate-950 and dark:border-slate-800 */}
                 <div className="flex items-center justify-center p-8 bg-white dark:bg-slate-950 border-l border-slate-100 dark:border-slate-800 transition-colors duration-300">
                     <div className="w-full max-w-lg">
-                        {/* Chat Container: 
-                            1. Added dark:bg-slate-900
-                            2. Changed border to dark:border-slate-700
-                            3. Added a subtle white shadow for depth in dark mode (dark:shadow-[...]) 
-                        */}
                         <div className="relative border-4 border-slate-900 dark:border-slate-700 rounded-[40px] shadow-[16px_16px_0px_0px_rgba(15,23,42,1)] dark:shadow-[16px_16px_0px_0px_rgba(255,255,255,0.1)] bg-white dark:bg-slate-900 overflow-hidden min-h-[600px] flex flex-col transition-all duration-300">
                             <div className="bg-slate-900 dark:bg-black p-6 flex items-center justify-between text-white">
                                 <div className="flex items-center gap-3">

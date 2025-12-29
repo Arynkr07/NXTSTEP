@@ -1,17 +1,36 @@
-export const getSavedCareers = (): number[] => {
-  if (typeof window === 'undefined') return [];
-  return JSON.parse(localStorage.getItem("saved_careers") || "[]");
-};
+import { db, auth } from "@/lib/firebase";
+import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 
-export const saveCareer = (careerId: number) => {
-  const saved = getSavedCareers();
-  if (!saved.includes(careerId)) {
-    saved.push(careerId);
-    localStorage.setItem("saved_careers", JSON.stringify(saved));
+/**
+ * Adds a career ID to the user's likedCareers array in Firestore
+ */
+export const saveCareer = async (careerId: number) => {
+  const user = auth.currentUser;
+  if (!user) return;
+
+  const userRef = doc(db, "users", user.uid);
+  try {
+    await updateDoc(userRef, {
+      likedCareers: arrayUnion(careerId)
+    });
+  } catch (error) {
+    console.error("Error saving career to Firestore:", error);
   }
 };
 
-export const removeCareer = (careerId: number) => {
-  const saved = getSavedCareers().filter(id => id !== careerId);
-  localStorage.setItem("saved_careers", JSON.stringify(saved));
+/**
+ * Removes a career ID from the user's likedCareers array in Firestore
+ */
+export const removeCareer = async (careerId: number) => {
+  const user = auth.currentUser;
+  if (!user) return;
+
+  const userRef = doc(db, "users", user.uid);
+  try {
+    await updateDoc(userRef, {
+      likedCareers: arrayRemove(careerId)
+    });
+  } catch (error) {
+    console.error("Error removing career from Firestore:", error);
+  }
 };

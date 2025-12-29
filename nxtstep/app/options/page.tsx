@@ -2,32 +2,35 @@
 
 import Link from 'next/link';
 import React, { useState, useRef, useEffect } from 'react';
-// import { saveCareer, removeCareer, getSavedCareers } from '../utils/storage'; 
-import { Search, Map, Zap, Target, ArrowRight, ExternalLink, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, Zap, Target, ArrowRight, ExternalLink, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
+import { RevealOnScroll } from '../components/reveal';
 
 import { auth, db } from "@/lib/firebase"; 
-import { doc, updateDoc, arrayUnion, arrayRemove, getDoc, onSnapshot } from "firebase/firestore";
+import { doc, setDoc, arrayUnion, arrayRemove, onSnapshot } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import { careerOptions, Career } from '../components/data'; 
+import { TiltCard } from '../components/tilteffect';
 
 export default function CareerOptionsPage() {
+  const [mounted, setMounted] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [popupData, setPopupData] = useState<Career | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   
-  const [saved, setSaved] = useState<number[]>([]);
-  const [user, setUser] = useState(auth.currentUser);
+  const [saved, setSaved] = useState<any[]>([]);
+  const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
+    setMounted(true);
     const unsubscribeAuth = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      
       if (currentUser) {
         const userRef = doc(db, "users", currentUser.uid);
         const unsubscribeDoc = onSnapshot(userRef, (docSnap) => {
           if (docSnap.exists()) {
-            setSaved(docSnap.data().savedCareers || []);
+            // Listen to 'likedCareers' to match Dashboard
+            setSaved(docSnap.data().likedCareers || []);
           }
         });
         return () => unsubscribeDoc();
@@ -35,9 +38,32 @@ export default function CareerOptionsPage() {
         setSaved([]); 
       }
     });
-
     return () => unsubscribeAuth();
   }, []);
+
+  if (!mounted) return null;
+
+  const toggleSave = async (e: React.MouseEvent, id: number) => {
+    e.stopPropagation(); 
+    if (!user) {
+      alert("Please log in to save careers!");
+      return;
+    }
+
+    const userRef = doc(db, "users", user.uid);
+    // Safe string comparison for UI logic
+    const isCurrentlyLiked = saved.some(savedId => String(savedId) === String(id));
+
+    try {
+      // FIX: Use setDoc with merge: true to avoid "No document to update" error
+      await setDoc(userRef, {
+        likedCareers: isCurrentlyLiked ? arrayRemove(id) : arrayUnion(id)
+      }, { merge: true });
+      
+    } catch (error) {
+      console.error("Error updating saved careers:", error);
+    }
+  };
 
   const handleShowPopup = (career: Career) => {
     setPopupData(career);
@@ -59,33 +85,6 @@ export default function CareerOptionsPage() {
   const filteredCareers = careerOptions.filter(career =>
     career.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
-  
-  const toggleSave = async (e: React.MouseEvent, id: number) => {
-    e.stopPropagation(); 
-
-    if (!user) {
-      alert("Please log in to save careers to your dashboard!");
-      return;
-    }
-
-    const userRef = doc(db, "users", user.uid);
-
-    try {
-      if (saved.includes(id)) {
-        setSaved(prev => prev.filter(item => item !== id));
-        await updateDoc(userRef, {
-          savedCareers: arrayRemove(id)
-        });
-      } else {
-        setSaved(prev => [...prev, id]);
-        await updateDoc(userRef, {
-          savedCareers: arrayUnion(id)
-        });
-      }
-    } catch (error) {
-      console.error("Error updating saved careers:", error);
-    }
-  };
 
   return (
     // 1. MAIN CONTAINER: Added dark:bg-slate-950 and dark:text-white
@@ -94,6 +93,7 @@ export default function CareerOptionsPage() {
       {/* --- HERO / SEARCH SECTION --- */}
       {/* 2. HERO HEADER: Changed bg-slate-50 to dark:bg-slate-900 */}
       <header className="bg-slate-50 dark:bg-slate-900 py-20 px-8 relative overflow-hidden border-b-4 border-transparent dark:border-slate-800 transition-colors duration-300">
+        <RevealOnScroll>
         <div className="max-w-6xl mx-auto relative z-10 text-center md:text-left">
           <div className="flex items-center justify-center md:justify-start gap-2 text-orange-600 font-bold text-sm uppercase tracking-widest mb-4">
             <Target size={18} fill="currentColor" />
@@ -106,6 +106,7 @@ export default function CareerOptionsPage() {
           
           <div className="flex flex-col md:flex-row gap-4 mt-12 max-w-2xl">
             <div className="relative flex-grow">
+              <TiltCard>
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
               {/* 3. SEARCH INPUT: Added dark:bg-slate-950, dark:text-white, dark:border-slate-700 */}
               <input
@@ -115,6 +116,7 @@ export default function CareerOptionsPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
+              </TiltCard>
             </div>
           </div>
         </div>
@@ -122,10 +124,13 @@ export default function CareerOptionsPage() {
         <div className="absolute -bottom-10 right-0 opacity-[0.04] dark:opacity-[0.05] select-none pointer-events-none dark:text-white">
           <h2 className="text-[250px] font-black italic whitespace-nowrap leading-none">EXPLORE</h2>
         </div>
+        </RevealOnScroll>
       </header>
 
       {/* --- CAREER CAROUSEL SECTION --- */}
       <section className="py-24 px-8 max-w-[1400px] mx-auto">
+        <RevealOnScroll>
+          <TiltCard>
         <div className="flex items-end justify-between mb-12">
           <div>
             <h2 className="text-4xl font-black uppercase italic tracking-tighter">Future-Proof Paths</h2>
@@ -179,11 +184,14 @@ export default function CareerOptionsPage() {
             </div>
           ))}
         </div>
+        </TiltCard>
+        </RevealOnScroll>
       </section>
 
       {/* --- POPUP MODAL --- */}
       {showPopup && popupData && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-md">
+          <TiltCard>
           {/* 6. MODAL CONTAINER: Added dark:bg-slate-950 and dark:border-slate-700 */}
           <div className="bg-white dark:bg-slate-950 rounded-[40px] border-4 border-slate-900 dark:border-slate-700 w-full max-w-2xl overflow-hidden shadow-[20px_20px_0px_0px_rgba(234,88,12,1)] dark:shadow-[20px_20px_0px_0px_rgba(234,88,12,0.5)] relative animate-in fade-in zoom-in duration-300">
             <button onClick={handleClosePopup} className="absolute top-6 right-6 z-10 p-2 hover:rotate-90 transition-transform bg-white/50 dark:bg-black/50 rounded-full">
@@ -223,6 +231,7 @@ export default function CareerOptionsPage() {
               </div>
             </div>
           </div>
+          </TiltCard>
         </div>
       )}
     </div>

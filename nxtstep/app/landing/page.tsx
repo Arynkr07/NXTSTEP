@@ -1,13 +1,17 @@
 "use client";
 import { 
   Map, Zap, RefreshCcw, ArrowRight, CheckCircle, 
-  Mail, Phone, MapPin, Globe, Linkedin, Twitter 
+  Mail, Phone, MapPin, Globe, Linkedin, Twitter, 
+  Scroll
 } from 'lucide-react';
 import Link from 'next/link';
 import { auth, db } from "@/lib/firebase"; 
 import React, { useEffect, useState } from 'react';
 import { onAuthStateChanged } from "firebase/auth";
 import ContactForm from '../components/contact';
+import Navbar from '../components/navbar';
+import { TiltCard } from '../components/tilteffect';
+import { RevealOnScroll } from '../components/reveal';
 
 const UpgradedLandingPage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,7 +25,7 @@ const UpgradedLandingPage = () => {
 
   return (
     // Updated background and text colors for dark mode
-    <div className="bg-white dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="bg-white dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-800 transition-colors duration-300">
       
 
       {/* --- 2. HOW IT WORKS --- */}
@@ -35,6 +39,8 @@ const UpgradedLandingPage = () => {
 
         <div className="grid md:grid-cols-3 gap-12">
           {/* Card 1 */}
+          <RevealOnScroll>
+          <TiltCard>
           <div className="bg-yellow-50 dark:bg-slate-900 border-4 border-slate-900 dark:border-slate-700 p-8 rounded-[40px] shadow-[12px_12px_0px_0px_rgba(15,23,42,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.05)]">
             <div className="bg-white dark:bg-slate-800 border-2 border-slate-900 dark:border-slate-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]">
               <Map className="text-orange-600" size={32} />
@@ -47,8 +53,12 @@ const UpgradedLandingPage = () => {
               "AI just updated the 'Cybersecurity' path with 4 new modules."
             </div>
           </div>
+          </TiltCard>
+          </RevealOnScroll>
 
           {/* Card 2 - Course Logic */}
+          <RevealOnScroll>
+          <TiltCard>
           <div className="bg-orange-50 dark:bg-slate-900 border-4 border-slate-900 dark:border-slate-700 p-8 rounded-[40px] shadow-[12px_12px_0px_0px_rgba(234,88,12,1)] scale-105 z-10">
             <div className="bg-white dark:bg-slate-800 border-2 border-slate-900 dark:border-slate-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]">
               <Zap className="text-orange-600" size={32} />
@@ -66,8 +76,12 @@ const UpgradedLandingPage = () => {
               </div>
             </div>
           </div>
+          </TiltCard>
+          </RevealOnScroll>
 
           {/* Card 3 */}
+          <RevealOnScroll>
+          <TiltCard>
           <div className="bg-blue-50 dark:bg-slate-900 border-4 border-slate-900 dark:border-slate-700 p-8 rounded-[40px] shadow-[12px_12px_0px_0px_rgba(15,23,42,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.05)]">
             <div className="bg-white dark:bg-slate-800 border-2 border-slate-900 dark:border-slate-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]">
               <RefreshCcw className="text-orange-600" size={32} />
@@ -77,12 +91,17 @@ const UpgradedLandingPage = () => {
               Switching fields? We calculate your "Compatibility Score" so you never have to start from zero.
             </p>
           </div>
+          </TiltCard>
+          </RevealOnScroll>
         </div>
+        
       </section>
 
       {/* --- SECTION 2: INTERACTIVE ANATOMY --- */}
       <section className="bg-slate-900 dark:bg-slate-900/50 py-24 px-8 text-white overflow-hidden relative border-y-4 border-slate-800">
+        <RevealOnScroll>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <TiltCard>
           <div>
             <h2 className="text-6xl font-black uppercase italic tracking-tighter leading-none mb-8">
               Your Career is a <br />
@@ -119,7 +138,9 @@ const UpgradedLandingPage = () => {
               </div>
             </div>
           </div>
+          </TiltCard>
         </div>
+        </RevealOnScroll>
       </section>
 
       {/* --- SECTION 3: STATS TICKER --- */}
@@ -137,6 +158,8 @@ const UpgradedLandingPage = () => {
 
       {/* --- 3. TESTIMONIALS SECTION --- */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900 border-y-4 border-slate-900 dark:border-slate-800">
+        <RevealOnScroll>
+        <TiltCard>
         <div className="max-w-7xl mx-auto px-8">
            <h2 className="text-4xl font-black uppercase italic tracking-tighter mb-12 text-center dark:text-white">Trusted by <span className="text-orange-600">Future Leaders*</span></h2>
            <div className="grid md:grid-cols-2 gap-8">
@@ -150,10 +173,14 @@ const UpgradedLandingPage = () => {
               </div>
            </div>
         </div>
+        </TiltCard>
+        </RevealOnScroll>
       </section>
 
       {/* --- SECTION 4: FINAL CTA --- */}
       <section className="py-24 px-8 text-center bg-white dark:bg-slate-950 relative">
+        <RevealOnScroll>
+        <TiltCard>
         <div className="max-w-4xl mx-auto border-8 border-slate-900 dark:border-slate-700 p-16 rounded-[60px] relative z-10 bg-white dark:bg-slate-900 shadow-[20px_20px_0px_0px_rgba(234,88,12,1)]">
           <h2 className="text-6xl md:text-8xl font-black uppercase italic tracking-tighter leading-[0.85] mb-8 dark:text-white">
             Catch Your <br />
@@ -169,6 +196,8 @@ const UpgradedLandingPage = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] dark:opacity-[0.05] pointer-events-none w-full">
           <span className="text-[400px] font-black italic select-none dark:text-white">QUEST</span>
         </div>
+        </TiltCard>
+        </RevealOnScroll>
       </section>
 
       <ContactForm/>

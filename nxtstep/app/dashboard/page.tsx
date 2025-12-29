@@ -4,10 +4,21 @@ import Link from 'next/link';
 import React, { useEffect, useState } from "react";
 import { Zap, Target, Heart, Award, ArrowRight } from "lucide-react";
 import { auth, db } from "@/lib/firebase"; 
-import { doc, updateDoc, arrayUnion, arrayRemove, onSnapshot } from "firebase/firestore";
-import { onAuthStateChanged } from "firebase/auth"; 
+import { doc, updateDoc, arrayUnion, arrayRemove, onSnapshot, setDoc } from "firebase/firestore";
+import { onAuthStateChanged, signOut } from "firebase/auth"; 
 import { useRouter } from "next/navigation";
-import { careerOptions, type Career } from '../components/data';
+import { careerOptions } from '../components/data';
+import { RevealOnScroll } from '../components/reveal';
+import { TiltCard } from '../components/tilteffect';
+
+export interface Career {
+  id: number;
+  title: string;
+  description: string;
+  salary: string;
+  link: string;
+  imageUrl: string;
+}
 
 interface QuizResult {
   id: number;
@@ -23,74 +34,124 @@ export default function Dashboard() {
   const [recommendations, setRecommendations] = useState<Career[]>([]);
   const [currentUser, setCurrentUser] = useState<any>(null);
   const router = useRouter();
+  
 
-  // Auth and Firestore listener
+  // 1. Logic Functions
+  const handleClearHistory = async () => {
+    if (!window.confirm("Are you sure? This will wipe your entire mission history!")) return;
+    if (!currentUser) return;
+
+    const userRef = doc(db, "users", currentUser.uid);
+    try {
+      await updateDoc(userRef, { quizResults: [] });
+    } catch (error) {
+      console.error("Error clearing history:", error);
+    }
+  };
+
+  const toggleSave = async (careerId: number) => {
+    if (!currentUser) return;
+    const userRef = doc(db, "users", currentUser.uid);
+    // Use String comparison for UI state toggle safety
+    const isSaved = savedCareers.some(c => String(c.id) === String(careerId));
+
+    try {
+      await updateDoc(userRef, {
+        likedCareers: isSaved ? arrayRemove(careerId) : arrayUnion(careerId)
+      });
+    } catch (err) {
+      console.error("Error updating favorites:", err);
+    }
+  };
+
+  // 2. Auth and Data Listener
   useEffect(() => {
     setMounted(true);
-
     const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
       if (user) {
         setCurrentUser(user);
         const userRef = doc(db, "users", user.uid);
-        const unsubscribeData = onSnapshot(userRef, (docSnap) => {
+        
+        const unsubscribeData = onSnapshot(userRef, async (docSnap) => {
           if (docSnap.exists()) {
             const data = docSnap.data();
+            
+            // USE THE UNIFIED FIELD NAME: likedCareers
             const likedIds = data.likedCareers || [];
-            setSavedCareers(careerOptions.filter(c => likedIds.includes(c.id)));
+            
+            // SYNC SAVED CAREERS: Using String conversion to avoid 1 !== "1" errors
+            const syncedCareers = careerOptions.filter(career => 
+              likedIds.some((id: any) => String(id) === String(career.id))
+            );
+            
+            // SYNC RECOMMENDATIONS: Careers NOT in the liked list
+            const recommended = careerOptions
+              .filter(career => !likedIds.some((id: any) => String(id) === String(career.id)))
+              .slice(0, 3);
+
+            setSavedCareers(syncedCareers);
             setQuizResults(data.quizResults || []);
-            setRecommendations(careerOptions.filter(c => !likedIds.includes(c.id)).slice(0, 3));
-          }
+            setRecommendations(careerOptions
+      .filter(c => !likedIds.some((id: any) => String(id) === String(c.id)))
+      .slice(0, 3)
+    );
+          }else {
+    // CRITICAL: If the document doesn't exist, create it now!
+    // This happens for first-time social logins (Google/GitHub)
+    await setDoc(userRef, {
+      likedCareers: [],
+      quizResults: [],
+      email: user.email,
+      createdAt: new Date().toISOString()
+    });
+  } 
         });
         return () => unsubscribeData();
       } else {
         router.push("/login");
       }
     });
-
     return () => unsubscribeAuth();
   }, [router]);
 
-  const handleClearHistory = async () => {
-    if (!window.confirm("Are you sure? This will wipe your entire mission history!")) return;
-    if (!currentUser) return;
-    const userRef = doc(db, "users", currentUser.uid);
-    try { await updateDoc(userRef, { quizResults: [] }); } 
-    catch (error) { console.error(error); }
-  };
-
-  const handleRetake = () => router.push("/quiz");
-  const toggleSave = async (careerId: number) => {
-    if (!currentUser) return;
-    const userRef = doc(db, "users", currentUser.uid);
-    const isSaved = savedCareers.some(c => c.id === careerId);
-    try {
-      await updateDoc(userRef, {
-        likedCareers: isSaved ? arrayRemove(careerId) : arrayUnion(careerId)
-      });
-    } catch (err) { console.error(err); }
+  const handleLogout = async () => {
+    await signOut(auth);
+    router.push("/landing");
   };
 
   if (!mounted || !currentUser) return null;
 
+  const handleRetake = () => router.push("/quiz");
+
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans">
-      
-
+      <RevealOnScroll>
       <div className="max-w-7xl mx-auto px-8 py-12">
-        <header className="mb-12">
-          <div className="flex items-center gap-2 text-orange-600 font-bold text-sm uppercase tracking-widest mb-2">
-            <Zap size={16} fill="currentColor" />
-            <span>Progress Overview</span>
+        <header className="mb-12 flex justify-between items-start">
+          <div>
+            <TiltCard>
+            <div className="flex items-center gap-2 text-orange-600 font-bold text-sm uppercase tracking-widest mb-2">
+              <Zap size={16} fill="currentColor" />
+              <span>Progress Overview</span>
+            </div>
+            <h1 className="text-6xl font-black uppercase italic tracking-tighter">
+              Student <span className="text-orange-600">Command Center*</span>
+            </h1>
+            </TiltCard>
           </div>
-          <h1 className="text-6xl font-black uppercase italic tracking-tighter">
-            Student <span className="text-orange-600">Command Center*</span>
-          </h1>
+          <button 
+            onClick={handleLogout}
+            className="bg-slate-100 dark:bg-slate-800 px-4 py-2 rounded-xl text-xs font-black uppercase italic hover:bg-red-500 hover:text-white transition"
+          >
+            Logout
+          </button>
         </header>
 
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-12">
             {/* Favourites Section */}
             <section>
+              < TiltCard>
               <h2 className="text-2xl font-black uppercase italic mb-6 flex items-center gap-3">
                 <Heart size={24} className="text-orange-600" fill="currentColor" /> My Favourites
               </h2>
@@ -122,10 +183,12 @@ export default function Dashboard() {
                   ))}
                 </div>
               )}
+              </TiltCard>
             </section>
 
             {/* Quiz Results Section */}
             <section>
+              <TiltCard>
               <div className="flex justify-between items-end mb-6">
                 <h2 className="text-2xl font-black uppercase italic flex items-center gap-3">
                   <Award size={24} className="text-orange-600" /> Recent Quiz Results
@@ -149,15 +212,17 @@ export default function Dashboard() {
                   <tbody className="divide-y-2 divide-slate-200 dark:divide-slate-700">
                     {quizResults.length === 0 ? (
                       <tr>
-                        <td colSpan={4} className="px-6 py-16 text-center">
+                        <td colSpan={3} className="px-6 py-16 text-center">
                           <p className="font-bold text-slate-400 dark:text-slate-500 italic mb-4">No missions completed yet.</p>
                           <button onClick={handleRetake} className="bg-slate-900 dark:bg-orange-600 text-white px-6 py-2 rounded-full font-black uppercase italic text-xs">Start First Mission</button>
                         </td>
                       </tr>
                     ) : (
-                      quizResults.map((q) => (
-                        <tr key={q.id} className="hover:bg-white dark:hover:bg-slate-700 transition group">
-                          <td className="px-6 py-4 font-black italic text-slate-900 dark:text-slate-100">{careerOptions.find(c => c.id === q.id)?.title || q.quizName}</td>
+                      quizResults.map((q, idx) => (
+                        <tr key={idx} className="hover:bg-white dark:hover:bg-slate-700 transition group">
+                          <td className="px-6 py-4 font-black italic text-slate-900 dark:text-slate-100">
+                            {careerOptions.find(c => String(c.id) === String(q.id))?.title || q.quizName}
+                          </td>
                           <td className="px-6 py-4 text-slate-500 dark:text-slate-400 font-bold text-sm">
                             {new Date(q.createdAt).toLocaleDateString()}
                           </td>
@@ -172,11 +237,13 @@ export default function Dashboard() {
                   </tbody>
                 </table>
               </div>
+              </TiltCard>
             </section>
           </div>
 
           {/* Sidebar */}
           <div className="space-y-12">
+            <TiltCard>
             <section className="bg-orange-600 dark:bg-orange-700 text-white p-8 rounded-[40px] shadow-xl relative overflow-hidden">
               <Target className="absolute -right-4 -bottom-4 opacity-20 w-32 h-32" />
               <h3 className="text-2xl font-black uppercase italic mb-4">AI Recommendations</h3>
@@ -192,8 +259,11 @@ export default function Dashboard() {
                 ))}
               </div>
             </section>
+            </TiltCard>
+            <TiltCard>
 
             <section className="border-4 border-slate-900 dark:border-slate-700 p-8 rounded-[40px]">
+              
               <h3 className="text-xl font-black uppercase italic mb-4">Quick Stats</h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center pb-4 border-b-2 border-slate-100 dark:border-slate-700">
@@ -206,9 +276,11 @@ export default function Dashboard() {
                 </div>
               </div>
             </section>
+            </TiltCard>
           </div>
         </div>
       </div>
+      </RevealOnScroll>
     </div>
   );
 }

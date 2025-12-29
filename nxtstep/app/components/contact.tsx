@@ -1,6 +1,12 @@
 "use client";
 import React, { useState } from 'react';
-import { Mail, Phone, MessageSquare, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare, ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
+import { db } from "@/lib/firebase"; // Make sure your firebase is imported
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { RevealOnScroll } from './reveal';
+import {TiltCard} from './tilteffect';  
+// import emailjs from '@emailjs/browser';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -15,6 +21,21 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    try {
+    // This is the "Real" working part
+    await addDoc(collection(db, "contactMessages"), {
+      ...formData,
+      timestamp: serverTimestamp(),
+    });
+
+    setIsSubmitting(false);
+    setSubmitted(true);
+    setFormData({ name: '', email: '', subject: 'General Inquiry', message: '' });
+  } catch (error) {
+    console.error("Error sending message: ", error);
+    alert("Something went wrong. Please try again!");
+    setIsSubmitting(false);
+  }
     
     // Logic: You can use 'addDoc(collection(db, "messages"), formData)' 
     // here to save these to Firestore!
@@ -29,6 +50,7 @@ export default function ContactPage() {
   return (
     // 1. MAIN CONTAINER: Added dark:bg-slate-950 and dark:text-white
     <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-white font-sans transition-colors duration-300">
+      <RevealOnScroll>
       
       <main className="max-w-7xl mx-auto px-8 py-16 grid lg:grid-cols-2 gap-16 items-center">
         
@@ -76,6 +98,7 @@ export default function ContactPage() {
 
         {/* RIGHT SIDE: THE FORM */}
         <div className="relative">
+          <TiltCard>
           <div className="absolute inset-0 bg-orange-600 rounded-[40px] translate-x-4 translate-y-4 -z-10"></div>
           
           {/* 2. FORM CONTAINER: Added dark:bg-slate-900 and dark:border-slate-700 */}
@@ -157,8 +180,10 @@ export default function ContactPage() {
               </form>
             )}
           </div>
+          </TiltCard>
         </div>
       </main>
+      </RevealOnScroll>
     </div>
   );
 }
