@@ -1,0 +1,182 @@
+[debug] [2026-01-15T18:08:27.367Z] ----------------------------------------------------------------------
+[debug] [2026-01-15T18:08:27.369Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ak061\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2026-01-15T18:08:27.369Z] CLI Version:   15.3.0
+[debug] [2026-01-15T18:08:27.369Z] Platform:      win32
+[debug] [2026-01-15T18:08:27.369Z] Node Version:  v22.15.0
+[debug] [2026-01-15T18:08:27.370Z] Time:          Thu Jan 15 2026 23:38:27 GMT+0530 (India Standard Time)
+[debug] [2026-01-15T18:08:27.370Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-01-15T18:08:28.826Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-15T18:08:28.826Z] > authorizing via signed-in user (arynkr07@gmail.com)
+[debug] [2026-01-15T18:08:28.826Z] [iam] checking project nxtstep-07 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-01-15T18:08:28.827Z] Checked if tokens are valid: true, expires at: 1768502492326
+[debug] [2026-01-15T18:08:28.828Z] Checked if tokens are valid: true, expires at: 1768502492326
+[debug] [2026-01-15T18:08:28.828Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nxtstep-07:testIamPermissions [none]
+[debug] [2026-01-15T18:08:28.828Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/nxtstep-07:testIamPermissions x-goog-quota-user=projects/nxtstep-07
+[debug] [2026-01-15T18:08:28.828Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nxtstep-07:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-01-15T18:08:30.391Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nxtstep-07:testIamPermissions 200
+[debug] [2026-01-15T18:08:30.391Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nxtstep-07:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-01-15T18:08:30.392Z] Checked if tokens are valid: true, expires at: 1768502492326
+[debug] [2026-01-15T18:08:30.392Z] Checked if tokens are valid: true, expires at: 1768502492326
+[debug] [2026-01-15T18:08:30.393Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nxtstep-07 [none]
+[debug] [2026-01-15T18:08:30.845Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nxtstep-07 200
+[debug] [2026-01-15T18:08:30.845Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nxtstep-07 {"projectId":"nxtstep-07","projectNumber":"848547852569","displayName":"nxtstep-07","name":"projects/nxtstep-07","resources":{"hostingSite":"nxtstep-07"},"state":"ACTIVE","etag":"1_1dc8d8d0-027a-4db2-b459-d165a32e5c63"}
+[debug] [2026-01-15T18:08:33.038Z] Checked if tokens are valid: true, expires at: 1768502492326
+[debug] [2026-01-15T18:08:33.038Z] Checked if tokens are valid: true, expires at: 1768502492326
+[debug] [2026-01-15T18:08:33.038Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/nxtstep-07/sites pageToken=&pageSize=10
+[debug] [2026-01-15T18:08:35.173Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/nxtstep-07/sites 200
+[debug] [2026-01-15T18:08:35.173Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/nxtstep-07/sites {"sites":[{"name":"projects/nxtstep-07/sites/nxtstep-07","defaultUrl":"https://nxtstep-07.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2026-01-15T18:08:35.173Z] Checked if tokens are valid: true, expires at: 1768502492326
+[debug] [2026-01-15T18:08:35.173Z] Checked if tokens are valid: true, expires at: 1768502492326
+[debug] [2026-01-15T18:08:35.174Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/nxtstep-07/sites 
+[debug] [2026-01-15T18:08:35.605Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/nxtstep-07/sites 200
+[debug] [2026-01-15T18:08:35.605Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/nxtstep-07/sites {"sites":[{"name":"projects/nxtstep-07/sites/nxtstep-07","defaultUrl":"https://nxtstep-07.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2026-01-15T18:08:35.605Z] Checked if tokens are valid: true, expires at: 1768502492326
+[debug] [2026-01-15T18:08:35.605Z] Checked if tokens are valid: true, expires at: 1768502492326
+[debug] [2026-01-15T18:08:35.606Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nxtstep-07/webApps/-/config [none]
+[debug] [2026-01-15T18:08:36.285Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nxtstep-07/webApps/-/config 200
+[debug] [2026-01-15T18:08:36.285Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nxtstep-07/webApps/-/config {"projectId":"nxtstep-07","storageBucket":"nxtstep-07.firebasestorage.app","apiKey":"AIzaSyBukNA7LTceVOnFBGCo3PEfv_ZKfYq4GDo","authDomain":"nxtstep-07.firebaseapp.com","messagingSenderId":"848547852569","projectNumber":"848547852569","version":"2"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2026-01-15T18:08:41.741Z] Checked if tokens are valid: true, expires at: 1768502492326
+[debug] [2026-01-15T18:08:41.742Z] Checked if tokens are valid: true, expires at: 1768502492326
+[debug] [2026-01-15T18:08:41.742Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/nxtstep-07/sites/nxtstep-07 [none]
+[debug] [2026-01-15T18:08:43.490Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/nxtstep-07/sites/nxtstep-07 200
+[debug] [2026-01-15T18:08:43.490Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/nxtstep-07/sites/nxtstep-07 {"name":"projects/nxtstep-07/sites/nxtstep-07","defaultUrl":"https://nxtstep-07.web.app","type":"DEFAULT_SITE"}
+[info]  ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\ak061\package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * C:\Users\ak061\OneDrive\Documents\GitHub\NXTSTEP\nxtstep\package-lock.json
+
+
+[info]    ▲ Next.js 15.5.2
+
+[info]    - Environments: .env.local
+
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully in 2.6s
+
+[info]    Linting and checking validity of types ...
+
+[info] 
+Failed to compile.
+
+./app/api/chat/route.ts
+46:19  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/api/roadmap/route.tsx
+4:7  Warning: 'genAI' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+62:19  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/api/user/route.ts
+1:10  Warning: 'NextRequest' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./app/components/ChatWidget.tsx
+39:14  Warning: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./app/components/contact.tsx
+3:23  Warning: 'MapPin' is defined but never used.  @typescript-eslint/no-unused-vars
+3:52  Warning: 'ArrowLeft' is defined but never used.  @typescript-eslint/no-unused-vars
+4:8  Warning: 'Link' is defined but never used.  @typescript-eslint/no-unused-vars
+66:18  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+112:79  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./app/components/themeProvider.tsx
+6:55  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/dashboard/page.tsx
+35:50  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+84:34  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+88:19  Warning: 'recommended' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+89:53  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+95:40  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/forgot/page.tsx
+22:19  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+49:89  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+57:92  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./app/landing/page.tsx
+4:3  Warning: 'Mail' is defined but never used.  @typescript-eslint/no-unused-vars
+4:9  Warning: 'Phone' is defined but never used.  @typescript-eslint/no-unused-vars
+4:16  Warning: 'MapPin' is defined but never used.  @typescript-eslint/no-unused-vars
+5:3  Warning: 'Scroll' is defined but never used.  @typescript-eslint/no-unused-vars
+8:16  Warning: 'db' is defined but never used.  @typescript-eslint/no-unused-vars
+12:8  Warning: 'Navbar' is defined but never used.  @typescript-eslint/no-unused-vars
+17:10  Warning: 'isLoggedIn' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+50:69  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+50:80  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+53:15  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+53:36  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+53:50  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+53:76  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+91:51  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+91:71  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+112:66  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+112:77  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+167:17  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+167:134  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+171:17  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+171:132  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+190:16  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./app/options/page.tsx
+3:8  Warning: 'Link' is defined but never used.  @typescript-eslint/no-unused-vars
+5:31  Warning: 'ArrowRight' is defined but never used.  @typescript-eslint/no-unused-vars
+21:38  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+22:36  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+162:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+203:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+203:17  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+207:141  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+207:165  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./app/page.tsx
+1:8  Warning: 'Image' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./app/profile/page.tsx
+11:44  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/quiz/ChatbotPanel.tsx
+66:13  Error: 'text' is never reassigned. Use 'const' instead.  prefer-const
+87:13  Error: 'newAnswers' is never reassigned. Use 'const' instead.  prefer-const
+88:37  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+126:75  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./app/quiz/HowToPursueDetail.tsx
+130:46  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+133:37  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+133:62  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./app/quiz/page.tsx
+18:54  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+96:29  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+96:118  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+
+./lib/firebase.ts
+3:10  Warning: 'getAnalytics' is defined but never used.  @typescript-eslint/no-unused-vars
+4:19  Warning: 'createUserWithEmailAndPassword' is defined but never used.  @typescript-eslint/no-unused-vars
+5:10  Warning: 'sub' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./lib/mongodb.ts
+10:5  Error: 'cached' is never reassigned. Use 'const' instead.  prefer-const
+10:25  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+
+[debug] [2026-01-15T18:08:53.468Z] Error: ENOENT: no such file or directory, open 'C:\Users\ak061\OneDrive\Documents\GitHub\NXTSTEP\nxtstep\.next\export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
