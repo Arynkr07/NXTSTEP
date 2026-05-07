@@ -22,29 +22,31 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-    // This is the "Real" working part
-    await addDoc(collection(db, "contactMessages"), {
-      ...formData,
-      timestamp: serverTimestamp(),
-    });
+      // 1. Write to Firestore
+      await addDoc(collection(db, "contactMessages"), {
+        ...formData,
+        timestamp: serverTimestamp(),
+      });
 
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ name: '', email: '', subject: 'General Inquiry', message: '' });
-  } catch (error) {
-    console.error("Error sending message: ", error);
-    alert("Something went wrong. Please try again!");
-    setIsSubmitting(false);
-  }
+      // 2. Handle Success
+      setSubmitted(true);
+      setFormData({ name: '', email: '', subject: 'General Inquiry', message: '' });
+    } catch (error) {
+      console.error("Error sending message: ", error);
+      alert("Something went wrong. Please try again!");
+    } finally {
+      // 3. Always stop the loading spinner
+      setIsSubmitting(false);
+    }
     
     // Logic: You can use 'addDoc(collection(db, "messages"), formData)' 
     // here to save these to Firestore!
     
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', subject: 'General Inquiry', message: '' });
-    }, 1500);
+    // setTimeout(() => {
+    //   setIsSubmitting(false);
+    //   setSubmitted(true);
+    //   setFormData({ name: '', email: '', subject: 'General Inquiry', message: '' });
+    // }, 1500);
   };
 
   return (
