@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            background-color: #0073b1;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .career-list {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .career-box {
+            margin: 10px 0;
+        }
+        .career-link {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 18px;
+            color: #0073b1;
+            border: 1px solid #0073b1;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .career-link:hover {
+            background-color: #0073b1;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Career Links</h1>
+    <div class="career-list">
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Doctor" target="_blank">Doctor</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Engineer" target="_blank">Engineer</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Historian" target="_blank">Historian</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Physicist" target="_blank">Physicist</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Mathematician" target="_blank">Mathematician</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Teacher" target="_blank">Teacher</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Lawyer" target="_blank">Lawyer</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Pilot" target="_blank">Pilot</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Chef" target="_blank">Chef</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Artist" target="_blank">Artist</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Software+Developer" target="_blank">Software Developer</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Game+Developer" target="_blank">Game Developer</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Dentist" target="_blank">Dentist</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Astronaut" target="_blank">Astronaut</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Fashion+Designer" target="_blank">Fashion Designer</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Psychologist" target="_blank">Psychologist</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Entrepreneur" target="_blank">Entrepreneur</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Cybersecurity+Expert" target="_blank">Cybersecurity Expert</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Veterinarian" target="_blank">Veterinarian</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Data+Analyst" target="_blank">Data Analyst</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Content+Writer" target="_blank">Content Writer</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Digital+Marketer" target="_blank">Digital Marketer</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Journalist" target="_blank">Journalist</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Nurse" target="_blank">Nurse</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Biologist" target="_blank">Biologist</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Economist" target="_blank">Economist</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Chemist" target="_blank">Chemist</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Pharmacist" target="_blank">Pharmacist</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Translator" target="_blank">Translator</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Social+Worker" target="_blank">Social Worker</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Environmentalist" target="_blank">Environmentalist</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Interior+Designer" target="_blank">Interior Designer</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Event+Planner" target="_blank">Event Planner</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Mechanical+Engineer" target="_blank">Mechanical Engineer</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Civil+Engineer" target="_blank">Civil Engineer</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=AI+Engineer" target="_blank">AI Engineer</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Graphic+Designer" target="_blank">Graphic Designer</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Photographer" target="_blank">Photographer</a></div>
+        <div class="career-box"><a class="career-link" href="https://www.linkedin.com/jobs/search/?keywords=Actor" target="_blank">Actor</a></div>
+    </div>
+</body>
+</html>
