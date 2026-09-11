@@ -1,0 +1,1739 @@
+SKILL,TASK
+Physical Demand,Content/Physical tasks/
+Furniture Moving,Content/Physical tasks/
+Milling,Content/Physical tasks/
+Spot Welding,Content/Physical tasks/
+Waste Removal,Content/Physical tasks/
+Antenna Installation,Content/Physical tasks/
+Working With Patient And/Or Condition: Physical Disability,Content/Physical tasks/Strength
+Heavy Lifting,Content/Physical tasks/Strength
+Working With Patient And/Or Condition: Bathing,Content/Physical tasks/Strength
+Digging Trenches,Content/Physical tasks/Strength
+Weeding,Content/Physical tasks/Strength
+Typing,Content/Physical tasks/Dexterity
+Surgery,Content/Physical tasks/Dexterity
+Packaging,Content/Physical tasks/Dexterity
+Plumbing,Content/Physical tasks/Dexterity
+Welding,Content/Physical tasks/Dexterity
+Cash Handling,Content/Physical tasks/Dexterity
+Electrical Work,Content/Physical tasks/Dexterity
+Repair,Content/Physical tasks/Dexterity
+Food Preparation,Content/Physical tasks/Dexterity
+Graphic Design,Content/Physical tasks/Dexterity
+Painting,Content/Physical tasks/Dexterity
+Housekeeping,Content/Physical tasks/Dexterity
+Carpentry,Content/Physical tasks/Dexterity
+Wiring,Content/Physical tasks/Dexterity
+Laundry,Content/Physical tasks/Dexterity
+Product Design,Content/Physical tasks/Dexterity
+Calibration,Content/Physical tasks/Dexterity
+Technical Drawings,Content/Physical tasks/Dexterity
+Meal Preparation,Content/Physical tasks/Dexterity
+Roofing,Content/Physical tasks/Dexterity
+Ironing,Content/Physical tasks/Dexterity
+Insulation,Content/Physical tasks/Dexterity
+Home Building,Content/Physical tasks/Dexterity
+Manual Dexterity,Content/Physical tasks/Dexterity
+Masonry,Content/Physical tasks/Dexterity
+Framing,Content/Physical tasks/Dexterity
+Bed Making and Linen Changes,Content/Physical tasks/Dexterity
+Orthopaedic Surgery,Content/Physical tasks/Dexterity
+Spray Painting,Content/Physical tasks/Dexterity
+Door Installation,Content/Physical tasks/Dexterity
+Switchboard Operator,Content/Physical tasks/Dexterity
+Basic Carpentry,Content/Physical tasks/Dexterity
+Cabinetry,Content/Physical tasks/Dexterity
+Remodelling,Content/Physical tasks/Dexterity
+Signage,Content/Physical tasks/Dexterity
+Concrete Finishing,Content/Physical tasks/Dexterity
+Exercise to Music,Content/Physical tasks/Dexterity
+Woodwork,Content/Physical tasks/Dexterity
+Drywall,Content/Physical tasks/Dexterity
+Colour Matching,Content/Physical tasks/Dexterity
+Metal Forming,Content/Physical tasks/Dexterity
+Epoxy,Content/Physical tasks/Dexterity
+Concrete Mixing,Content/Physical tasks/Dexterity
+Weeding,Content/Physical tasks/Dexterity
+Basic Tools,Content/Physical tasks/Dexterity
+Highway Construction,Content/Physical tasks/Dexterity
+Paving,Content/Physical tasks/Dexterity
+Rebar,Content/Physical tasks/Dexterity
+Exterior Painting,Content/Physical tasks/Dexterity
+Interior Painting,Content/Physical tasks/Dexterity
+Window Installation,Content/Physical tasks/Dexterity
+Woodworking Machines,Content/Physical tasks/Dexterity
+Insulation Installation,Content/Physical tasks/Dexterity
+Form Building,Content/Physical tasks/Dexterity
+Bridge Construction,Content/Physical tasks/Dexterity
+Concrete Pouring,Content/Physical tasks/Dexterity
+Screeds,Content/Physical tasks/Dexterity
+Chain Saws,Content/Physical tasks/Dexterity
+Commercial Roofing,Content/Physical tasks/Dexterity
+Roofing Materials,Content/Physical tasks/Dexterity
+2D Animation,Content/Physical tasks/Dexterity
+Metal Roofing,Content/Physical tasks/Dexterity
+Mixing Machines,Content/Physical tasks/Dexterity
+Woodworking Tools,Content/Physical tasks/Dexterity
+Organ Transplantation,Content/Physical tasks/Dexterity
+Wood Assembly,Content/Physical tasks/Dexterity
+Trim Carpentry,Content/Physical tasks/Dexterity
+Cabinet Installation,Content/Physical tasks/Dexterity
+Bridge Repair,Content/Physical tasks/Dexterity
+Submerged Arc Welding,Content/Physical tasks/Dexterity
+Shingle,Content/Physical tasks/Dexterity
+Concrete Placement,Content/Physical tasks/Dexterity
+Piping Replacement,Content/Physical tasks/Dexterity
+Commercial Carpentry,Content/Physical tasks/Dexterity
+Concrete Forming,Content/Physical tasks/Dexterity
+Residential Painting,Content/Physical tasks/Dexterity
+Apartment Maintenance,Content/Physical tasks/Dexterity
+Metal Framing,Content/Physical tasks/Dexterity
+Rubber Mallets,Content/Physical tasks/Dexterity
+Spray Foam (Insulation),Content/Physical tasks/Dexterity
+Cabinet Repair,Content/Physical tasks/Dexterity
+Frame Carpentry,Content/Physical tasks/Dexterity
+Carpenter Assistance,Content/Physical tasks/Dexterity
+Finish Carpentry,Content/Physical tasks/Dexterity
+Prepare Calibration Solutions,Content/Physical tasks/Dexterity
+Wood Framing,Content/Physical tasks/Dexterity
+Rough Carpentry,Content/Physical tasks/Dexterity
+Drywall Repair,Content/Physical tasks/Dexterity
+Drywall Installation,Content/Physical tasks/Dexterity
+Sighting Rods,Content/Physical tasks/Dexterity
+Form Carpentry,Content/Physical tasks/Dexterity
+Cement Masonry,Content/Physical tasks/Dexterity
+Painter Assistance,Content/Physical tasks/Dexterity
+Crown Moulding,Content/Physical tasks/Dexterity
+Drywall Finishing,Content/Physical tasks/Dexterity
+Carpenter's Levels,Content/Physical tasks/Dexterity
+Low-Slope Roofing,Content/Physical tasks/Dexterity
+Product Delivery,Content/Physical tasks/Navigation
+Lawn Mowing,Content/Physical tasks/Navigation
+Data Entry,Content/Intellectual tasks/Information processing/
+Colour Matching,Content/Intellectual tasks/Information processing/Processing of uncodified information
+Data Transformation,Content/Intellectual tasks/Information processing/Processing of codified information/
+English,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+Writing,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+Written Communication,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+Editing,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+Report Writing,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+French,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+German,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+Spanish,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+Proofreading,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+Dictation,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+Mail Sorting,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+Arabic,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+Legal Document Composition,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+Sign Language,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+Swedish,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+Shorthand,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+Transcription,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/
+Administrative Support,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Finance,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Business Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Cost Control,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Service Level Agreement,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Contract Management,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Business Intelligence,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Contract Preparation,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Contract Review,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Due Diligence,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Process Design,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Content Management,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Procurement Contracts,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Legal Compliance,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Business Systems Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Root Cause Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Business Case Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Newsletters,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Training Materials,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Copy Writing,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Prepare Presentations,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Preparing Reports,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+International Financial Reporting Standards,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Legal Support,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Copywriting,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Progress Reports,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Contract Administration,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Business Operations,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Request for Proposal (RFP),Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Contract Negotiation,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Category Management,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Profit Targets,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Taking Messages,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Contract Draughting,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Ad Hoc Reporting,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Process Management,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Note Taking,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Business Systems,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Decision Support,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Sales Contracts,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Business Intelligence Reporting,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Corporate Tax Returns,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Ad Hoc Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+TIBCO,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Office Supply Ordering,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Procedure Development,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Cost Efficiency,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Flow Diagrams,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Business Requirements Documentation,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Business Modelling,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Problem Identification,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Business Metrics,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Memorandums Preparation,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Process Architecture,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Business Case Creation,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Profit and Loss Control,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Confidentiality Agreements,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Workflow Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Contract Implementation,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Supplier Contract Negotiation,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Contract Interpretation,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Task Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Total Quality Management,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Procedure Establishment,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Contract Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Profitability Improvement,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Rules Engines,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Contract Processing,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Report Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Process Refinement,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Life Cycle Cost Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Anaplan,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Business and Processing Documentation,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Mail Processing,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Software AG,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Decision Support Systems,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Complex Event Processing (CEP),Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Design Evaluation,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Business Statistics,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Contract Auditing,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Business Intelligence Reporting Tools (BIRT),Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Expense Report Processing,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Supply Ordering,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Domo,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Route Auditing,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Oracle Demantra,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Oracle Business Activity Monitoring (BAM),Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Damage Prevention,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Direct Store Delivery (DSD),Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Process Isolation,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Business
+Research,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Technical
+Technical Support,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Technical
+It Support,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Technical
+Technical Writing / Editing,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Technical
+Application Support,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Technical
+Preparing Reports,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Technical
+Contract Draughting,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Technical
+Ad Hoc Reporting,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Technical
+Ad Hoc Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Technical
+System Documentation,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Technical
+Policy Review,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Technical
+Data Documentation,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Technical
+Building Science,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Technical
+Medical Translation,Content/Intellectual tasks/Information processing/Processing of codified information/Literacy/Technical
+Finance,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/
+Budgeting,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Accounting,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Key Performance Indicators (KPIs),Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Cost Control,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Data Entry,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Calculation,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Account Reconciliation,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Invoicing,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Invoice Processing,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Financial Reporting,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Record Keeping,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Balance Sheet,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Payroll Processing,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Customer Billing,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Estimating,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Financial Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Costing,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Financial Accounting,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Bookkeeping,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+VAT Returns,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Bank Reconciliation,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Financial Controls,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Accruals,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Statutory Accounts,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Financial Statements,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Account Closing,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Accounts Payable / Accounts Receivable,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Accounting Systems,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Cost Estimation,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Account Auditing,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+General Ledger,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Cost Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Financial Advising,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Corporate Tax Returns,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Payroll Administration,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Retail Accounts,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Revenue Recognition,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Cost Accounting,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Benefits Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Expense Reports,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Budget Forecasting,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Job Costing,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Marketing Performance Measurement,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Financial Statement Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Business Intelligence Data Modelling,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Full Cycle Accounts Payable,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Advanced Data Entry,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Accounting
+Business Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Data Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Estimating,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Benchmarking,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Machine Learning,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Statistics,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Data Science,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Variance Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Cash Flow Forecasting,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Cost Estimation,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Data Modelling,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Financial Modelling,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Statistical Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Interior Design,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Data Manipulation,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Pricing,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Data Mining,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Data Capture,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Data Visualisation,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Data Governance,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Big Data Analytics,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Architectural Design,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Residential Design,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Predictive Models,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Natural Language Processing,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Quantitative Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Benefits Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Building Design,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Project Architecture,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Space Planning,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Geometry,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Statistical Methods,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Data Reports,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Computer Vision,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Predictive Analytics,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Mathematical Modelling,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Deep Learning,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Model Building,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Sales Trend Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Pipeline (Computing),Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Cluster Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Multivariate Testing,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Stochastic Processes,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Neural Networks,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Statistical Process Control (SPC),Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Sustainability Consulting,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Data Conversion,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Data Trending,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Decision Trees,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Quantitative Data Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Calculus,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Sustainable Design,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Revenue Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Logistic Regression,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Data Cleaning,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Building Performance,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Schematic Design,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Regression Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Text Mining,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Time Series Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Analytical Functions,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Applied Statistics,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Professional Architect,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Data Encryption,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Algebra,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+trigonometry,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Time Series Models,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Speech Recognition,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Linear Regression,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Interior Architecture,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Ontologies,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Linear Algebra,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Shop Drawings,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Recommender Systems,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Analysis Of Variance (ANOVA),Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Random Forests,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Support Vector Machines (SVM),Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Sentiment Analysis / Opinion Mining,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Factor Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Decision Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Monte Carlo Simulation,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Differential Equations,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Analysis Computing Tools,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Data Evaluation,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Social Network Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Metadata Design,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Computational Linguistics,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Exploratory Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Bayesian Methods,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Data Quality Assessment,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Time Series Forecasting,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Statistical Forecasting,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Green Building,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Qualitative Data Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Advanced Statistics,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Information Extraction,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Survival Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+K-Means,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Window Treatments,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Generalised Linear Model (GLM),Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Linear Programming,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Tokenisation,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Correlation Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Bayesian Networks,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Markov Chains,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Principal Component Analysis (PCA),Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Machine Translation (MT),Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Naive Bayes,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Object Recognition,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Semi-Structured Data,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Multiple Regression,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Natural Language Toolkit (NLTK),Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Automatic Speech Recognition (ASR),Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Text to Speech (TTS),Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Multivariate Regression,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Bayesian Modelling,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Object Tracking,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Kernel Methods,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Graph-Based Algorithms,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Web Mining,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+OpenNLP,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Multi-Layer Perceptron,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Leadership in Energy and Environmental Design (LEED),Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Stochastic Optimisation,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Nearest Neighbour Algorithm,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Latent Dirichlet Allocation,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Sentiment Classification,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Lexical Semantics,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Lexical Acquisition,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Energy Savings Calculations,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Latent Semantic Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Lexalytics,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Logit Analysis,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Fuzzy Clustering,Content/Intellectual tasks/Information processing/Processing of codified information/Numeracy/Analytic
+Problem Solving,Content/Intellectual tasks/Problem solving/
+Troubleshooting,Content/Intellectual tasks/Problem solving/
+Analytical Skills,Content/Intellectual tasks/Problem solving/
+Decision Making,Content/Intellectual tasks/Problem solving/
+Project Planning and Development Skills,Content/Intellectual tasks/Problem solving/
+Optimisation,Content/Intellectual tasks/Problem solving/
+Test Equipment,Content/Intellectual tasks/Problem solving/
+Retail Buying,Content/Intellectual tasks/Problem solving/
+Internal Control Procedures,Content/Intellectual tasks/Problem solving/
+Issue Investigation,Content/Intellectual tasks/Problem solving/
+Process Flow Development,Content/Intellectual tasks/Problem solving/
+Internal Controls Testing,Content/Intellectual tasks/Problem solving/
+Internal Control Evaluation,Content/Intellectual tasks/Problem solving/
+Management Reporting,Content/Intellectual tasks/Problem solving/Information gathering/
+Purchasing,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Data Entry,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Record Keeping,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Sorting,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Claims Adjustments,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Troubleshooting Technical Issues,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Filing,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Data Collection,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Online Research,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Market Analysis,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Site Surveys,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+File Management,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Requirements Verification and Validation,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Mail Sorting,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Note Taking,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Data Validation,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Data Verification,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Document Sorting,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Operational Qualification (OQ),Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Mail Distribution,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Managing Student Data,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Maintaining Student Records,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Cleaning Validation,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Document Retrieval,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+Retail Inventory,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+City Ledger,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+508 Compliance Testing,Content/Intellectual tasks/Problem solving/Information gathering/Info search and retrieval
+New Business Development,Content/Intellectual tasks/Problem solving/Information gathering/Conceptualization
+Root Cause Analysis,Content/Intellectual tasks/Problem solving/Information gathering/Conceptualization
+Preparing Proposals,Content/Intellectual tasks/Problem solving/Information gathering/Conceptualization
+System Architecture,Content/Intellectual tasks/Problem solving/Information gathering/Conceptualization
+Requirements Verification and Validation,Content/Intellectual tasks/Problem solving/Information gathering/Conceptualization
+Data Governance,Content/Intellectual tasks/Problem solving/Information gathering/Conceptualization
+Data Validation,Content/Intellectual tasks/Problem solving/Information gathering/Conceptualization
+Data Verification,Content/Intellectual tasks/Problem solving/Information gathering/Conceptualization
+Mathematical Modelling,Content/Intellectual tasks/Problem solving/Information gathering/Conceptualization
+Product Naming,Content/Intellectual tasks/Problem solving/Information gathering/Conceptualization
+Business Strategy,Content/Intellectual tasks/Problem solving/Creativity and resolution/
+Strategic Leadership,Content/Intellectual tasks/Problem solving/Creativity and resolution/
+Strategic Management,Content/Intellectual tasks/Problem solving/Creativity and resolution/
+Financial Strategy,Content/Intellectual tasks/Problem solving/Creativity and resolution/
+Strategic Analysis,Content/Intellectual tasks/Problem solving/Creativity and resolution/
+Growth Strategies,Content/Intellectual tasks/Problem solving/Creativity and resolution/
+Creativity,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Graphic Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Painting,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Product Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Strategic Development,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+New Product Development,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Technical Drawings,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Visual Merchandising,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Creative Problem Solving,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Digital Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+3D Modelling / Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Interior Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Creative Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Visual Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Architectural Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Interface Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Design Thinking,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Layout Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Lighting Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Print Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Bridge Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Vehicle Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Landscaping,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Advertising Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Freelance Graphics,Content/Intellectual tasks/Problem solving/Creativity and resolution/Creativity
+Organisational Skills,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Project Management,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Business Development,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Time Management,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Scheduling,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Quality Assurance and Control,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Quality Management,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Prioritising Tasks,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Commissioning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Project Planning and Development Skills,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Business Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Care Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Enterprise Resource Planning (ERP),Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Risk Management,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Estimating,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Strategic Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Appointment Setting,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Travel Arrangements,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Resource Management,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Audit Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Event Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Project Design,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Lesson Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Disaster Recovery Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Business Operations,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Manufacturing Resource Planning (MRP),Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Sales Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Treatment Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Tax Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Media Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Business Continuity Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Brand Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Scenario Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Meeting Planning/Facilitation,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Forecasting,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Preparation Of Demonstrations,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Calendar Management,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Meeting Room Scheduling,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Banquet Event Orders (BEOs),Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Conservation Planning,Content/Intellectual tasks/Problem solving/Creativity and resolution/Planning
+Communication Skills,Content/Social tasks/
+Verbal / Oral Communication,Content/Social tasks/
+Listening,Content/Social tasks/
+Telephone Skills,Content/Social tasks/
+Oral Communication,Content/Social tasks/
+Customer Service,Content/Social tasks/Serving & attending
+Customer Contact,Content/Social tasks/Serving & attending
+Stakeholder Management,Content/Social tasks/Serving & attending
+Technical Support,Content/Social tasks/Serving & attending
+Troubleshooting,Content/Social tasks/Serving & attending
+It Support,Content/Social tasks/Serving & attending
+Customer Checkout,Content/Social tasks/Serving & attending
+Front Office,Content/Social tasks/Serving & attending
+Application Support,Content/Social tasks/Serving & attending
+Service Improvement,Content/Social tasks/Serving & attending
+Customer Accounts,Content/Social tasks/Serving & attending
+Public Relations,Content/Social tasks/Serving & attending
+Troubleshooting Technical Issues,Content/Social tasks/Serving & attending
+Guest Services,Content/Social tasks/Serving & attending
+Help Desk Support,Content/Social tasks/Serving & attending
+Compliance Management,Content/Social tasks/Serving & attending
+Taking Messages,Content/Social tasks/Serving & attending
+Refunds Exchanges and Adjustments,Content/Social tasks/Serving & attending
+Technical Assistance,Content/Social tasks/Serving & attending
+Client Service,Content/Social tasks/Serving & attending
+Hardware Support,Content/Social tasks/Serving & attending
+Phone Answering,Content/Social tasks/Serving & attending
+Message Delivery,Content/Social tasks/Serving & attending
+Teaching,"Content/Social tasks/Teaching, training, coaching"
+Presentation Skills,"Content/Social tasks/Teaching, training, coaching"
+Mentoring,"Content/Social tasks/Teaching, training, coaching"
+Training Programmes,"Content/Social tasks/Teaching, training, coaching"
+Faculty Training,"Content/Social tasks/Teaching, training, coaching"
+Onboarding,"Content/Social tasks/Teaching, training, coaching"
+Employee Training,"Content/Social tasks/Teaching, training, coaching"
+Employee Relations,"Content/Social tasks/Teaching, training, coaching"
+Staff Development,"Content/Social tasks/Teaching, training, coaching"
+Technical Training,"Content/Social tasks/Teaching, training, coaching"
+Sales Training,"Content/Social tasks/Teaching, training, coaching"
+Graduate Teaching,"Content/Social tasks/Teaching, training, coaching"
+Meeting Facilitation,"Content/Social tasks/Teaching, training, coaching"
+Technical Demonstrations,"Content/Social tasks/Teaching, training, coaching"
+Grand Rounds,"Content/Social tasks/Teaching, training, coaching"
+Sales,Content/Social tasks/Selling & influencing
+Building Effective Relationships,Content/Social tasks/Selling & influencing
+Business Development,Content/Social tasks/Selling & influencing
+Marketing,Content/Social tasks/Selling & influencing
+Social Media,Content/Social tasks/Selling & influencing
+Product Sales,Content/Social tasks/Selling & influencing
+Client Base Retention,Content/Social tasks/Selling & influencing
+Sales Management,Content/Social tasks/Selling & influencing
+Account Management,Content/Social tasks/Selling & influencing
+Business-to-Business,Content/Social tasks/Selling & influencing
+Sales Goals,Content/Social tasks/Selling & influencing
+Purchasing,Content/Social tasks/Selling & influencing
+E-Commerce,Content/Social tasks/Selling & influencing
+Negotiation Skills,Content/Social tasks/Selling & influencing
+Prospective Clients,Content/Social tasks/Selling & influencing
+Telesales,Content/Social tasks/Selling & influencing
+Customer Relationship Management (CRM),Content/Social tasks/Selling & influencing
+Merchandising,Content/Social tasks/Selling & influencing
+Fundraising,Content/Social tasks/Selling & influencing
+Digital Marketing,Content/Social tasks/Selling & influencing
+Sales Support,Content/Social tasks/Selling & influencing
+Cold Calling,Content/Social tasks/Selling & influencing
+Professional Services Marketing,Content/Social tasks/Selling & influencing
+Retail Sales,Content/Social tasks/Selling & influencing
+Litigation,Content/Social tasks/Selling & influencing
+Persuasion,Content/Social tasks/Selling & influencing
+Cross Sell,Content/Social tasks/Selling & influencing
+Description and Demonstration of Products,Content/Social tasks/Selling & influencing
+Direct Sales,Content/Social tasks/Selling & influencing
+Business-to-Business Sales,Content/Social tasks/Selling & influencing
+Technical Sales,Content/Social tasks/Selling & influencing
+Upselling Products and Services,Content/Social tasks/Selling & influencing
+Sales Engineering,Content/Social tasks/Selling & influencing
+Prospecting,Content/Social tasks/Selling & influencing
+Marketing Materials,Content/Social tasks/Selling & influencing
+Telemarketing,Content/Social tasks/Selling & influencing
+Sales Strategy,Content/Social tasks/Selling & influencing
+Direct Marketing,Content/Social tasks/Selling & influencing
+Email Marketing,Content/Social tasks/Selling & influencing
+Campaign Management,Content/Social tasks/Selling & influencing
+Management Consulting,Content/Social tasks/Selling & influencing
+Marketing Communications,Content/Social tasks/Selling & influencing
+Brand Awareness Generation,Content/Social tasks/Selling & influencing
+Online Marketing,Content/Social tasks/Selling & influencing
+Sales Cycle,Content/Social tasks/Selling & influencing
+Advertising,Content/Social tasks/Selling & influencing
+Trade Shows,Content/Social tasks/Selling & influencing
+Contract Negotiation,Content/Social tasks/Selling & influencing
+Sales Calls,Content/Social tasks/Selling & influencing
+Customer Retention,Content/Social tasks/Selling & influencing
+Inside Sales,Content/Social tasks/Selling & influencing
+Brand Management,Content/Social tasks/Selling & influencing
+Knowledge Management,Content/Social tasks/Selling & influencing
+Business Consulting,Content/Social tasks/Selling & influencing
+Publicity,Content/Social tasks/Selling & influencing
+Unified Communications,Content/Social tasks/Selling & influencing
+Technical Services Marketing,Content/Social tasks/Selling & influencing
+Corporate Communications,Content/Social tasks/Selling & influencing
+Pharmaceutical Sales,Content/Social tasks/Selling & influencing
+Business Process Modelling,Content/Social tasks/Selling & influencing
+Business Communications,Content/Social tasks/Selling & influencing
+E-Marketing,Content/Social tasks/Selling & influencing
+Solution Selling,Content/Social tasks/Selling & influencing
+Promotional Campaigns,Content/Social tasks/Selling & influencing
+Communications Programmes,Content/Social tasks/Selling & influencing
+Digital Sales,Content/Social tasks/Selling & influencing
+Internal Communications,Content/Social tasks/Selling & influencing
+Business Process Modelling Notation (BPMN),Content/Social tasks/Selling & influencing
+Marketing Sales,Content/Social tasks/Selling & influencing
+Strategic Communications,Content/Social tasks/Selling & influencing
+Strategic Recommendations,Content/Social tasks/Selling & influencing
+Store Merchandising,Content/Social tasks/Selling & influencing
+Co-branding,Content/Social tasks/Selling & influencing
+Digital Media Sales,Content/Social tasks/Selling & influencing
+Mortgage Lending,Content/Social tasks/Selling & influencing
+Business Impact Analysis,Content/Social tasks/Selling & influencing
+Organisational Skills,Content/Social tasks/Managing & coordinating
+Project Management,Content/Social tasks/Managing & coordinating
+Building Effective Relationships,Content/Social tasks/Managing & coordinating
+Leadership,Content/Social tasks/Managing & coordinating
+Staff Management,Content/Social tasks/Managing & coordinating
+People Management,Content/Social tasks/Managing & coordinating
+Scheduling,Content/Social tasks/Managing & coordinating
+Sales Management,Content/Social tasks/Managing & coordinating
+Decision Making,Content/Social tasks/Managing & coordinating
+Commissioning,Content/Social tasks/Managing & coordinating
+Change Management,Content/Social tasks/Managing & coordinating
+Operations Management,Content/Social tasks/Managing & coordinating
+Performance Management,Content/Social tasks/Managing & coordinating
+Team Management,Content/Social tasks/Managing & coordinating
+Supervisory Skills,Content/Social tasks/Managing & coordinating
+Office Management,Content/Social tasks/Managing & coordinating
+Marketing Management,Content/Social tasks/Managing & coordinating
+Business Administration,Content/Social tasks/Managing & coordinating
+Appointment Setting,Content/Social tasks/Managing & coordinating
+Conflict Management,Content/Social tasks/Managing & coordinating
+Outsourcing,Content/Social tasks/Managing & coordinating
+Employee Relations,Content/Social tasks/Managing & coordinating
+Business Management,Content/Social tasks/Managing & coordinating
+Resource Management,Content/Social tasks/Managing & coordinating
+Construction Management,Content/Social tasks/Managing & coordinating
+Restaurant Management,Content/Social tasks/Managing & coordinating
+Team Building,Content/Social tasks/Managing & coordinating
+Contract Administration,Content/Social tasks/Managing & coordinating
+Office Administration,Content/Social tasks/Managing & coordinating
+Managing Subcontractors,Content/Social tasks/Managing & coordinating
+Policy Implementation,Content/Social tasks/Managing & coordinating
+Event Management,Content/Social tasks/Managing & coordinating
+Change Management Process,Content/Social tasks/Managing & coordinating
+Strategic Partnerships,Content/Social tasks/Managing & coordinating
+Personnel Management,Content/Social tasks/Managing & coordinating
+Goal Setting,Content/Social tasks/Managing & coordinating
+Gatekeeper,Content/Social tasks/Managing & coordinating
+Escalation Management,Content/Social tasks/Managing & coordinating
+Drools Rules Engine,Content/Social tasks/Managing & coordinating
+TIBCO Administration,Content/Social tasks/Managing & coordinating
+Construction Coordination,Content/Social tasks/Managing & coordinating
+Corporate Supply Chain Management,Content/Social tasks/Managing & coordinating
+Global Organisational Development,Content/Social tasks/Managing & coordinating
+Faculty Relations,Content/Social tasks/Managing & coordinating
+Child Care,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Mental Health,Content/Social tasks/Caring
+Listening,Content/Social tasks/Caring
+Patient Care,Content/Social tasks/Caring
+Rehabilitation,Content/Social tasks/Caring
+Autism Diagnosis / Treatment / Care,Content/Social tasks/Caring
+Child Protection,Content/Social tasks/Caring
+Primary Care,Content/Social tasks/Caring
+Elder Care,Content/Social tasks/Caring
+Paediatrics,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Physical Disability,Content/Social tasks/Caring
+Home Care,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Trauma,Content/Social tasks/Caring
+Palliative Care,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Bathing,Content/Social tasks/Caring
+Critical Care,Content/Social tasks/Caring
+Babysitting,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Brain Injury,Content/Social tasks/Caring
+Urgent Care,Content/Social tasks/Caring
+Life Support,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Attention Deficit Hyperactivity Disorder (ADHD),Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hepatitis B,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Legionella,Content/Social tasks/Caring
+Venipuncture,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Mental Illness,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hygiene,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Chronic Disease,Content/Social tasks/Caring
+Parenting,Content/Social tasks/Caring
+Dental Care,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Geriatrics,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Personality Disorder,Content/Social tasks/Caring
+Eye Care,Content/Social tasks/Caring
+Psychotherapy,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Neurological Injury,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Dysphagia (Swallowing Problems),Content/Social tasks/Caring
+Working With Patient And/Or Condition: Injections,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Psychosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Schizophrenia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cardiac Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Stoma,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Heart Failure,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Ulcer,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Metabolism,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Fascia,Content/Social tasks/Caring
+Patient Condition Monitoring,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Physical Impairment,Content/Social tasks/Caring
+Working With Patient And/Or Condition:Cystic Fibrosis,Content/Social tasks/Caring
+Family Therapy,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Dyspraxia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hepatitis C,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Down Syndrome,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cardiac Arrest,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cognitive Impairment,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Abortion,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Communication Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Addiction Treatment,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Biopsy,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Fractures,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Influenza,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Anaphylaxis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Acute Illness,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Child Neglect,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Musculoskeletal Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Amputation,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Lymphoma,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Sepsis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Thrombosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Haemophilia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Bipolar Disorder,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Developmental Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Delirium,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Sarcoma,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Movement Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Behaviour Problems,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Gastrointestinal (GI) bleeding,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Back Pain,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Malnutrition,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Vasectomy,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Sexually Transmitted Infections,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Acute Pain,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Speech Impairment,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Tinnitus,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Dermatitis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Caesarean Section (C-section),Content/Social tasks/Caring
+Working With Patient And/Or Condition: Acute Medical Conditions,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Anaemia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hernia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Psychological Issues,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Eczema,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Back Injury,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Chronic Pain Management,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Skin Conditions,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hip Fracture,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Brain Tumour,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Respiratory Failure,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Psoriasis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Human Papilloma Virus (HPV),Content/Social tasks/Caring
+Working With Patient And/Or Condition: Viral Hepatitis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Severe Disability,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Psychological Problems,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Escherichia Coli (E.Coli),Content/Social tasks/Caring
+Symptoms Reporting,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Acute and Chronic Pain,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cholesterol,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Gastrointestinal Disorder,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hypoxia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cleft Lip,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Methadone,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Food Allergy,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Colitis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Quadriplegia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Osteoarthritis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Pulmonary Hypertension,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Scoliosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Attention Deficit Disorder,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Social Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Fibrosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Food Poisoning,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Enemas,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Chronic Fatigue Syndrome,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Respiratory Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Sleep Apnoea,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Borderline Personality Disorder,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Snoring,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Voice Disorder,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Bloodborne Pathogens,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Tetanus,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Abrasions,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Genetic Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Polio,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Euthanasia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Immunodeficiency,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Vasculitis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Ulcerative Colitis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Varicella Zoster,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Neuromuscular Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Salmonella,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Haemorrhage,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hepatitis A,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cardiac Anaesthesia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cardiomyopathy,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Lumbar Punctures,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cognitive Disabilities,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Migraine,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Stillbirth,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Spinal Muscular Atrophy,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Rare Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Sudden Infant Death Syndrome (SIDS),Content/Social tasks/Caring
+Working With Patient And/Or Condition: Pulmonary Fibrosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Lesion,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Anxiety Reduction,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Carcinoma,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Chronic Renal Failure,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Bradycardia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Dysplasia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Yellow Fever,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cleft Palate,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Menopause,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Endocrine Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Viagra,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Acute Coronary Syndromes,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Blood Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Gestational Diabetes,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Finger Prick,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cell Death,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Embolism,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Low Back Pain,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Skin Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Balance Disorder,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Major Depression,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Anxiety Disorder,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Varicose Vein,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Atherosclerosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Lymphoid,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Coronary Artery Bypass,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Angina,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Epidermolysis Bullosa,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hypothermia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Obstructive Sleep Apnoea,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Bronchial Challenges,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Myelodysplastic Syndromes,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Dysarthria,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Pulmonary Arterial Hypertension,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Deep Vein Thrombosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Haematopoiesis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Claustrophobia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Soft Tissue Sarcoma,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Neuropathic Pain,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Neuropathic Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Lymphoedema,Content/Social tasks/Caring
+Health Treatment,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Joint Conditions,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Aortic Aneurysm,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Urinary Incontinence,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Connective Tissue Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Mycobacterium Tuberculosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Abscesses,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Puberty,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Chronic Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Musculoskeletal Trauma,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Developmentally Delayed Children,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Suturing Wounds,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Food Intolerance,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Viral Infection,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Esophageal Cancer,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Atrophy,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Asthmatic,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Irritable Bowel Syndrome,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Adenovirus,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cirrhosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Acute Disease,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Faecal Incontinence,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Amnesia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Diphtheria,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Acute Myocardial Infarction,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Ocular Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Bipolar Depression,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Jaundice,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Arterial Blood Gases,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Typhoid,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Immune Condition,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Preventable Disease,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Colic,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Metabolic Syndrome,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Allergic Conditions,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Aplastic Anaemia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Liver Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Congenital Anomaly,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Foetal Alcohol Syndrome,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Sarcoidosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Dopamine,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Retrovirus,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Neoplasia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Allergic Reaction,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Paraplegia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Esophageal Reflux,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Ebola Virus,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hyperventilation,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Ectopic Pregnancy,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Chronic Cough,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Systemic Lupus Erythematosus (SLE),Content/Social tasks/Caring
+Working With Patient And/Or Condition: Premature Birth,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Emphysema,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Williams Syndrome,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Myopia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Gastroenteritis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Urinary Tract Infection,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Sciatica,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Psychologically Based Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Knee Injury,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Pulmonary Embolism,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Mastectomy,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Urologic Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Appendicitis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Mucosa,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hypothyroidism,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hypertrophy,Content/Social tasks/Caring
+Working With Patient And/Or Condition: High Cholesterol,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Sleep - Disordered Breathing,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Renal Stone,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Circumcision,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Birth Defect,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Genetic Syndromes,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Swine Flu,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Wart,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Sickle Cell Anaemia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Superficial Lacerations,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Bronchitis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Congenital Heart Defects,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Schizophrenia Psychosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Craniotomy,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Barium Enema,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Head Lice,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cerebrovascular Accident,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Human T-cell lymphotropic virus (HTLV),Content/Social tasks/Caring
+Working With Patient And/Or Condition: Tropical Disease,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Aortic Stenosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Immune Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Rotavirus,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hypoventilation,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Depressant,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Panic Disorder,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Anterior Cruciate Ligament,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Separation Anxiety,Content/Social tasks/Caring
+Passive Exercise,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Acute Respiratory Distress Syndrome,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Colostomy Bag,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Vestibular Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Peptic Ulcer,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Eye Disorder,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Generalised Anxiety Disorder,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hyperthermia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cardiovascular Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hyperplasia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Allergic Rhinitis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Dysphonia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hypoglycemia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Basal Cell Carcinoma,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hyperthyroidism,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Myeloproliferative Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Morning After Pill,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Schizoaffective Disorder,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Arterial Puncture,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Lennox-Gastaut Syndrome,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hodgkin Lymphoma,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Conjunctivitis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Impotence,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Pericardiocentesis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Sore Throat,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Septic Shock,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Shoulder Injuries,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Albinism,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Exercise-Induced Asthma,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Laceration,Content/Social tasks/Caring
+Working With Patient And/Or Condition: DNA Viruses,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hallucination,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Congenital Birth Defects,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Uterine Fibroids,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Athlete's Foot,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Skeletal Dysplasia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Atrial Flutter,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Clinical Depression,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Malignant Mesothelioma,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Gallstones,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Stuttering,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hypotension,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Pulmonary Tuberculosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hyperlipidaemia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Shoulder Pain,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Social Anxiety Disorder,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Ventricular Tachycardia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Coronary Bypass,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Adverse Drug Event,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Chest Tubes,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Sclera,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Conjunctiva,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Delusion,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Saphenous Vein,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Open Fracture,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Sensory Integration Disorder,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Prostate Gland,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hypercholesterolaemia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Enterovirus,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hypogonadism,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Epstein-Barr Virus,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Tennis Elbow,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Chronic Aspiration,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Gynaecomastia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Baldness,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Bedwetting,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cardiac Myocyte,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Haematoma,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Craniosynostosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Malignant Hyperthermia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Acid Reflux,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Colourblindness,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Breast Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Urethritis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Mucosal Immune Responses,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Bird Flu,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Sexual Health Dysfunctions,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Mucositis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Congenital Malformation,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Coinfection,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Parasomnia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Musculoskeletal System Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Foot Pain,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Rectal Bleeding,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Heart Rhythm Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Retinoids,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Flavivirus,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Septicaemia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Postpartum Depression,Content/Social tasks/Caring
+Working With Patient And/Or Condition: T-Cell Lymphoma,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hemorrhoid,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Gingivitis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hyperparathyroidism,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Temporomandibular Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hip Pain,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Urinary Tract Dysfunctions,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Juvenile Rheumatoid Arthritis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Acute Disorders,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Diplopia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: West Nile Virus,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Paramyxovirus,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Ringworm,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Puncture Wound,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Active Tuberculosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cold Sore,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Gastrointestinal Stromal Tumours,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Pulmonary Oedema,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Immunologic Conditions,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Reportable Disease,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hypocalcemia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Repetitive Motion Injuries,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Cell Abnormality,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Dyslipidemia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hyperopia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Heartworm,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hyperglycemia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Degenerative Disc,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Bacillus Anthracis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Myocarditis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Convulsion,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Sinusitis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Psychopathic Personality,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Urethral Sphincter,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Goitre,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Urine Blood,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Preventable Injury,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Migraine Headache,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Foetal Distress,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Pneumonitis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Anal Incontinence,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Harsh Voice Problems,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hypochondria,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Malacia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Tendinitis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Congenital Defect,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Respiratory Insufficiency,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Vaginitis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Carcinoid Syndrome,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Gastritis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Repetitive Stress Injury,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Nosocomial Infection,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Loeys-Dietz Syndrome,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Altitude Sickness,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Premature Ejaculation,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Gastric Ulcer,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Varicella Chickenpox,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Epicondylitis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hypoxaemia,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Host-Parasite Relationships,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Adverse Drug Interactions,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Pediculosis,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Snake Bite,Content/Social tasks/Caring
+Working With Patient And/Or Condition: Hyponatremia,Content/Social tasks/Caring
+Multi-Tasking,Methods/Autonomy/Latitude
+Overcoming Obstacles,Methods/Autonomy/Latitude
+Meeting Deadlines,Methods/Autonomy/Control
+Teamwork / Collaboration,Methods/Teamwork
+Building Effective Relationships,Methods/Teamwork
+Scrum,Methods/Teamwork
+Agile Development,Methods/Teamwork
+Lean Six Sigma,Methods/Teamwork
+Quality Assurance and Control,Methods/Routine/Standardization
+Quality Management,Methods/Routine/Standardization
+ITIL,Methods/Routine/Standardization
+ISO 9001 Standards,Methods/Routine/Standardization
+Six Sigma,Methods/Routine/Standardization
+International Financial Reporting Standards,Methods/Routine/Standardization
+ISO Standards,Methods/Routine/Standardization
+Generally Accepted Accounting Principles (GAAP),Methods/Routine/Standardization
+Hazard Analysis Critical Control Point (HACCP),Methods/Routine/Standardization
+Lean Six Sigma,Methods/Routine/Standardization
+Kaizen,Methods/Routine/Standardization
+Following SOPs,Methods/Routine/Standardization
+IEC 61508,Methods/Routine/Standardization
+ISO/IEC 27001,Methods/Routine/Standardization
+Lead Scoring,Methods/Routine/Standardization
+Forklift Operation,Tools/Mechanical machinery
+Machining,Tools/Mechanical machinery
+Hydraulics,Tools/Mechanical machinery
+Hand Tools,Tools/Mechanical machinery
+Mig and Tig Welding,Tools/Mechanical machinery
+Test Equipment,Tools/Mechanical machinery
+Auto Repair,Tools/Mechanical machinery
+Power Tools,Tools/Mechanical machinery
+Lifting Equipment,Tools/Mechanical machinery
+Excavation,Tools/Mechanical machinery
+Transportation Systems,Tools/Mechanical machinery
+Milling,Tools/Mechanical machinery
+Transcription,Tools/Mechanical machinery
+Endoscope,Tools/Mechanical machinery
+Band Saw,Tools/Mechanical machinery
+Construction Equipment,Tools/Mechanical machinery
+Condensers,Tools/Mechanical machinery
+Solar Products,Tools/Mechanical machinery
+Efficient Transportation,Tools/Mechanical machinery
+Predictive Models,Tools/Digital machinery/
+Property Management Systems,Tools/Digital machinery/Autonomous
+R,Tools/Digital machinery/Non-autonomous/
+Minitab,Tools/Digital machinery/Non-autonomous/
+SAS Enterprise Miner,Tools/Digital machinery/Non-autonomous/
+Computer Literacy,Tools/Digital machinery/Non-autonomous/Computing devices
+Siemens Nixdorf Hardware,Tools/Digital machinery/Non-autonomous/Computing devices
+Digital Communications,Tools/Digital machinery/Non-autonomous/Computing devices
+Call Centre Technology,Tools/Digital machinery/Non-autonomous/Computing devices
+Microsoft Excel,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Microsoft Office,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Microsoft Powerpoint,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Microsoft Word,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Spreadsheets,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Microsoft Windows,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Microsoft Outlook,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Microsoft Operating Systems,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Word Processing,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Basic Internet Skills,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Instagram,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Digital Communications,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Communications Programmes,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Prezi,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Dictaphone,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Web Communications,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+Microsoft Live Meeting,Tools/Digital machinery/Non-autonomous/Computing devices/Basic ICT
+SQL,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+JavaScript,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Software Development,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Microsoft C#,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Java,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+.NET,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+SQL Server,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+LINUX,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Software Engineering,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+C++,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Active Server Pages (ASP),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+ASP.NET,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Python,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Hypertext Preprocessor (PHP),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+jQuery,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+HTML5,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Extensible Markup Language (XML),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+UNIX,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+MySQL,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Computer Numerical Control (CNC),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Git,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Microsoft Sharepoint,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Windows Server,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Web Application Development,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Object-Oriented Analysis and Design (OOAD),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+DevOps,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Data Management,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+CSS,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+AngularJS,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Continuous Integration (CI),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Front-end Development,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+ASP.NET MVC,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+System Administration,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Data Warehousing,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Transact-SQL,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Virtualisation,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Big Data,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Citrix,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Wide Area Network (WAN),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Software as a Service (SaaS),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Domain Name System (DNS),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Database Administration,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+SQL Server Reporting Services (SSRS),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Visual Studio,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Extraction Transformation and Loading (ETL),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Atlassian JIRA,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+AJAX,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Apache Webserver,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+PERL Scripting Language,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+System Design,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Microsoft SQL,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Relational Databases,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Version Control,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Configuration Management,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Systems Integration,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+JavaScript Object Notation (JSON),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Software Architecture,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Visual Basic for Applications (VBA),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Microsoft Azure,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Microsoft Sql Server Integration Services (SSIS),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Systems Development Life Cycle (SDLC),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Selenium,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Systems Development,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Software Testing,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Database Design,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Waterfall Development Process,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Simulation,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+NoSQL,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+User Interface (UI) Design,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Engineering Design and Installation,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Hardware and Software Installation,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Hardware and Software Configuration,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Microsoft PowerShell,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Systems Analysis,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Unified Modelling Language (UML),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Debugging,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Network Hardware/Software Maintenance,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Ruby,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Teradata DBA,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Hyper-V,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Investment Management,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Bootstrapping,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Database Management,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Oracle PL/SQL,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Embedded Software,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Machine Learning,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Virtual Private Networking (VPN),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Voice over IP (VoIP),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Apache Hadoop,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Puppet,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Bash,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Node.js,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Data Migration,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Middleware,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+MongoDB,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Data Modelling,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Tomcat,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Ansible,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Relational DataBase Management System (RDBMS),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Java Server Pages (JSP),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Multithreaded Programming,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+GitHub,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Citrix XenApp,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+R,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Ruby on Rails,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+SPSS,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Apache Ant,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Atlassian Bamboo,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Less.js,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+UNIX Platforms,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+OpenStack,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+iOS Testing,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Minitab,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+S-Plus,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+CakePHP,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Grails,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+STATA,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Abaqus,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Cisco Wireless,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Statistical Programming,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+SQLite,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Application Programming Interface (API),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+WebGL,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+AWS CloudFront,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Machine Vision,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+JAX-RS,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Storage Architectures,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+SAS Enterprise Miner,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+E-Views,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Streaming Media,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Microfocus,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Convolutional Neural Network (CNN),Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+IBM MQ Series,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Apache Cordova,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Next Generation Networks,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+SPSS Modeller,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Application Lifecycle Management (ALM) Software,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Automation Software,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+XUL,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Autoencoders,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Xbase,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+IBM VisualAge,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Carbon Mitigation Software,Tools/Digital machinery/Non-autonomous/Computing devices/Advanced ICT
+Social Media,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+SAP,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Oracle,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Web Development,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+AutoCAD,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Facebook,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Adobe Photoshop,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Microsoft Active Directory,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+VMware,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Cisco,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Prince,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Adobe Indesign,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Microsoft Project,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Web Site Design,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Salesforce,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Microsoft Exchange,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Transmission Control Protocol / Internet Protocol (TCP / IP),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Microsoft Access,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+SAS,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Microsoft Dynamics,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Adobe Acrobat,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Adobe Creative Suite,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Adobe Illustrator,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Google Analytics,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Data Quality,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Pivot Tables,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Revit,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Microsoft Visio,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+SolidWorks,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Dynamic Host Configuration Protocol (DHCP),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Document Management,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Content Management Systems (CMS),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+LinkedIn,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Digital Design,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+3D Modelling / Design,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Red Hat Linux,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+MATLAB,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Help Desk Support,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+SAP BusinessObjects,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Social Media Tools,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Tableau,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Social Media Platforms,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Global Positioning System (GPS),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Design Software,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Amazon Web Services (AWS),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Billing Systems,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Google AdWords,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Cognos Impromptu,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Solaris,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Microsoft Dynamics AX,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Qlikview,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+R,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+SPSS,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Team Foundation Server,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Crystal Reports,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Data Visualisation,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Autodesk,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+VHSIC hardware description language (VHDL),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Ubuntu,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+CAD / CAM (Computer-Aided Design / Manufacturing),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Adobe Aftereffects,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+SketchUp,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Oracle E-Business Suite,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Oracle Business Intelligence Enterprise Edition (OBIEE),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Advanced Business Application Programming (ABAP),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Interaction Design,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+SAP Business Intelligence (BI),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Search Marketing,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Really Simple Syndication(RSS),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Search Engine Marketing (SEM),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Civil 3D,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Microstrategy,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Oracle Business Intelligence (BI) / OBIA,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Public Key Infrastructure (PKI),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Microsoft Business Intelligence (BI) Stack,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Qlik,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Desktop Publishing,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Spotfire,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+3D Studio Max,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Adobe Premiere,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Cisco Call Manager,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+MAYA,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Final Cut Pro,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+QuarkXPress,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Minitab,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+S-Plus,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Navisworks,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Blackberry Enterprise Server,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Paint Shop Pro,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+STATA,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Pandas,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Ad Serving,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Alteryx,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+IBM Cognos,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Oracle Development,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Statistical Programming,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Cisco Voice,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+ERwin,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Poster Design,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Yammer,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Chi Square Automatic Interaction Detection (CHAID),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Salesforce Sales Cloud,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Adobe Freehand,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Crisis Communications,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Microsoft Business Intelligence Development,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Adobe Campaign,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+SAP BusinessObjects Web Intelligence (WebI),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Microsoft Publisher,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Verint Systems,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+V-Ray,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Business Intelligence Software,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Tumblr,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Cisco Unified Contact Centre Express (UCCX),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Oracle Endeca,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Oracle Reports,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Graphics Software,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Oracle Retail,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+CorelDRAW,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Oracle Discoverer,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Infor Software,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+SAS BI Tools,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Page Design,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Pattern Recognition,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+CANalyzer,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Enterprise Messaging,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Symantec Endpoint Protection,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+OpenCV,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Microsoft Azure Cloud Services,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+SAS Enterprise Miner,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+E-Views,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Mahout,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+POP3,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Sendmail,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Oracle 11I,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+GNU Image Manipulation Programme (GIMP),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Cognos Report Studio,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Analysis Computing Tools,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+DODAF,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+COMSOL,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Distributed Control Systems (DCS),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Oracle Manufacturing,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+ETAP Software,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Mathematica,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Analyst Relations,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Avid Media Composer,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Microsoft Lync Server,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Cisco WebEx,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Oracle BI Publisher,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Business Rules Engines,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Factorytalk,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Print Shop,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Oracle SCM Advanced Procurement,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Apttus,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+IBM Emptoris,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+WEKA,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Oracle Hyperion Essbase,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+SPSS Modeller,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Mathematical Programming,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+BRIO,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+SAP Lumira,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+JD Edwards (JDE) EnterpriseOne,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+IBM QRadar,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+CA-7,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Knowledge Discovery,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Conceptual Data Models,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Adding Machine,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+SAP Information Steward,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+IBM Case Manager,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+SAP TM Transportation Management Software,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+HP Vertica,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+BigMachines,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Adobe PageMaker,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+CRISP-DM,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+GeoJSON,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Strata Studio Pro,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Peopleclick,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Cg (Programming Language),Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+MathWorks MATLAB,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Microsoft Visio Professional,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Oracle Service Contracts,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Chartio,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Slim Framework,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Freelance Graphics,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Maple,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Unstructured Information Management Architecture,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Atlas.ti,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+HP Sprinter,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+SEMMA,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Optuminsight,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+TreeMap,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Expectation-Maximisation (EM) Algorithm,Tools/Digital machinery/Non-autonomous/Computing devices/Specialised ICT
+Telecommunications,Tools/Digital machinery/Non-autonomous/Computing devices/Other ICT
+Printers,Tools/Digital machinery/Non-autonomous/Computing devices/Other ICT
+Copying,Tools/Digital machinery/Non-autonomous/Computing devices/Other ICT
+Scanners,Tools/Digital machinery/Non-autonomous/Computing devices/Other ICT
+Phone Systems,Tools/Digital machinery/Non-autonomous/Computing devices/Other ICT
+Scanning,Tools/Digital machinery/Non-autonomous/Computing devices/Other ICT
+Calculator,Tools/Digital machinery/Non-autonomous/Computing devices/Other ICT
+Document Shredding,Tools/Digital machinery/Non-autonomous/Computing devices/Other ICT
+Plotters,Tools/Digital machinery/Non-autonomous/Computing devices/Other ICT
+Cognex,Tools/Digital machinery/Non-autonomous/Computing devices/Other ICT
+Radiologic Technology,Tools/Digital machinery/Non-autonomous/Computing devices/Other ICT
+Multi-Line Telephones,Tools/Digital machinery/Non-autonomous/Computing devices/Other ICT
+Ten-Key Calculator,Tools/Digital machinery/Non-autonomous/Computing devices/Other ICT
+Cleaning,Other/Job title
+Cooking,Other/Job title
+Secretarial Skills,Other/Job title
+Mechanical Engineering,Other/Job title
+Store Management,Other/Job title
+Midwifery,Other/Job title
+Plumbing,Other/Job title
+Facility Management,Other/Job title
+Systems Engineering,Other/Job title
+Lecturer,Other/Job title
+General Office Duties,Other/Job title
+General Practice,Other/Job title
+Detail-Orientated,Other/Attitude
+Positive Disposition,Other/Attitude
+Articulate,Other/Attitude
+Energetic,Other/Attitude
+Self-Starter,Other/Attitude
+Self-Motivation,Other/Attitude
+Business Acumen,Other/Attitude
+Initiative,Other/Attitude
+Quick Learner,Other/Attitude
+Empower,Other/Attitude
+Product Knowledge,Other/Knowledge
+Dementia knowledge,Other/Knowledge
+Information Technology Industry Knowledge,Other/Knowledge
+Asset Management Industry Knowledge,Other/Knowledge
+Physics,Other/Knowledge
+Chemistry,Other/Knowledge
+Supply Chain Knowledge,Other/Knowledge
+Music,Other/Knowledge
+Mechanical Design,Other/Knowledge
+Engineering Drawings,Other/Knowledge
+Information Systems,Other/Knowledge
+Economics,Other/Knowledge
+Occupational Therapy,Other/Knowledge
+Learning Disability,Other/Knowledge
+Automotive Industry Knowledge,Other/Knowledge
+Network Engineering,Other/Knowledge
+Cancer knowledge,Other/Knowledge
+Electrical Engineering,Other/Knowledge
+Psychology,Other/Knowledge
+Broadcast Industry Knowledge,Other/Knowledge
+Claims Knowledge,Other/Knowledge
+Derivatives,Other/Knowledge
+Oncology,Other/Knowledge
+Market Trend,Other/Knowledge
+Anaesthesiology,Other/Knowledge
+Construction Industry Knowledge,Other/Knowledge
+Biology,Other/Knowledge
+Engineering Design,Other/Knowledge
+Orthopaedics,Other/Knowledge
+Surveys,Other/Knowledge
+Process Engineering,Other/Knowledge
+Social Services Industry Knowledge,Other/Knowledge
+Electrical Design,Other/Knowledge
+Infection Control,Other/Knowledge
+Mergers and Acquisitions,Other/Knowledge
+Clinical Research,Other/Knowledge
+Renewable Energy,Other/Knowledge
+Electrical Systems,Other/Knowledge
+Electronics Industry Knowledge,Other/Knowledge
+Experiments,Other/Knowledge
+Capital Markets,Other/Knowledge
+Gynaecology,Other/Knowledge
+Transportation Industry Knowledge,Other/Knowledge
+Fluid Mechanics,Other/Knowledge
+comScore,Other/Knowledge
+Cardiovascular Disease knowledge,Other/Knowledge
+Business Law,Other/Knowledge
+Health Insurance Portability and Accountability Act (HIPAA),Other/Knowledge
+Cell Therapy,Other/Knowledge
+Material Handling Industry Knowledge,Other/Knowledge
+Dentures,Other/Knowledge
+Fluorescence-activated cell sorting (FACS),Other/Knowledge
+Prostate Cancer knowledge,Other/Knowledge
+Foreign Exchange Risks,Other/Knowledge
+Hedge Fund Industry Knowledge,Other/Knowledge
+High Blood Pressure,Other/Knowledge
+Laryngectomy,Other/Knowledge
+Periodontal Disease knowledge,Other/Knowledge
+Idiopathic,Other/Knowledge
+Photonics Engineering,Other/Knowledge
+Agricultural Research,Other/Knowledge
+Automotive Manufacturing Industry Knowledge,Other/Knowledge
+Environmental Safety,Other/Knowledge
+Optical System Design and Analysis,Other/Knowledge
+Energy Efficient Home Improvement,Other/Knowledge
+Cell Biology Research,Other/Knowledge
+Hydroelectric Power,Other/Knowledge
+Nerve Conduction Velocity (NCV),Other/Knowledge
+Advanced Materials Development,Other/Knowledge
+Suboxone,Other/Knowledge
+Glycoprotein,Other/Knowledge
+Drug Regulatory Affairs,Other/Knowledge
+Lysis,Other/Knowledge
+Federal Aviation Administration Regulations,Other/Knowledge
+Amniotic Fluids,Other/Knowledge
+Germ Cell Tumours Diagnosis / Treatment,Other/Knowledge
+Financial Securities Industry Knowledge,Other/Knowledge
+Counterpulsation,Other/Knowledge
+Procurement,Other/Process
+Business Process,Other/Process
+Product Development,Other/Process
+Logistics,Other/Process
+Process Improvement,Other/Process
+Stock Control,Other/Process
+Administrative Functions,Other/Process
+Home Management,Other/Process
+Product Management,Other/Process
+External Auditing,Other/Process
+Internal Auditing,Other/Process
+Preventive Maintenance,Other/Process
+Market Research,Other/Process
+Market Strategy,Other/Process
+Performance Analysis,Other/Process
+Recruiting,Other/Process
+Food Safety,Other/Process
+Occupational Health and Safety,Other/Process
+Supply Chain Management,Other/Process
+Performance Appraisals,Other/Process
+Technical Recruiting,Other/Process
+Brand Experience,Other/Process
+Predictive / Preventative Maintenance,Other/Process
+Unit Testing,Other/Process
+Test Driven Development (TDD),Other/Process
+Information Security,Other/Process
+Case Management,Other/Process
+Risk Assessment,Other/Process
+Manufacturing Processes,Other/Process
+Lifecycle Management,Other/Process
+Programme Management,Other/Process
+Production Management,Other/Process
+Insurance Underwriting,Other/Process
+Good Manufacturing Practices (GMP),Other/Process
+IT Recruiting,Other/Process
+Mailing,Other/Process
+Credit Risk,Other/Process
+Full Life Cycle,Other/Process
+Surveillance,Other/Process
+Market Planning,Other/Process
+Lean Manufacturing,Other/Process
+Kanban,Other/Process
+Prototyping,Other/Process
+Lead Generation,Other/Process
+Automated Testing,Other/Process
+Work Area Maintenance,Other/Process
+HR Policies,Other/Process
+Succession Planning,Other/Process
+Health and Safety Standards,Other/Process
+Nondestructive Testing (NDT),Other/Process
+Procure-To-Pay,Other/Process
+Sales Intelligence,Other/Process
+Equipment Development,Other/Process
+Financial Support,Other/Process
+Planning and Sourcing,Other/Process
+Construction Operations,Other/Process
+Demand Flow,Other/Process
+Filling Preparation,Other/Process
+Retail Industry Knowledge,Other/Sector
+Civil Engineering,Other/Sector
+Social Services,Other/Sector
+Social Work,Other/Sector
+Property Management,Other/Sector
+Local Government,Other/Sector
+HVAC,Other/Sector
+Original Equipment Manufacturer (OEM),Other/Sector
+Business Solutions,Other/Sector
+Public Health and Safety,Other/Sector
+Medication Administration,Other/Sector
+Corporate Finance,Other/Sector
+Wealth Management,Other/Sector
+Ventilation,Other/Sector
+Fitness,Other/Sector
+Npower,Other/Sector
+NIOSH,Other/Sector
+Bilingual,Other/Language
+Welsh,Other/Language
+Chinese,Other/Language
+Dutch,Other/Language
+Nursing Home,Other/Experience
+Financial Services Industy Experience,Other/Experience
+Industrial Engineering Industry Expertise,Other/Experience
+Hardware Experience,Other/Experience
+Operating Room Experience,Other/Experience

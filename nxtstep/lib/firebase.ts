@@ -1,25 +1,32 @@
 // Import the functions you need from the SDKs you need
 import { getApp, getApps, initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { sub } from "framer-motion/client";
+import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDqsPSSWqh3YGqCFwTQKV0MVIg-cm542wk",
-  authDomain: "nxtstep-4.firebaseapp.com",
-  projectId: "nxtstep-4",
-  storageBucket: "nxtstep-4.firebasestorage.app",
-  messagingSenderId: "269421076819",
-  appId: "1:269421076819:web:3a4a49ac75e1f5b6a3c1a6",
-  measurementId: "G-QL7STD7WPY"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
+
 // Initialize once
 const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
+
+// Initialize analytics only in the browser (crashes on SSR otherwise)
+if (typeof window !== "undefined") {
+  import("firebase/analytics").then(({ getAnalytics }) => {
+    try {
+      getAnalytics(app);
+    } catch {
+      // Analytics may fail in dev/non-production environments
+    }
+  });
+}
 
 // Export the tools correctly
 export const auth = getAuth(app);
