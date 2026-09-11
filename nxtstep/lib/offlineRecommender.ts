@@ -79,48 +79,74 @@ export function generateOfflineAssessment(state: QuizState): AssessmentResponse 
 
   const userKeywords = extractKeywords([...userActivities, freeTextCorpus, ...userSkillNames, state.fieldOfStudy || ""]);
 
-  // Score each career in the dataset
-  const scored = careerOptions.map((career) => {
+  const field = (state.fieldOfStudy || "").toLowerCase().trim();
+  const careerPool = careerOptions.filter((career) => {
+    const haystack = [
+      career.title,
+      career.category || "",
+      career.description || "",
+      ...(career.skills || []),
+      ...(career.marketInsights?.topLinkedInSkills || []),
+    ].join(" ").toLowerCase();
+
+    if (field && (haystack.includes(field) || field.includes(haystack))) {
+      return true;
+    }
+
+    const hasSkillMatch = userSkills.some((uSkill) => {
+      const token = uSkill.name.toLowerCase().trim();
+      return token && haystack.includes(token);
+    });
+
+    if (hasSkillMatch) {
+      return true;
+    }
+
+    return userKeywords.some((kw) => haystack.includes(kw));
+  });
+
+  const candidatePool = careerPool.length > 0 ? careerPool.slice(0, 180) : careerOptions.slice(0, 60);
+
+  const scored = candidatePool.map((career) => {
     let score = 0;
     const careerTitleLower = career.title.toLowerCase();
     const careerCategoryLower = (career.category || "").toLowerCase();
     const careerDescLower = (career.description || "").toLowerCase();
     const careerSkills = (career.skills || []).map((s) => s.toLowerCase());
     const topSkills = (career.marketInsights?.topLinkedInSkills || []).map((s) => s.toLowerCase());
-    
-    // Combine career tokens for broad matching
-    const careerTokens = extractKeywords([careerTitleLower, careerCategoryLower, careerDescLower, ...careerSkills, ...topSkills]);
+    const careerTokens = new Set(
+      extractKeywords([careerTitleLower, careerCategoryLower, careerDescLower, ...careerSkills, ...topSkills])
+    );
 
-    // 1. Skill Match (up to 40 pts)
     let matchedSkillCount = 0;
     for (const uSkill of userSkills) {
-      const uTokens = extractKeywords([uSkill.name]);
-      const hasMatch = uTokens.some(ut => careerTokens.includes(ut) || careerSkills.some(cs => cs.includes(ut)));
-      
+      const uName = uSkill.name.toLowerCase().trim();
+      if (!uName) continue;
+      const hasMatch =
+        careerTokens.has(uName) ||
+        careerSkills.some((cs) => cs.includes(uName) || uName.includes(cs)) ||
+        careerTitleLower.includes(uName) ||
+        careerCategoryLower.includes(uName);
+
       if (hasMatch) {
-        score += 15 * uSkill.weight;
+        score += 15 * (uSkill.weight || 1);
         matchedSkillCount++;
       }
     }
 
-    // 2. Keyword Match from Activities & Text (up to 40 pts)
     let keywordHits = 0;
     for (const kw of userKeywords) {
-      if (careerTitleLower.includes(kw) || careerCategoryLower.includes(kw)) {
+      if (careerTitleLower.includes(kw) || careerCategoryLower.includes(kw) || careerDescLower.includes(kw)) {
         score += 8;
         keywordHits++;
-      } else if (careerTokens.includes(kw)) {
+      } else if (careerTokens.has(kw)) {
         score += 3;
         keywordHits++;
       }
     }
 
-    // 3. Exact Category/Field Match (up to 20 pts)
-    if (state.fieldOfStudy) {
-      const field = state.fieldOfStudy.toLowerCase();
-      if (careerCategoryLower.includes(field) || careerTitleLower.includes(field)) {
-        score += 20;
-      }
+    if (field && (careerCategoryLower.includes(field) || careerTitleLower.includes(field))) {
+      score += 20;
     }
 
     return {
@@ -131,12 +157,9 @@ export function generateOfflineAssessment(state: QuizState): AssessmentResponse 
     };
   });
 
-  // Sort descending by score
   scored.sort((a, b) => b.score - a.score);
 
-  // Take top 3 distinct careers
   const topMatches: typeof scored = [];
-  const seenWords = new Set<string>();
 
   for (const item of scored) {
     if (topMatches.length >= 3) break;

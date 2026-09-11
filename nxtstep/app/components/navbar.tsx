@@ -40,20 +40,37 @@ export default function Navbar() {
   useEffect(() => {
     setMounted(true);
 
+    let unsubscribeDoc: (() => void) | undefined;
+
     const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const userRef = doc(db, "users", user.uid);
-        const unsubscribeDoc = onSnapshot(userRef, (docSnap) => {
-          if (docSnap.exists()) {
-            const name = docSnap.data().username || "User";
-            setUserData({ username: name });
-            setInitial(name.charAt(0).toUpperCase());
-          }
-        });
-        return () => unsubscribeDoc();
-      } else {
+      unsubscribeDoc?.();
+
+      if (!user) {
         setUserData(null);
+        setInitial("");
+        return;
       }
+
+      const userRef = doc(db, "users", user.uid);
+      unsubscribeDoc = onSnapshot(
+        userRef,
+        (docSnap) => {
+          if (!docSnap.exists()) {
+            setUserData(null);
+            setInitial("");
+            return;
+          }
+
+          const name = docSnap.data().username || "User";
+          setUserData({ username: name });
+          setInitial(name.charAt(0).toUpperCase());
+        },
+        (error) => {
+          console.error("Failed to load user profile:", error);
+          setUserData(null);
+          setInitial("");
+        }
+      );
     });
 
     const handleClickOutside = (event: MouseEvent) => {
@@ -67,6 +84,7 @@ export default function Navbar() {
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
+      unsubscribeDoc?.();
       unsubscribeAuth();
       document.removeEventListener("mousedown", handleClickOutside);
     };

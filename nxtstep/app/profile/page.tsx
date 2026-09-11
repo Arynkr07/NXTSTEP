@@ -7,27 +7,55 @@ import { User, ShieldCheck, Edit3, Save } from "lucide-react";
 import { RevealOnScroll } from '../components/reveal';
 import { TiltCard } from '../components/tilteffect';
 
+type UserProfileData = {
+  username?: string;
+  [key: string]: unknown;
+};
+
 export default function ProfileSettings() {
-  const [userData, setUserData] = useState<any>(null);
+  const [userData, setUserData] = useState<UserProfileData | null>(null);
   const [newUsername, setNewUsername] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
+    let unsubscribeDoc: (() => void) | undefined;
+
     const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const userRef = doc(db, "users", user.uid);
-        const unsubscribeDoc = onSnapshot(userRef, (docSnap) => {
-          if (docSnap.exists()) {
-            const data = docSnap.data();
-            setUserData(data);
-            setNewUsername(data.username || "");
-          }
-        });
-        return () => unsubscribeDoc();
+      unsubscribeDoc?.();
+
+      if (!user) {
+        setUserData(null);
+        setNewUsername("");
+        return;
       }
+
+      const userRef = doc(db, "users", user.uid);
+      unsubscribeDoc = onSnapshot(
+        userRef,
+        (docSnap) => {
+          if (!docSnap.exists()) {
+            setUserData(null);
+            setNewUsername("");
+            return;
+          }
+
+          const data = docSnap.data();
+          setUserData(data);
+          setNewUsername(data.username || "");
+        },
+        (error) => {
+          console.error("Failed to load profile data:", error);
+          setUserData(null);
+          setNewUsername("");
+        }
+      );
     });
-    return () => unsubscribeAuth();
+
+    return () => {
+      unsubscribeDoc?.();
+      unsubscribeAuth();
+    };
   }, []);
 
   const handleUpdateProfile = async () => {

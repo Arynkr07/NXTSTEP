@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import Link from "next/link";
-import { Zap, ArrowRight, User, Mail, Lock } from "lucide-react";
+import { Zap, ArrowRight, User, Mail, Lock, Chrome } from "lucide-react";
 import { auth, db } from "@/lib/firebase"; 
 import { doc, setDoc } from "firebase/firestore";
 
@@ -11,7 +11,7 @@ export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [username, setUsername] = useState(""); // This was missing from the UI
+  const [username, setUsername] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const router = useRouter();
@@ -21,36 +21,31 @@ export default function Signup() {
       setError("Passwords do not match");
       return;
     }
-    
-    // Basic validation
+
     if (!username.trim()) {
-        setError("Please enter a username.");
-        return;
+      setError("Please enter a username.");
+      return;
     }
 
     try {
-      // 1. Create the Auth Account
       const userCred = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCred.user;
 
-      // 2. Create the Firestore User Profile
       await setDoc(doc(db, "users", user.uid), {
         uid: user.uid,
         email: user.email,
-        username: username, // Now this will actually have a value
+        username: username,
         likedCareers: [],
         quizResults: [],
         createdAt: new Date().toISOString()
       });
 
-      // 3. Send Verification Email
       await sendEmailVerification(user);
 
       setSuccess("Account created! Check your email to verify.");
       setError("");
-      
+
       setTimeout(() => router.push("/login"), 3000);
-      
     } catch (err) {
       const errorMessage = (err as Error).message;
       if (errorMessage.includes("email-already-in-use")) {
@@ -58,6 +53,37 @@ export default function Signup() {
       } else {
         setError(errorMessage || "Signup failed");
       }
+      setSuccess("");
+    }
+  };
+
+  const handleGoogleSignup = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      provider.setCustomParameters({ prompt: "select_account" });
+
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      await setDoc(
+        doc(db, "users", user.uid),
+        {
+          uid: user.uid,
+          email: user.email || "",
+          username: user.displayName || "Google User",
+          likedCareers: [],
+          quizResults: [],
+          createdAt: new Date().toISOString(),
+        },
+        { merge: true }
+      );
+
+      setSuccess("Google account connected successfully.");
+      setError("");
+      setTimeout(() => router.push("/dashboard"), 1000);
+    } catch (err) {
+      console.error("Google signup error:", err);
+      setError("Google signup failed. Please try again.");
       setSuccess("");
     }
   };
@@ -172,6 +198,15 @@ export default function Signup() {
                 className="w-full bg-orange-600 text-white p-5 rounded-xl font-black uppercase italic tracking-widest flex items-center justify-center gap-3 hover:bg-orange-700 dark:hover:bg-orange-500 transition-all hover:scale-[1.02] shadow-xl shadow-orange-200 dark:shadow-none mt-8"
               >
                 Sign Up Now <ArrowRight size={20} />
+              </button>
+
+              <button
+                type="button"
+                onClick={handleGoogleSignup}
+                className="mt-4 flex w-full items-center justify-center gap-3 rounded-xl border-2 border-slate-900 bg-white p-4 text-sm font-black uppercase tracking-[0.2em] text-slate-900 transition hover:bg-orange-50 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
+              >
+                <Chrome size={18} />
+                Sign up with Google
               </button>
             </div>
 

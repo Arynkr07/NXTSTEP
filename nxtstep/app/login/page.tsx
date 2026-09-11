@@ -2,9 +2,10 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { auth } from "@/lib/firebase"; 
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { Zap, ArrowRight, Lock, Mail } from "lucide-react";
+import { auth, db } from "@/lib/firebase"; 
+import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { Zap, ArrowRight, Lock, Mail, Chrome } from "lucide-react";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -45,6 +46,37 @@ export default function Login() {
       } else {
         setError("Login failed. Please check your credentials.");
       }
+      setSuccess("");
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      provider.setCustomParameters({ prompt: "select_account" });
+
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      await setDoc(
+        doc(db, "users", user.uid),
+        {
+          uid: user.uid,
+          email: user.email || "",
+          username: user.displayName || "Google User",
+          likedCareers: [],
+          quizResults: [],
+          updatedAt: new Date().toISOString(),
+        },
+        { merge: true }
+      );
+
+      setSuccess("Google login successful. Redirecting...");
+      setError("");
+      setTimeout(() => router.push("/dashboard"), 1000);
+    } catch (err) {
+      console.error("Google login error:", err);
+      setError("Google sign-in failed. Please try again.");
       setSuccess("");
     }
   };
@@ -149,6 +181,15 @@ export default function Login() {
                 className="w-full bg-slate-900 dark:bg-orange-600 text-white p-5 rounded-xl font-black uppercase italic tracking-widest flex items-center justify-center gap-3 hover:bg-orange-600 dark:hover:bg-orange-700 transition-all hover:scale-[1.02] shadow-xl dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.2)] mt-4"
               >
                 Launch Dashboard <ArrowRight size={20} />
+              </button>
+
+              <button
+                type="button"
+                onClick={handleGoogleLogin}
+                className="mt-4 flex w-full items-center justify-center gap-3 rounded-xl border-2 border-slate-900 bg-white p-4 text-sm font-black uppercase tracking-[0.2em] text-slate-900 transition hover:bg-orange-50 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
+              >
+                <Chrome size={18} />
+                Continue with Google
               </button>
             </div>
 
