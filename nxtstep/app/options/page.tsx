@@ -72,7 +72,7 @@ export default function CareerOptionsPage() {
 
     try {
       const token = await user.getIdToken();
-      await fetch('/api/user/career', {
+      const res = await fetch('/api/user/career', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({
@@ -81,8 +81,15 @@ export default function CareerOptionsPage() {
           action: isSaved ? 'unsave' : 'save',
         }),
       });
+      if (!res.ok) {
+        const errorData = await res.json();
+        alert(`API Error: ${errorData.error}`);
+        // Revert
+        setSavedIds((prev) => isSaved ? [...prev, id] : prev.filter((i) => i !== id));
+      }
     } catch (error) {
       console.error("Error updating saved careers:", error);
+      alert(`Network Error: ${error}`);
       // Revert
       setSavedIds((prev) => isSaved ? [...prev, id] : prev.filter((i) => i !== id));
     }

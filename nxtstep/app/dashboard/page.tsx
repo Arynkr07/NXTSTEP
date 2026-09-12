@@ -160,7 +160,7 @@ export default function Dashboard() {
 
     try {
       const token = await (currentUser as unknown as { getIdToken: () => Promise<string> }).getIdToken();
-      await fetch('/api/user/career', {
+      const res = await fetch('/api/user/career', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({
@@ -169,8 +169,16 @@ export default function Dashboard() {
           action: isSaved ? 'unsave' : 'save',
         }),
       });
+      if (!res.ok) {
+        const errorData = await res.json();
+        alert(`API Error: ${errorData.error}`);
+        setSavedCareerIds((prev) =>
+          isSaved ? [...prev, careerId] : prev.filter((id) => id !== careerId)
+        );
+      }
     } catch (err) {
       console.error("Error toggling saved career:", err);
+      alert(`Network Error: ${err}`);
       setSavedCareerIds((prev) =>
         isSaved ? [...prev, careerId] : prev.filter((id) => id !== careerId)
       );
