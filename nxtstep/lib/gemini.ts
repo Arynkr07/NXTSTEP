@@ -327,12 +327,13 @@ RULES:
           }
         },
       });
-    } catch {
+    } catch (innerErr: any) {
+      console.error("Gemini API Error:", innerErr.message);
       const encoder = new TextEncoder();
       return new ReadableStream<Uint8Array>({
         start(controller) {
           controller.enqueue(
-            encoder.encode("I'm having trouble connecting right now. Please try again!")
+            encoder.encode(`### ⚠️ AI Connection Failed\n\nGemini API Error: ${innerErr.message || "Unknown Error"}\n\nPlease check your GEMINI_API_KEY in Vercel.`)
           );
           controller.close();
         },
@@ -422,24 +423,37 @@ Give 3 concrete bullet points (tools to try, specific concepts to grasp, or exac
         }
       },
     });
-  } catch {
-    const client = getClient();
-    const model = client.getGenerativeModel({ model: "gemini-1.5-flash" });
-    const stream = await model.generateContentStream(prompt);
-    const encoder = new TextEncoder();
+  } catch (outerErr: any) {
+    try {
+      const client = getClient();
+      const model = client.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const stream = await model.generateContentStream(prompt);
+      const encoder = new TextEncoder();
 
-    return new ReadableStream<Uint8Array>({
-      async start(controller) {
-        try {
-          for await (const chunk of stream.stream) {
-            const text = chunk.text();
-            if (text) controller.enqueue(encoder.encode(text));
+      return new ReadableStream<Uint8Array>({
+        async start(controller) {
+          try {
+            for await (const chunk of stream.stream) {
+              const text = chunk.text();
+              if (text) controller.enqueue(encoder.encode(text));
+            }
+            controller.close();
+          } catch (err) {
+            controller.error(err);
           }
+        },
+      });
+    } catch (innerErr: any) {
+      console.error("Gemini API Error:", innerErr.message);
+      const encoder = new TextEncoder();
+      return new ReadableStream<Uint8Array>({
+        start(controller) {
+          controller.enqueue(
+            encoder.encode(`### ⚠️ AI Connection Failed\n\nGemini API Error: ${innerErr.message || "Unknown Error"}\n\nPlease check your GEMINI_API_KEY in Vercel.`)
+          );
           controller.close();
-        } catch (err) {
-          controller.error(err);
-        }
-      },
-    });
+        },
+      });
+    }
   }
 }
