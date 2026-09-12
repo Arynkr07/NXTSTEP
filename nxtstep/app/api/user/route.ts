@@ -26,7 +26,7 @@ export async function GET(req: NextRequest) {
 
     const { data: savedRoadmaps, error: roadmapsError } = await supabase
       .from("saved_roadmaps")
-      .select("id, career_title, skills_input, roadmap_content, created_at")
+      .select("id, career_title, skills_input, roadmap_content, completed_steps, created_at")
       .eq("firebase_uid", uid)
       .order("created_at", { ascending: false });
 
