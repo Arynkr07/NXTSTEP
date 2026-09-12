@@ -10,7 +10,7 @@ import { findGuidanceInsight } from "@/lib/data/careerIntelligence";
 import type { CareerEmbedding, ChatMessage } from "@/lib/supabase";
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
-const CHAT_MODEL = process.env.GEMINI_MODEL || "gemini-3.6-flash";
+const CHAT_MODEL = process.env.GEMINI_MODEL || "gemini-1.5-flash";
 const EMBED_MODEL = "text-embedding-004";
 
 // ── Gemini Client ─────────────────────────────────────────────────────────────
@@ -138,7 +138,7 @@ Base recommendations on the LinkedIn data provided. Be specific about tools, tec
     // Model fallback
     try {
       const client = getClient();
-      const model = client.getGenerativeModel({ model: "gemini-3.6-flash" });
+      const model = client.getGenerativeModel({ model: "gemini-1.5-flash" });
       const encoder = new TextEncoder();
       const stream = await model.generateContentStream(systemPrompt);
 
@@ -307,7 +307,7 @@ RULES:
     try {
       const client = getClient();
       const model = client.getGenerativeModel({
-        model: "gemini-3.6-flash",
+        model: "gemini-1.5-flash",
         systemInstruction,
       });
       const chat = model.startChat({ history: historyForGemini });
@@ -424,7 +424,7 @@ Give 3 concrete bullet points (tools to try, specific concepts to grasp, or exac
     });
   } catch {
     const client = getClient();
-    const model = client.getGenerativeModel({ model: "gemini-3.6-flash" });
+    const model = client.getGenerativeModel({ model: "gemini-1.5-flash" });
     const stream = await model.generateContentStream(prompt);
     const encoder = new TextEncoder();
 

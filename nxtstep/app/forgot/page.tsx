@@ -18,9 +18,9 @@ export default function ResetPassword() {
 
     try {
       const redirectUrl =
-        typeof window !== "undefined"
+        typeof window !== "undefined" && window.location.origin
           ? `${window.location.origin}/reset-password`
-          : "http://localhost:3000/reset-password";
+          : "https://nxtstep31.vercel.app/reset-password";
 
       try {
         await sendPasswordResetEmail(auth, email, {
