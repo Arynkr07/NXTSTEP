@@ -23,6 +23,12 @@ export default function CareerOptionsPage() {
   const [savedIds, setSavedIds] = useState<number[]>([]);
   const [user, setUser] = useState<{ uid: string; getIdToken: () => Promise<string> } | null>(null);
 
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeftPos, setScrollLeftPos] = useState(0);
+  const hasDraggedRef = useRef(false);
+
   useEffect(() => {
     setMounted(true);
     const unsub = onAuthStateChanged(auth, async (currentUser) => {
@@ -91,12 +97,6 @@ export default function CareerOptionsPage() {
     setShowPopup(false);
     setPopupData(null);
   };
-
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeftPos, setScrollLeftPos] = useState(0);
-  const hasDraggedRef = useRef(false);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
