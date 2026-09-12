@@ -54,7 +54,13 @@ export default function InteractiveRoadmap({
   const [isSavingProgress, setIsSavingProgress] = useState(false);
 
   useEffect(() => {
-    setCompletedSteps(initialCompletedSteps);
+    // Only update if array contents actually differ to prevent infinite re-render loops
+    const areEqual =
+      completedSteps.length === initialCompletedSteps.length &&
+      completedSteps.every((val, idx) => val === initialCompletedSteps[idx]);
+    if (!areEqual) {
+      setCompletedSteps(initialCompletedSteps);
+    }
   }, [initialCompletedSteps]);
 
   const totalSteps = steps.length;
@@ -347,10 +353,51 @@ export default function InteractiveRoadmap({
 
           {/* Coach Advice Content Box */}
           {(coachResponse || isCoaching) && (
-            <div className="bg-slate-50 dark:bg-slate-950 p-5 rounded-2xl border-2 border-slate-200 dark:border-slate-800 min-h-[140px] text-sm leading-relaxed text-slate-800 dark:text-slate-200 font-sans whitespace-pre-wrap">
-              {coachResponse}
+            <div className="bg-slate-50 dark:bg-slate-950 p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-800 min-h-[140px] text-sm leading-relaxed text-slate-800 dark:text-slate-200 font-sans space-y-3">
+              {(() => {
+                const lines = coachResponse.split('\n');
+                return lines.map((line, idx) => {
+                  const trimmed = line.trim();
+                  if (!trimmed) return <div key={idx} className="h-1.5" />;
+
+                  // Headers (e.g. ### or ##)
+                  if (trimmed.startsWith('#')) {
+                    const heading = trimmed.replace(/^#+\s*/, '').replace(/\*\*/g, '');
+                    return (
+                      <h4 key={idx} className="text-sm font-black uppercase italic tracking-wider text-orange-600 dark:text-orange-400 pt-2 border-t border-slate-200 dark:border-slate-800 first:border-0 first:pt-0">
+                        {heading}
+                      </h4>
+                    );
+                  }
+
+                  // Bullet points (- or • or *)
+                  const isBullet = trimmed.startsWith('- ') || trimmed.startsWith('• ') || trimmed.startsWith('* ');
+                  const content = isBullet ? trimmed.replace(/^[-•*]\s*/, '') : trimmed;
+
+                  // Parse bold markers **
+                  const parts = content.split(/(\*\*[^*]+\*\*)/g);
+
+                  return (
+                    <div key={idx} className={`leading-relaxed ${isBullet ? 'flex items-start gap-2 pl-2' : ''}`}>
+                      {isBullet && <span className="text-orange-500 font-black mt-0.5">•</span>}
+                      <span className="flex-1">
+                        {parts.map((part, pIdx) => {
+                          if (part.startsWith('**') && part.endsWith('**')) {
+                            return (
+                              <strong key={pIdx} className="font-black text-slate-900 dark:text-white">
+                                {part.slice(2, -2)}
+                              </strong>
+                            );
+                          }
+                          return part;
+                        })}
+                      </span>
+                    </div>
+                  );
+                });
+              })()}
               {isCoaching && (
-                <div className="flex items-center gap-2 text-xs font-black uppercase text-orange-600 animate-pulse mt-3">
+                <div className="flex items-center gap-2 text-xs font-black uppercase text-orange-600 animate-pulse pt-2">
                   <Loader2 size={14} className="animate-spin" /> Coach is drafting your custom game plan...
                 </div>
               )}

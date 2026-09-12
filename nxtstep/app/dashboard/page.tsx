@@ -35,6 +35,8 @@ interface SavedCareerRow {
   career_title: string;
 }
 
+const EMPTY_STEPS: number[] = [];
+
 function parseRoadmapSteps(rawContent?: string): { steps: RoadmapStep[]; motivation?: string; marketInsight?: string } {
   if (!rawContent) {
     return {
@@ -280,12 +282,20 @@ export default function Dashboard() {
             </h1>
             </TiltCard>
           </div>
-          <button
-            onClick={handleLogout}
-            className="bg-slate-100 dark:bg-slate-800 px-4 py-2 rounded-xl text-xs font-black uppercase italic hover:bg-red-500 hover:text-white transition"
-          >
-            Logout
-          </button>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/quiz"
+              className="flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-5 py-3 rounded-2xl text-xs font-black uppercase italic tracking-wider transition shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] active:translate-y-0.5"
+            >
+              <Sparkles size={15} /> Retake Assessment
+            </Link>
+            <button
+              onClick={handleLogout}
+              className="bg-slate-100 dark:bg-slate-800 px-4 py-3 rounded-2xl text-xs font-black uppercase italic hover:bg-red-500 hover:text-white transition border-2 border-slate-200 dark:border-slate-700"
+            >
+              Logout
+            </button>
+          </div>
         </header>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -521,7 +531,7 @@ export default function Dashboard() {
                   steps={parsed.steps}
                   motivation={parsed.motivation}
                   marketInsight={parsed.marketInsight}
-                  initialCompletedSteps={selectedRoadmap.completed_steps || []}
+                  initialCompletedSteps={selectedRoadmap.completed_steps || EMPTY_STEPS}
                   onProgressChange={(updated) => handleRoadmapProgressUpdate(selectedRoadmap.id, updated)}
                   showCoachButton={true}
                 />

@@ -69,8 +69,10 @@ OUTPUT FORMAT: Return ONLY valid raw JSON without codeblocks or markdown:
       const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
       const model = genAI.getGenerativeModel({ model: GEMINI_MODEL });
 
+      // Race with a fast 3.5s timeout: if Gemini takes longer, instantly deliver
+      // offline recommendations tallied directly from the 1,300+ career database
       const timeoutPromise = new Promise<never>((_, reject) =>
-        setTimeout(() => reject(new Error("Timeout")), 30000)
+        setTimeout(() => reject(new Error("Timeout")), 3500)
       );
 
       const geminiResult = await Promise.race([

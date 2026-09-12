@@ -37,14 +37,19 @@ export default function Login() {
       }
 
       setTimeout(() => router.push("/dashboard"), 1500);
-    } catch (err) {
-      const errorMessage = (err as Error).message;
-      if (errorMessage.includes("user-not-found")) {
-        setError("No account found with this email.");
-      } else if (errorMessage.includes("wrong-password")) {
-        setError("Incorrect password. Try again!");
+    } catch (err: any) {
+      console.warn("Login failed with error code:", err?.code);
+      const code = err?.code || "";
+      if (code === "auth/user-not-found") {
+        setError("No account found with this email address.");
+      } else if (code === "auth/wrong-password" || code === "auth/invalid-credential") {
+        setError("Incorrect email or password. If you reset your password, please use the new one.");
+      } else if (code === "auth/invalid-email") {
+        setError("Please enter a valid email address.");
+      } else if (code === "auth/too-many-requests") {
+        setError("Too many failed attempts. Please wait a few minutes or reset your password.");
       } else {
-        setError("Login failed. Please check your credentials.");
+        setError("Login failed. Please check your email and password.");
       }
       setSuccess("");
     }
@@ -74,7 +79,11 @@ export default function Login() {
       setSuccess("Google login successful. Redirecting...");
       setError("");
       setTimeout(() => router.push("/dashboard"), 1000);
-    } catch (err) {
+    } catch (err: any) {
+      if (err?.code === "auth/popup-closed-by-user" || err?.code === "auth/cancelled-popup-request") {
+        // User closed the popup window voluntarily
+        return;
+      }
       console.error("Google login error:", err);
       setError("Google sign-in failed. Please try again.");
       setSuccess("");

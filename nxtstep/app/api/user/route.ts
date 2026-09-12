@@ -1,4 +1,4 @@
-﻿// app/api/user/route.ts
+// app/api/user/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAuthHeader } from "@/lib/firebase-admin";
 import { createSupabaseServer } from "@/lib/supabase";
@@ -102,3 +102,40 @@ export async function DELETE(req: NextRequest) {
 
   return NextResponse.json({ success: true });
 }
+
+// PATCH /api/user — updates completed milestones progress for a roadmap
+export async function PATCH(req: NextRequest) {
+  const decoded = await verifyAuthHeader(req.headers.get("authorization"));
+  if (!decoded || !decoded.uid) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const { roadmapId, completedSteps } = (await req.json()) as {
+    roadmapId: string;
+    completedSteps: number[];
+  };
+
+  if (!roadmapId) {
+    return NextResponse.json({ error: "roadmapId is required" }, { status: 400 });
+  }
+
+  const supabase = createSupabaseServer();
+  const uid = decoded.uid;
+
+  try {
+    const { error } = await supabase
+      .from("saved_roadmaps")
+      .update({ completed_steps: completedSteps })
+      .eq("id", roadmapId)
+      .eq("firebase_uid", uid);
+
+    if (error) {
+      console.warn("[/api/user] PATCH error updating completed_steps:", error.message);
+    }
+  } catch (err) {
+    console.warn("[/api/user] PATCH exception:", err);
+  }
+
+  return NextResponse.json({ success: true, completedSteps });
+}
+

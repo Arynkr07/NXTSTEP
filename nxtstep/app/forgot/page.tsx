@@ -17,7 +17,20 @@ export default function ResetPassword() {
     setError("");
 
     try {
-      await sendPasswordResetEmail(auth, email);
+      const redirectUrl =
+        typeof window !== "undefined"
+          ? `${window.location.origin}/reset-password`
+          : "http://localhost:3000/reset-password";
+
+      try {
+        await sendPasswordResetEmail(auth, email, {
+          url: redirectUrl,
+          handleCodeInApp: true,
+        });
+      } catch (settingsErr) {
+        // Fallback without actionCodeSettings if domain is not yet authorized in Firebase Console
+        await sendPasswordResetEmail(auth, email);
+      }
       setIsSent(true);
     } catch (err: any) {
       if (err.code === "auth/user-not-found") {

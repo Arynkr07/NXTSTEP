@@ -92,11 +92,59 @@ export default function CareerOptionsPage() {
     setPopupData(null);
   };
 
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeftPos, setScrollLeftPos] = useState(0);
+  const hasDraggedRef = useRef(false);
+
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
-      const scrollAmount = direction === 'left' ? -400 : 400;
+      const scrollAmount = direction === 'left' ? -420 : 420;
       scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
+  };
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      const maxScroll = scrollWidth - clientWidth;
+      if (maxScroll > 0) {
+        setScrollProgress(Math.round((scrollLeft / maxScroll) * 100));
+      }
+    }
+  };
+
+  // Convert vertical mouse wheel into horizontal carousel scroll
+  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    if (scrollContainerRef.current) {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        scrollContainerRef.current.scrollLeft += e.deltaY * 1.5;
+      }
+    }
+  };
+
+  // Mouse drag-to-scroll
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    setIsDragging(true);
+    hasDraggedRef.current = false;
+    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+    setScrollLeftPos(scrollContainerRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 1.6;
+    if (Math.abs(walk) > 6) {
+      hasDraggedRef.current = true;
+    }
+    scrollContainerRef.current.scrollLeft = scrollLeftPos - walk;
+  };
+
+  const handleMouseUpOrLeave = () => {
+    setIsDragging(false);
   };
 
   const filteredCareers = careerOptions.filter(career =>
@@ -165,42 +213,92 @@ export default function CareerOptionsPage() {
         </div>
 
         {filteredCareers.length > 0 ? (
-          <div 
-            ref={scrollContainerRef}
-            className="flex gap-8 overflow-x-auto pb-12 scroll-smooth no-scrollbar"
-          >
-            {filteredCareers.map((career) => (
-              <div
-                key={career.id}
-                onClick={() => handleShowPopup(career)}
-                className="min-w-[320px] md:min-w-[380px] group cursor-pointer"
-              >
-                {/* 5. CARD: Added dark:border-slate-700 and dark shadow */}
-                <div className="relative h-[400px] rounded-[32px] overflow-hidden border-4 border-slate-900 dark:border-slate-700 shadow-[12px_12px_0px_0px_rgba(15,23,42,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.1)] transition-all group-hover:-translate-y-2 group-hover:shadow-[16px_16px_0px_0px_rgba(234,88,12,1)] dark:group-hover:shadow-[16px_16px_0px_0px_rgba(234,88,12,0.8)]">
-                  <img src={career.imageUrl} alt={career.title} className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500" />
-                  
-                  {/* Overlay Content */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-90"></div>
-                  
-                  <button 
-                    onClick={(e) => toggleSave(e, career.id)}
-                    className="absolute top-6 right-6 p-3 bg-white dark:bg-slate-900 rounded-xl border-2 border-slate-900 dark:border-white shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] dark:shadow-none hover:scale-110 transition z-20"
-                  >
-                  <Heart size={20} fill={savedIds.includes(career.id) ? "#ea580c" : "none"} color={savedIds.includes(career.id) ? "#ea580c" : "currentColor"} className="text-slate-900 dark:text-white" />
-                  </button>
+          <div className="relative group/carousel">
+            {/* Floating Left Arrow */}
+            <button
+              onClick={() => scroll('left')}
+              className="hidden md:flex absolute -left-5 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white dark:bg-slate-900 border-4 border-slate-900 dark:border-slate-700 rounded-2xl items-center justify-center text-slate-900 dark:text-white hover:bg-orange-600 hover:text-white shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] transition-all hover:scale-110 active:translate-y-0 opacity-80 group-hover/carousel:opacity-100"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft size={24} />
+            </button>
 
-                  <div className="absolute bottom-8 left-8 right-8">
-                    <span className="bg-orange-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-3 inline-block shadow-md">
-                      {career.marketInsights?.demandLevel ? `${career.marketInsights.demandLevel} Demand` : "High Growth"} {career.marketInsights?.growthRate ? `• ${career.marketInsights.growthRate}` : ""}
-                    </span>
-                    <h3 className="text-3xl font-black text-white uppercase italic leading-none">{career.title}</h3>
-                    <div className="flex items-center gap-2 text-orange-400 mt-2 font-bold italic">
-                      <Zap size={14} fill="currentColor" /> {career.salary}
+            {/* Floating Right Arrow */}
+            <button
+              onClick={() => scroll('right')}
+              className="hidden md:flex absolute -right-5 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white dark:bg-slate-900 border-4 border-slate-900 dark:border-slate-700 rounded-2xl items-center justify-center text-slate-900 dark:text-white hover:bg-orange-600 hover:text-white shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] transition-all hover:scale-110 active:translate-y-0 opacity-80 group-hover/carousel:opacity-100"
+              aria-label="Scroll right"
+            >
+              <ChevronRight size={24} />
+            </button>
+
+            {/* Carousel Container */}
+            <div 
+              ref={scrollContainerRef}
+              onScroll={handleScroll}
+              onWheel={handleWheel}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUpOrLeave}
+              onMouseLeave={handleMouseUpOrLeave}
+              className="flex gap-8 overflow-x-auto pb-8 pt-2 scroll-smooth no-scrollbar cursor-grab active:cursor-grabbing select-none"
+            >
+              {filteredCareers.map((career) => (
+                <div
+                  key={career.id}
+                  onClick={() => {
+                    if (!hasDraggedRef.current) handleShowPopup(career);
+                  }}
+                  className="min-w-[320px] md:min-w-[380px] group cursor-pointer flex-shrink-0"
+                >
+                  {/* 5. CARD: Added dark:border-slate-700 and dark shadow */}
+                  <div className="relative h-[400px] rounded-[32px] overflow-hidden border-4 border-slate-900 dark:border-slate-700 shadow-[12px_12px_0px_0px_rgba(15,23,42,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.1)] transition-all group-hover:-translate-y-2 group-hover:shadow-[16px_16px_0px_0px_rgba(234,88,12,1)] dark:group-hover:shadow-[16px_16px_0px_0px_rgba(234,88,12,0.8)]">
+                    <img src={career.imageUrl} alt={career.title} className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-500 pointer-events-none" />
+                    
+                    {/* Overlay Content */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-90"></div>
+                    
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleSave(e, career.id);
+                      }}
+                      className="absolute top-6 right-6 p-3 bg-white dark:bg-slate-900 rounded-xl border-2 border-slate-900 dark:border-white shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] dark:shadow-none hover:scale-110 transition z-20"
+                    >
+                    <Heart size={20} fill={savedIds.includes(career.id) ? "#ea580c" : "none"} color={savedIds.includes(career.id) ? "#ea580c" : "currentColor"} className="text-slate-900 dark:text-white" />
+                    </button>
+
+                    <div className="absolute bottom-8 left-8 right-8">
+                      <span className="bg-orange-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-3 inline-block shadow-md">
+                        {career.marketInsights?.demandLevel ? `${career.marketInsights.demandLevel} Demand` : "High Growth"} {career.marketInsights?.growthRate ? `• ${career.marketInsights.growthRate}` : ""}
+                      </span>
+                      <h3 className="text-3xl font-black text-white uppercase italic leading-none">{career.title}</h3>
+                      <div className="flex items-center gap-2 text-orange-400 mt-2 font-bold italic">
+                        <Zap size={14} fill="currentColor" /> {career.salary}
+                      </div>
                     </div>
                   </div>
                 </div>
+              ))}
+            </div>
+
+            {/* Interactive Scroll Progress Indicator */}
+            <div className="mt-4 flex items-center justify-between gap-6 px-2">
+              <div className="flex items-center gap-2 text-xs font-bold text-slate-400 dark:text-slate-500">
+                <span className="hidden sm:inline">Tip: Scroll with mouse wheel or drag to swipe</span>
               </div>
-            ))}
+              
+              <div className="flex-1 max-w-sm bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                <div
+                  className="bg-orange-600 h-full rounded-full transition-all duration-150"
+                  style={{ width: `${Math.max(scrollProgress, 6)}%` }}
+                />
+              </div>
+
+              <span className="text-xs font-black uppercase tracking-wider text-slate-400">
+                {filteredCareers.length} Paths Available
+              </span>
+            </div>
           </div>
         ) : (
           <div className="border-4 border-slate-900 dark:border-slate-700 rounded-[32px] p-8 md:p-12 bg-orange-50/70 dark:bg-slate-900/90 shadow-[12px_12px_0px_0px_rgba(234,88,12,1)] dark:shadow-[12px_12px_0px_0px_rgba(234,88,12,0.4)] text-center max-w-3xl mx-auto my-4">

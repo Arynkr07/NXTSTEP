@@ -10,7 +10,7 @@ import { findGuidanceInsight } from "@/lib/data/careerIntelligence";
 import type { CareerEmbedding, ChatMessage } from "@/lib/supabase";
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
-const CHAT_MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+const CHAT_MODEL = process.env.GEMINI_MODEL || "gemini-3.6-flash";
 const EMBED_MODEL = "text-embedding-004";
 
 // ── Gemini Client ─────────────────────────────────────────────────────────────
@@ -377,15 +377,20 @@ ${nextPendingStep ? `- Immediate Next Milestone to conquer: "${nextPendingStep.t
 ${userChallenge ? `- User's Specific Question / Blocker: "${userChallenge}"` : ""}
 
 YOUR MISSION:
-Deliver a high-impact, highly practical, and motivating tactical game plan formatted with clear Markdown headers and bullet points.
+Deliver a crisp, punchy, and energizing game plan. Do NOT clutter with excessive asterisks. Keep it conversational, actionable, and under 250 words.
 
-Include:
-1. 🎯 **Progress Assessment & Reality Check**: Celebrate what's done, and clearly frame where they stand on the path to becoming a hired ${career}.
-2. ⚡ **Immediate Next Action (Next 7–14 Days)**: Specific breakdown for the immediate milestone. What to study each week, tools to install, or repos to clone.
-3. 🛠️ **High-Yield Portfolio Project Idea**: 1 concrete project relevant to real LinkedIn hiring requirements that proves mastery for this milestone.
-4. ❓ **Coach's Check-in Question**: Conclude with 1 targeted, thought-provoking question asking them about their specific roadblock or timeline so they can continue refining their plan.
+Structure your response with these exact headers:
+### 1. Where You Stand
+Celebrate progress in 1-2 sharp, motivating sentences.
 
-Keep it direct, energizing, modern (referencing current 2024-2026 tech/industry standards), and under 350 words.`;
+### 2. Next 7-Day Sprint
+Give 3 concrete bullet points (tools to try, specific concepts to grasp, or exact workflow steps).
+
+### 3. Portfolio Proof
+1 specific, impressive portfolio project idea that recruiters and hiring managers in this field love seeing.
+
+### 4. Coach's Challenge
+1 short, direct question to help them conquer their next blocker.`;
 
   if (!GEMINI_API_KEY) {
     const fallbackText = `### 🎯 Progress Overview for ${career}\n\nYou have completed **${doneCount} of ${total} milestones** (${Math.round((doneCount / Math.max(total, 1)) * 100)}%).\n\n#### ⚡ Next Tactical Step: ${nextPendingStep?.title || "Final Polish"}\n- **Focus**: Dedicate 5-8 hours weekly to mastering core practical skills.\n- **Action**: Build 1 standalone project showcasing real problem-solving.\n- **Next Milestone**: ${nextPendingStep?.description || "Network with professionals and apply for entry roles."}\n\n*Add your GEMINI_API_KEY to get real-time tailored AI coaching on demand!*`;
