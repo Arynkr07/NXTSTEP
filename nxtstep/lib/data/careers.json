@@ -73779,5 +73779,205 @@
     },
     "salaryNumericMin": 40000,
     "salaryNumericMax": 120000
+  },
+  {
+    "title": "Politician",
+    "description": "Represent and govern the people by enacting laws and policies.",
+    "pursuitSteps": [
+      "Gain deep knowledge of Civics and Political Science",
+      "Engage in student politics or grassroots activism",
+      "Join a political party and contest in local elections"
+    ],
+    "colleges": "JNU, Delhi University (for Political Science), Tata Institute of Social Sciences",
+    "salary": "₹ 12 - 30 LPA (Basic MP/MLA Allowances) + Pensions",
+    "link": "https://www.google.com/search?q=how+to+become+a+politician+in+india",
+    "imageUrl": "https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=800&auto=format&fit=crop",
+    "iconKey": "users",
+    "relatedInterests": [
+      "Social Science",
+      "Leadership"
+    ],
+    "skills": [
+      "Public Speaking",
+      "Negotiation",
+      "Leadership"
+    ],
+    "category": "Government & Public Administration",
+    "workStyleFit": "Social/Enterprising",
+    "educationLevel": "Any Degree (BA Political Science preferred)",
+    "fees": "₹ 10,000 - 1 Lakh (Degree)",
+    "howTo": "Gain deep knowledge of Civics -> Engage in grassroots activism -> Join a political party and contest in local elections",
+    "marketInsights": {
+      "demandLevel": "Moderate",
+      "growthRate": "Stable",
+      "seniorityLadder": [
+        "Grassroots Worker",
+        "Local Leader (MLA/Corporator)",
+        "National Leader (MP/Minister)"
+      ],
+      "experienceRequired": "Years of community service and political networking",
+      "salaryEntry": "Variable",
+      "salaryMid": "₹ 12 - 18 LPA",
+      "salarySenior": "₹ 30+ LPA",
+      "topLinkedInSkills": [
+        "Public Speaking",
+        "Policy Analysis",
+        "Campaign Management"
+      ]
+    },
+    "salaryNumericMin": 1200000,
+    "salaryNumericMax": 3000000,
+    "recommendedCourseIds": [],
+    "id": 1309
+  },
+  {
+    "title": "NDA (National Defence Academy) Officer",
+    "description": "Serve the nation as a commissioned officer in the Indian Armed Forces (Army, Navy, Air Force).",
+    "pursuitSteps": [
+      "Complete 10+2 with Physics and Maths",
+      "Clear the UPSC NDA & NA Examination",
+      "Pass the 5-day SSB Interview and Medical Test"
+    ],
+    "colleges": "National Defence Academy (NDA), Pune",
+    "salary": "₹ 7 - 15 LPA (Stipend + Starting Pay)",
+    "link": "https://www.google.com/search?q=how+to+join+nda+india",
+    "imageUrl": "https://images.unsplash.com/photo-1590243440787-84bc762d1a3a?q=80&w=800&auto=format&fit=crop",
+    "iconKey": "shield",
+    "relatedInterests": [
+      "Defense",
+      "Physical Fitness"
+    ],
+    "skills": [
+      "Leadership",
+      "Physical Endurance",
+      "Strategic Thinking"
+    ],
+    "category": "Defense & Security",
+    "workStyleFit": "Realistic/Enterprising",
+    "educationLevel": "12th Pass (PCM preferred)",
+    "fees": "Govt Funded Training",
+    "howTo": "Complete 10+2 (PCM) -> Clear the UPSC NDA & NA Examination -> Pass the 5-day SSB Interview",
+    "marketInsights": {
+      "demandLevel": "High",
+      "growthRate": "Stable",
+      "seniorityLadder": [
+        "Cadet",
+        "Lieutenant / Sub-Lieutenant / Flying Officer",
+        "Major / Commander / Squadron Leader"
+      ],
+      "experienceRequired": "Intensive 3-year military training at NDA",
+      "salaryEntry": "₹ 7 - 9 LPA (Stipend)",
+      "salaryMid": "₹ 12 - 18 LPA",
+      "salarySenior": "₹ 20+ LPA (Plus extensive perks)",
+      "topLinkedInSkills": [
+        "Military Operations",
+        "Leadership",
+        "Discipline"
+      ]
+    },
+    "salaryNumericMin": 700000,
+    "salaryNumericMax": 1500000,
+    "recommendedCourseIds": [],
+    "id": 1310
+  },
+  {
+    "title": "Indian Civil Services (IAS/IPS/IFS)",
+    "description": "Administer government policies, maintain law and order, and represent India internationally.",
+    "pursuitSteps": [
+      "Complete a Bachelor Degree in any discipline",
+      "Clear the UPSC Civil Services Examination (Prelims, Mains, Interview)",
+      "Undergo training at LBSNAA or SVPNPA"
+    ],
+    "colleges": "Any recognized university in India",
+    "salary": "₹ 7 - 25 LPA (Plus massive perks & allowances)",
+    "link": "https://www.google.com/search?q=upsc+civil+services",
+    "imageUrl": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800&auto=format&fit=crop",
+    "iconKey": "landmark",
+    "relatedInterests": [
+      "Government",
+      "Public Service"
+    ],
+    "skills": [
+      "Administration",
+      "Decision Making",
+      "Analytical Thinking"
+    ],
+    "category": "Government & Public Administration",
+    "workStyleFit": "Enterprising/Investigative",
+    "educationLevel": "Bachelor Degree",
+    "fees": "Minimal exam fees; Coaching: ₹ 1 - 2 Lakhs",
+    "howTo": "Complete a Bachelor Degree -> Clear the UPSC Civil Services Examination -> Undergo training at LBSNAA",
+    "marketInsights": {
+      "demandLevel": "High",
+      "growthRate": "Stable",
+      "seniorityLadder": [
+        "Sub-Divisional Magistrate",
+        "District Magistrate / SP",
+        "Secretary to Govt of India"
+      ],
+      "experienceRequired": "Rigorous selection process and foundational training",
+      "salaryEntry": "₹ 7 - 10 LPA",
+      "salaryMid": "₹ 14 - 18 LPA",
+      "salarySenior": "₹ 25+ LPA (Secretary scale)",
+      "topLinkedInSkills": [
+        "Public Administration",
+        "Policy Making",
+        "Governance"
+      ]
+    },
+    "salaryNumericMin": 700000,
+    "salaryNumericMax": 2500000,
+    "recommendedCourseIds": [],
+    "id": 1311
+  },
+  {
+    "title": "Special Services / Intelligence Officer (RAW/IB)",
+    "description": "Gather intelligence, ensure national security, and conduct covert operations.",
+    "pursuitSteps": [
+      "Join Civil Services (IPS, IRS) or Armed Forces",
+      "Build an impeccable service record and clear intense background checks",
+      "Get deputed to RAW or IB after specialized training"
+    ],
+    "colleges": "Any recognized university, usually via UPSC or SSC CGL (for IB)",
+    "salary": "₹ 8 - 25 LPA (Plus special security allowances)",
+    "link": "https://www.google.com/search?q=how+to+join+RAW+or+IB+in+india",
+    "imageUrl": "https://images.unsplash.com/photo-1517409277026-621db332fc33?q=80&w=800&auto=format&fit=crop",
+    "iconKey": "eye",
+    "relatedInterests": [
+      "Intelligence",
+      "Security"
+    ],
+    "skills": [
+      "Analytical Thinking",
+      "Secrecy",
+      "Observation"
+    ],
+    "category": "Defense & Security",
+    "workStyleFit": "Investigative/Realistic",
+    "educationLevel": "Bachelor Degree",
+    "fees": "Minimal exam fees",
+    "howTo": "Join Civil Services or Armed Forces -> Build an impeccable record -> Get deputed to RAW or IB",
+    "marketInsights": {
+      "demandLevel": "High (Selective)",
+      "growthRate": "Stable",
+      "seniorityLadder": [
+        "ACIO (for IB) / Field Officer",
+        "Deputy Director",
+        "Joint Secretary / Director"
+      ],
+      "experienceRequired": "Years of proven track record in police or military",
+      "salaryEntry": "₹ 8 - 12 LPA",
+      "salaryMid": "₹ 15 - 20 LPA",
+      "salarySenior": "₹ 25+ LPA",
+      "topLinkedInSkills": [
+        "Intelligence Analysis",
+        "National Security",
+        "Investigation"
+      ]
+    },
+    "salaryNumericMin": 800000,
+    "salaryNumericMax": 2500000,
+    "recommendedCourseIds": [],
+    "id": 1312
   }
 ]
