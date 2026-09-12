@@ -147,9 +147,12 @@ export default function CareerOptionsPage() {
     setIsDragging(false);
   };
 
-  const filteredCareers = careerOptions.filter(career =>
+  let filteredCareers = careerOptions.filter(career =>
     career.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
+  if (!searchQuery) {
+    filteredCareers = filteredCareers.slice(0, 50);
+  }
 
   return (
     // 1. MAIN CONTAINER: Added dark:bg-slate-950 and dark:text-white
@@ -296,7 +299,7 @@ export default function CareerOptionsPage() {
               </div>
 
               <span className="text-xs font-black uppercase tracking-wider text-slate-400">
-                {filteredCareers.length} Paths Available
+                Swipe to explore
               </span>
             </div>
           </div>
