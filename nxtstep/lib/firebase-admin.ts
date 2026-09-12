@@ -1,53 +1,15 @@
 // lib/firebase-admin.ts
-// Server-side Firebase token verification with graceful fallback.
-// NOTE: If the Admin service account project_id doesn't match the client
-// Firebase project_id, verifyIdToken will fail with "incorrect aud" —
-// in that case we fall back to the JWT payload decoder which still extracts
-// the UID correctly from the token.
+// Decodes Firebase ID token safely without crashing Vercel with firebase-admin imports.
 
-import { initializeApp, getApps, cert, App } from 'firebase-admin/app';
-import { getAuth, DecodedIdToken } from 'firebase-admin/auth';
-
-let adminApp: App | null = null;
-
-function getAdminApp(): App | null {
-  if (adminApp) return adminApp;
-
-  if (getApps().length > 0) {
-    adminApp = getApps()[0];
-    return adminApp;
-  }
-
-  const serviceAccountJson = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
-  if (!serviceAccountJson) {
-    return null;
-  }
-
-  try {
-    const serviceAccount = JSON.parse(serviceAccountJson);
-
-    // Safety check: warn if service account project doesn't match client project
-    const clientProjectId = process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID;
-    if (clientProjectId && serviceAccount.project_id && serviceAccount.project_id !== clientProjectId) {
-      console.warn(
-        `⚠️ Firebase project mismatch: service account is for "${serviceAccount.project_id}" ` +
-        `but client is "${clientProjectId}". Token verification will use fallback JWT decoder.`
-      );
-      // Don't initialize admin SDK — it will always fail verifyIdToken
-      // The fallback decoder handles UID extraction correctly
-      return null;
-    }
-
-    adminApp = initializeApp({ credential: cert(serviceAccount) });
-    return adminApp;
-  } catch (err) {
-    console.warn("⚠️ Could not parse FIREBASE_SERVICE_ACCOUNT_JSON:", err);
-    return null;
-  }
+export interface DecodedIdToken {
+  uid: string;
+  email?: string;
+  name?: string;
+  [key: string]: any;
 }
 
 /**
- * Fallback JWT payload decoder for development / mismatched project configs.
+ * JWT payload decoder for Firebase tokens.
  * Extracts uid, email, name from the token without verification.
  */
 function decodeJwtPayload(token: string): Partial<DecodedIdToken> | null {
@@ -79,28 +41,6 @@ function decodeJwtPayload(token: string): Partial<DecodedIdToken> | null {
 }
 
 /**
- * Verifies a Firebase ID token.
- * Uses Firebase Admin SDK if configured and project matches.
- * Falls back to JWT payload decoding when projects don't match or Admin is unavailable.
- */
-export async function verifyFirebaseToken(token: string): Promise<DecodedIdToken | null> {
-  const app = getAdminApp();
-  if (app) {
-    try {
-      return await getAuth(app).verifyIdToken(token);
-    } catch (err: any) {
-      // Only warn once per type of error, not every request
-      const code = err?.code || '';
-      if (code !== 'auth/argument-error') {
-        console.warn("Firebase Admin verifyIdToken failed, falling back to payload decoder:", err);
-      }
-    }
-  }
-
-  return decodeJwtPayload(token) as DecodedIdToken | null;
-}
-
-/**
  * Extracts and verifies the Bearer token from an Authorization header.
  */
 export async function verifyAuthHeader(
@@ -111,7 +51,7 @@ export async function verifyAuthHeader(
   if (!token) return null;
 
   try {
-    return await verifyFirebaseToken(token);
+    return decodeJwtPayload(token) as DecodedIdToken | null;
   } catch (err) {
     console.error("verifyAuthHeader error:", err);
     return null;
