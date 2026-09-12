@@ -1,1 +1,56 @@
-// app/api/roadmap/route.ts // Generates a streaming AI career roadmap. // // Flow: // 1. Verify Firebase JWT (optional — allows unauthenticated preview) // 2. Stream Gemini roadmap response // 3. Client-side (StreamingRoadmap.tsx) handles saving via /api/roadmap/save import { NextRequest, NextResponse } from "next/server"; import { verifyAuthHeader } from "@/lib/firebase-admin"; import { generateRoadmapAI } from "@/lib/gemini"; export const dynamic = "force-dynamic"; export async function POST(req: NextRequest) { try { // ── 1. Auth (optional) ──────────────────────────────────────────────── const authHeader = req.headers.get("authorization"); // Allow unauthenticated access (quiz preview mode) — just skip the check try { await verifyAuthHeader(authHeader); } catch { // Unauthenticated is fine } // ── 2. Parse request ────────────────────────────────────────────────── const body = await req.json() as { career: string; userInterests?: string[]; userSkills?: string[]; save?: boolean; }; const { career, userInterests = [], userSkills = [] } = body; if (!career) { return NextResponse.json({ error: "career is required" }, { status: 400 }); } // ── 3. Stream Gemini response ───────────────────────────────────────── const stream = await generateRoadmapAI({ career, userInterests, userSkills, ragContext: [], }); return new Response(stream, { headers: { "Content-Type": "text/plain; charset=utf-8", "Transfer-Encoding": "chunked", "X-Content-Type-Options": "nosniff", }, }); } catch (err) { console.error("[roadmap] error:", err); return NextResponse.json( { error: "Internal server error" }, { status: 500 } ); } } 
+﻿// app/api/roadmap/route.ts
+// Generates a streaming AI career roadmap.
+
+import { NextRequest, NextResponse } from "next/server";
+import { verifyAuthHeader } from "@/lib/firebase-admin";
+import { generateRoadmapAI } from "@/lib/gemini";
+
+export const dynamic = "force-dynamic";
+
+export async function POST(req: NextRequest) {
+  try {
+    // ── 1. Auth (optional) ────────────────────────────────────────────────
+    const authHeader = req.headers.get("authorization");
+    try {
+      await verifyAuthHeader(authHeader);
+    } catch {
+      // Unauthenticated is fine
+    }
+
+    // ── 2. Parse request ──────────────────────────────────────────────────
+    const body = (await req.json()) as {
+      career: string;
+      userInterests?: string[];
+      userSkills?: string[];
+      save?: boolean;
+    };
+
+    const { career, userInterests = [], userSkills = [] } = body;
+
+    if (!career) {
+      return NextResponse.json({ error: "career is required" }, { status: 400 });
+    }
+
+    // ── 3. Stream Gemini response ─────────────────────────────────────────
+    const stream = await generateRoadmapAI({
+      career,
+      userInterests,
+      userSkills,
+      ragContext: [],
+    });
+
+    return new Response(stream, {
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "X-Content-Type-Options": "nosniff",
+      },
+    });
+  } catch (err) {
+    console.error("[roadmap] error:", err);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
+  }
+}

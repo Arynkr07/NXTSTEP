@@ -26,7 +26,7 @@ import {
   AssessmentResponse
 } from './types';
 
-// â”€â”€ Initial State â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// - Initial State -
 const initialState: QuizState = {
   currentStepIndex: 0,
   
@@ -47,14 +47,14 @@ const initialState: QuizState = {
 
   // Phase 2
   skills: [],
-  experience: '0â€“1 years',
+  experience: '0-1 years',
   projects: '',
   education: "Bachelor's Degree",
   fieldOfStudy: '',
 
   // Phase 3
   currency: 'INR',
-  salaryRange: 'â‚¹6â€“10 LPA',
+  salaryRange: '₹6-10 LPA',
   timeline: '6 months',
   openToEducation: 'Yes, part-time / online',
   openToEducationReason: '',
@@ -64,7 +64,7 @@ const initialState: QuizState = {
   error: null,
 };
 
-// â”€â”€ Reducer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// - Reducer -
 function quizReducer(state: QuizState, action: QuizAction): QuizState {
   switch (action.type) {
     case 'SET_STEP':
@@ -113,7 +113,7 @@ function quizReducer(state: QuizState, action: QuizAction): QuizState {
       return {
         ...state,
         currency: action.payload,
-        salaryRange: action.payload === 'INR' ? 'â‚¹6â€“10 LPA' : '$60â€“100k',
+        salaryRange: action.payload === 'INR' ? '₹6-10 LPA' : '$60-100k',
       };
     case 'SET_SALARY_RANGE':
       return { ...state, salaryRange: action.payload };
@@ -136,7 +136,7 @@ function quizReducer(state: QuizState, action: QuizAction): QuizState {
   }
 }
 
-// â”€â”€ Presets & Option Lists â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// - Presets & Option Lists -
 const ACTIVITIES_PRESETS = [
   'Solving complex problems and thinking analytically',
   'Creating, designing, or making things from scratch',
@@ -184,19 +184,19 @@ const SUGGESTED_SKILLS = [
 ];
 
 const SALARY_RANGES_INR = [
-  'â‚¹0â€“3 LPA',
-  'â‚¹3â€“6 LPA',
-  'â‚¹6â€“10 LPA',
-  'â‚¹10â€“20 LPA',
-  'â‚¹20â€“50 LPA',
-  'â‚¹50 LPA+',
+  '₹0-3 LPA',
+  '₹3-6 LPA',
+  '₹6-10 LPA',
+  '₹10-20 LPA',
+  '₹20-50 LPA',
+  '₹50 LPA+',
 ];
 
 const SALARY_RANGES_USD = [
-  '$0â€“30k',
-  '$30â€“60k',
-  '$60â€“100k',
-  '$100â€“150k',
+  '$0-30k',
+  '$30-60k',
+  '$60-100k',
+  '$100-150k',
   '$150k+',
 ];
 
@@ -225,7 +225,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
   const [customConcern, setCustomConcern] = useState('');
   const [refinementData, setRefinementData] = useState<{ message: string; suggestions: string[] } | null>(null);
 
-  // â”€â”€ Step Navigation & Dynamic AI Follow-up Trigger â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // - Step Navigation & Dynamic AI Follow-up Trigger -
   const handleNext = async () => {
     // Skip Dynamic AI Follow-up step entirely as requested by user
     if (state.currentStepIndex === 3) {
@@ -236,7 +236,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
     dispatch({ type: 'NEXT_STEP' });
   };
 
-  // â”€â”€ Submit Assessment to Gemini + RAG â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // - Submit Assessment to Gemini + RAG -
   const handleFinalSubmit = async () => {
     dispatch({ type: 'SET_SUBMITTING', payload: true });
     dispatch({ type: 'SET_ERROR', payload: null });
@@ -281,7 +281,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
     }
   };
 
-  // â”€â”€ Phase & Progress Calculation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // - Phase & Progress Calculation -
   const totalStepsCount = 14;
   const progressPercent = Math.round(((state.currentStepIndex + 1) / totalStepsCount) * 100);
 
@@ -295,7 +295,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
 
   const phaseInfo = getPhaseInfo(state.currentStepIndex);
 
-  // â”€â”€ Custom Input Submission Handlers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // - Custom Input Submission Handlers -
   const handleAddCustomActivity = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     const trimmed = customActivity.trim();
@@ -347,7 +347,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
 
   return (
     <div className="w-full max-w-3xl mx-auto font-sans">
-      {/* â”€â”€ Top Progress Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* - Top Progress Header - */}
       <div className="bg-white dark:bg-slate-900 border-4 border-slate-900 dark:border-slate-700 rounded-[28px] p-6 shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] mb-6">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
           <div className="flex items-center gap-2">
@@ -371,10 +371,10 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
         </div>
       </div>
 
-      {/* â”€â”€ Main Question Card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* - Main Question Card - */}
       <div className="bg-white dark:bg-slate-900 border-4 border-slate-900 dark:border-slate-700 rounded-[32px] p-8 md:p-10 shadow-[12px_12px_0px_0px_rgba(15,23,42,1)] dark:shadow-[12px_12px_0px_0px_rgba(255,255,255,0.1)] min-h-[460px] flex flex-col justify-between animate-in fade-in duration-200">
         
-        {/* â”€â”€ QUESTION BODY BY STEP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* - QUESTION BODY BY STEP - */}
         <div className="space-y-6">
 
           {/* ================================================================= */}
@@ -390,7 +390,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
                   What kind of work makes you lose track of time?
                 </h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">
-                  Choose everything that resonates â€” across any field or industry:
+                  Choose everything that resonates - across any field or industry:
                 </p>
               </div>
 
@@ -407,7 +407,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
                         onClick={() => dispatch({ type: 'SET_ACTIVITIES', payload: state.activities.filter((a) => a !== act) })}
                         className="hover:text-black font-black text-xs ml-1"
                       >
-                        âœ•
+                        -
                       </button>
                     </span>
                   ))}
@@ -512,8 +512,8 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
                   >
                     <option value="Any / Flexible">Any / Flexible Team Size</option>
                     <option value="Solo / Micro (<5)">Solo / Micro Team (&lt;5 people)</option>
-                    <option value="Small Agile (5-20)">Small Agile Squad (5â€“20 people)</option>
-                    <option value="Mid-size (20-100)">Mid-size Growth Company (20â€“100 people)</option>
+                    <option value="Small Agile (5-20)">Small Agile Squad (5-20 people)</option>
+                    <option value="Mid-size (20-100)">Mid-size Growth Company (20-100 people)</option>
                     <option value="Large Enterprise (100+)">Large Global Enterprise (100+ people)</option>
                   </select>
                 </div>
@@ -557,7 +557,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
                   How do you want your success measured?
                 </h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">
-                  Select up to 2 â€” what does a great outcome look like to you?
+                  Select up to 2 - what does a great outcome look like to you?
                 </p>
               </div>
 
@@ -573,7 +573,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
                         onClick={() => dispatch({ type: 'SET_MEASUREMENT', payload: state.measurement.filter((item) => item !== m) })}
                         className="hover:text-black font-black text-xs ml-1"
                       >
-                        âœ•
+                        -
                       </button>
                     </span>
                   ))}
@@ -643,7 +643,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
                   What would make you quit a job?
                 </h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">
-                  Pick your biggest dealbreaker â€” this helps filter out bad-fit careers:
+                  Pick your biggest dealbreaker - this helps filter out bad-fit careers:
                 </p>
               </div>
 
@@ -759,7 +759,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
                   What skills do you already have?
                 </h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">
-                  Add any skill â€” technical, creative, medical, legal, soft skills â€” and rate your level:
+                  Add any skill - technical, creative, medical, legal, soft skills - and rate your level:
                 </p>
               </div>
 
@@ -798,7 +798,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
                             onClick={() => dispatch({ type: 'REMOVE_SKILL', payload: skill.name })}
                             className="text-slate-400 hover:text-red-500 ml-1 text-xs px-1"
                           >
-                            âœ•
+                            -
                           </button>
                         </div>
                       </div>
@@ -860,7 +860,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
                             : 'bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-blue-400'
                         }`}
                       >
-                        {isAdded ? 'âœ“ ' : '+ '}{skill}
+                        {isAdded ? '- ' : '+ '}{skill}
                       </button>
                     );
                   })}
@@ -885,10 +885,10 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
               <div className="grid sm:grid-cols-2 gap-3">
                 {([
                   'Student / Fresher',
-                  '0â€“1 years',
-                  '1â€“3 years',
-                  '3â€“5 years',
-                  '5â€“10 years',
+                  '0-1 years',
+                  '1-3 years',
+                  '3-5 years',
+                  '5-10 years',
                   '10+ years',
                 ] as const).map((exp) => (
                   <button
@@ -916,7 +916,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
                   What's the most significant thing you've done or created?
                 </h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400 font-bold mt-1">
-                  Share 1â€“2 achievements, projects, initiatives, or experiences (200 characters max):
+                  Share 1-2 achievements, projects, initiatives, or experiences (200 characters max):
                 </p>
               </div>
 
@@ -1279,7 +1279,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
                       <strong>Passions:</strong> {state.activities.slice(0, 2).join(', ') || 'N/A'}
                     </p>
                     <p className="text-xs font-bold text-slate-800 dark:text-slate-200">
-                      <strong>Environment:</strong> {state.workEnvironment.location} â€¢ {state.workEnvironment.pace}
+                      <strong>Environment:</strong> {state.workEnvironment.location} - {state.workEnvironment.pace}
                     </p>
                     <p className="text-xs font-bold text-slate-800 dark:text-slate-200">
                       <strong>Frustration:</strong> {state.frustrations || 'N/A'}
@@ -1333,7 +1333,7 @@ export default function CareerAssessmentQuiz({ onAssessmentComplete }: CareerAss
           )}
         </div>
 
-        {/* â”€â”€ BOTTOM BUTTON BAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* - BOTTOM BUTTON BAR - */}
         <div className="pt-8 border-t-2 border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-4">
           {/* Back Button */}
           {state.currentStepIndex > 0 ? (

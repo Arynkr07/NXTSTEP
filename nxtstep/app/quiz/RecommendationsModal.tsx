@@ -67,7 +67,7 @@ export default function RecommendationsModal({
 
     try {
       const token = await user.getIdToken();
-      await fetch('/api/user/career', {
+      const res = await fetch('/api/user/career', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({
@@ -76,6 +76,9 @@ export default function RecommendationsModal({
           action: isSaved ? 'unsave' : 'save',
         }),
       });
+      if (!res.ok) {
+        throw new Error('Failed to save to database');
+      }
     } catch (err) {
       console.error('Error saving career from modal:', err);
       setSavedIds((prev) => (isSaved ? [...prev, id] : prev.filter((i) => i !== id)));

@@ -67,8 +67,10 @@ export default function Navbar() {
         },
         (error) => {
           console.error("Failed to load user profile:", error);
-          setUserData(null);
-          setInitial("");
+          // Fallback to auth details so user doesn't appear logged out on permission errors
+          const fallbackName = user.displayName || user.email?.split('@')[0] || "User";
+          setUserData({ username: fallbackName });
+          setInitial(fallbackName.charAt(0).toUpperCase());
         }
       );
     });

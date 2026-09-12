@@ -138,7 +138,7 @@ Base recommendations on the LinkedIn data provided. Be specific about tools, tec
     // Model fallback
     try {
       const client = getClient();
-      const model = client.getGenerativeModel({ model: "gemini-2.0-flash" });
+      const model = client.getGenerativeModel({ model: "gemini-3.6-flash" });
       const encoder = new TextEncoder();
       const stream = await model.generateContentStream(systemPrompt);
 
@@ -307,7 +307,7 @@ RULES:
     try {
       const client = getClient();
       const model = client.getGenerativeModel({
-        model: "gemini-2.0-flash",
+        model: "gemini-3.6-flash",
         systemInstruction,
       });
       const chat = model.startChat({ history: historyForGemini });
@@ -419,7 +419,7 @@ Keep it direct, energizing, modern (referencing current 2024-2026 tech/industry 
     });
   } catch {
     const client = getClient();
-    const model = client.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const model = client.getGenerativeModel({ model: "gemini-3.6-flash" });
     const stream = await model.generateContentStream(prompt);
     const encoder = new TextEncoder();
 

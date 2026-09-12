@@ -49,20 +49,28 @@ function getHiringCompanies(career: Career): string[] {
 }
 
 export function generateOfflineAssessment(state: QuizState): AssessmentResponse {
-  const userSkills = (state.skills || []).map((s) => ({
-    name: s.name.toLowerCase().trim(),
-    proficiency: s.proficiency || "intermediate",
-    weight: s.proficiency === "advanced" ? 3 : s.proficiency === "intermediate" ? 2 : 1,
-  }));
+  const safeState = state || ({} as QuizState);
+  const rawSkills = Array.isArray(safeState.skills) ? safeState.skills : [];
+  const userSkills = rawSkills.map((s: any) => {
+    const name = typeof s === "string" ? s : (s?.name || "");
+    const proficiency = typeof s === "object" && s?.proficiency ? s.proficiency : "intermediate";
+    return {
+      name: String(name).toLowerCase().trim(),
+      proficiency,
+      weight: proficiency === "advanced" ? 3 : proficiency === "intermediate" ? 2 : 1,
+    };
+  }).filter((s) => s.name.length > 0);
 
   const userSkillNames = userSkills.map((s) => s.name);
-  const userActivities = (state.activities || []).map((a) => a.toLowerCase().trim());
+  const userActivities = (Array.isArray(safeState.activities) ? safeState.activities : [])
+    .map((a) => String(a || "").toLowerCase().trim())
+    .filter(Boolean);
   const freeTextCorpus = [
-    state.frustrations || "",
-    state.projects || "",
-    state.fieldOfStudy || "",
-    state.aiFollowUpAnswer || "",
-    state.concern || "",
+    safeState.frustrations || "",
+    safeState.projects || "",
+    safeState.fieldOfStudy || "",
+    safeState.aiFollowUpAnswer || "",
+    safeState.concern || "",
   ]
     .join(" ")
     .toLowerCase();
