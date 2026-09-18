@@ -11,10 +11,23 @@ function ResetPasswordForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // oobCode can come from query param ?oobCode=... or ?code=...
-  const queryCode = searchParams.get("oobCode") || searchParams.get("code") || "";
+  const extractOobCode = (raw: string) => {
+    if (!raw) return "";
+    const trimmed = raw.trim();
+    if (trimmed.includes("oobCode=")) {
+      try {
+        const urlObj = new URL(trimmed.startsWith("http") ? trimmed : `https://dummy.com/?${trimmed}`);
+        return urlObj.searchParams.get("oobCode") || urlObj.searchParams.get("code") || trimmed;
+      } catch {
+        const match = trimmed.match(/[?&]oobCode=([^&]+)/);
+        if (match) return decodeURIComponent(match[1]);
+      }
+    }
+    return trimmed;
+  };
 
-  const [code, setCode] = useState(queryCode);
+  const initialCode = extractOobCode(queryCode);
+  const [code, setCode] = useState(initialCode);
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -27,17 +40,18 @@ function ResetPasswordForm() {
 
   // If code is in URL, automatically verify it
   useEffect(() => {
-    if (queryCode) {
-      setCode(queryCode);
+    const cleanCode = extractOobCode(queryCode);
+    if (cleanCode) {
+      setCode(cleanCode);
       setIsVerifyingCode(true);
-      verifyPasswordResetCode(auth, queryCode)
+      verifyPasswordResetCode(auth, cleanCode)
         .then((email) => {
           setAccountEmail(email);
           setError("");
         })
         .catch((err) => {
           console.warn("Invalid reset code:", err);
-          setError("This password reset link is invalid or has expired. Please request a new one.");
+          setError("This reset link has already been used or has expired. If you just set your password on the Firebase page, your new password is ready to use!");
         })
         .finally(() => {
           setIsVerifyingCode(false);
@@ -49,7 +63,7 @@ function ResetPasswordForm() {
     e.preventDefault();
     setError("");
 
-    const trimmedCode = code.trim();
+    const trimmedCode = extractOobCode(code);
     if (!trimmedCode) {
       setError("Please provide a valid reset code from your email.");
       return;
