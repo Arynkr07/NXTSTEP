@@ -33,10 +33,11 @@ export default function ResetPassword() {
       }
       setIsSent(true);
     } catch (err: any) {
+      console.error("Password reset error:", err);
       if (err.code === "auth/user-not-found") {
         setError("No account found with this email address.");
       } else {
-        setError("Something went wrong. Please try again later.");
+        setError(err.message || "Something went wrong. Please try again later.");
       }
     } finally {
       setIsLoading(false);
