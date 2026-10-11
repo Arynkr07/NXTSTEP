@@ -178,7 +178,3 @@ nxtstep/
 - `npm run lint`: Runs ESLint to verify code quality.
 
 ---
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
